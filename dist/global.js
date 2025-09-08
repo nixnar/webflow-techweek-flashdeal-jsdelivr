@@ -681,6 +681,12 @@ video {
 .max-h-full{
   max-height: 100% !important;
 }
+.max-h-\\[85vh\\]{
+  max-height: 85vh !important;
+}
+.min-h-0{
+  min-height: 0px !important;
+}
 .w-4{
   width: 1rem !important;
 }
@@ -708,6 +714,12 @@ video {
 .max-w-none{
   max-width: none !important;
 }
+.flex-1{
+  flex: 1 1 0% !important;
+}
+.flex-none{
+  flex: none !important;
+}
 .grow{
   flex-grow: 1 !important;
 }
@@ -718,6 +730,9 @@ video {
   -webkit-user-select: none !important;
      -moz-user-select: none !important;
           user-select: none !important;
+}
+.resize{
+  resize: both !important;
 }
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
@@ -768,6 +783,16 @@ video {
 .gap-y-3{
   row-gap: 0.75rem !important;
 }
+.gap-x-4{
+  -moz-column-gap: 1rem !important;
+       column-gap: 1rem !important;
+}
+.gap-y-2{
+  row-gap: 0.5rem !important;
+}
+.gap-y-1{
+  row-gap: 0.25rem !important;
+}
 .self-start{
   align-self: flex-start !important;
 }
@@ -776,6 +801,9 @@ video {
 }
 .overflow-hidden{
   overflow: hidden !important;
+}
+.overflow-y-auto{
+  overflow-y: auto !important;
 }
 .whitespace-nowrap{
   white-space: nowrap !important;
@@ -854,6 +882,13 @@ video {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
+.px-2{
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+.pr-2{
+  padding-right: 0.5rem !important;
+}
 .text-center{
   text-align: center !important;
 }
@@ -890,6 +925,12 @@ video {
 }
 .text-\\[1\\.375rem\\]{
   font-size: 1.375rem !important;
+}
+.text-\\[0\\.5rem\\]{
+  font-size: 0.5rem !important;
+}
+.text-\\[0\\.75rem\\]{
+  font-size: 0.75rem !important;
 }
 .font-\\[700\\]{
   font-weight: 700 !important;
@@ -18196,13 +18237,13 @@ function OfferModal(_ref) {
     className: "absolute inset-0 bg-black/70",
     onClick: onClose
   }), /*#__PURE__*/react.createElement("div", {
-    className: "relative w-[min(1100px,95vw)] max-h-[90vh] overflow-auto text-white"
+    className: "relative w-[min(1100px,95vw)] text-white"
   }, /*#__PURE__*/react.createElement("div", {
     className: "border border-white p-[4px] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border border-white p-6"
+    className: "border border-white p-6 flex flex-col max-h-[85vh]"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-start justify-between gap-6 mb-6"
+    className: "flex items-start justify-between gap-6 mb-6 flex-none"
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex items-center gap-4"
   }, /*#__PURE__*/react.createElement("div", {
@@ -18220,6 +18261,8 @@ function OfferModal(_ref) {
     onClick: onClose,
     className: "text-white hover:text-white/70 text-2xl"
   }, "\u2715")), /*#__PURE__*/react.createElement("div", {
+    className: "flex-1 min-h-0 overflow-y-auto pr-2"
+  }, /*#__PURE__*/react.createElement("div", {
     className: "grid grid-cols-1 lg:grid-cols-2 gap-8"
   }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
     title: "About this offer"
@@ -18237,8 +18280,10 @@ function OfferModal(_ref) {
     }
   }) : /*#__PURE__*/react.createElement("p", {
     className: "text-white/70"
-  }, "Follow the partner link to redeem this offer.")), /*#__PURE__*/react.createElement("div", {
-    className: "mt-6 flex items-center gap-3"
+  }, "Follow the partner link to redeem this offer."))))), /*#__PURE__*/react.createElement("div", {
+    className: "flex-none mt-6"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-3"
   }, /*#__PURE__*/react.createElement("input", {
     id: "wish-checkbox",
     type: "checkbox",
@@ -18257,7 +18302,7 @@ function OfferModal(_ref) {
   }, /*#__PURE__*/react.createElement("button", {
     className: "inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors",
     onClick: handleRedeemClick
-  }, "Redeem Now"))))))));
+  }, "Redeem Now")))))));
 }
 function Section(_ref2) {
   var title = _ref2.title,
@@ -18453,6 +18498,20 @@ var App = function App() {
     _React$useState14 = App_slicedToArray(_React$useState13, 2),
     emailModalOpen = _React$useState14[0],
     setEmailModalOpen = _React$useState14[1];
+  var _React$useState15 = react.useState(false),
+    _React$useState16 = App_slicedToArray(_React$useState15, 2),
+    isMobile = _React$useState16[0],
+    setIsMobile = _React$useState16[1];
+  react.useEffect(function () {
+    var handleResize = function handleResize() {
+      setIsMobile(window.innerWidth < 900);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return function () {
+      return window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   react.useEffect(function () {
     var cancelled = false;
     _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -18484,6 +18543,20 @@ var App = function App() {
       setHasOfferEmail(Boolean(stored));
     } catch (_unused) {}
   }, []);
+
+  // Lock page scroll when any modal is open
+  var isAnyModalOpen = Boolean(activeOffer) || emailModalOpen;
+  react.useEffect(function () {
+    if (!isAnyModalOpen) return;
+    var prevHtml = document.documentElement.style.overflow;
+    var prevBody = document.body.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    return function () {
+      document.documentElement.style.overflow = prevHtml;
+      document.body.style.overflow = prevBody;
+    };
+  }, [isAnyModalOpen]);
   var handleRedeem = react.useCallback(function (offer) {
     var _offer$vendor;
     // Placeholder: integrate Webflow modal or external click handler
@@ -18572,8 +18645,10 @@ var App = function App() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex w-full p-4 sticky top-0 bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "w-full flex flex-col gap-4"
-  }, /*#__PURE__*/react.createElement("div", {
+    className: "w-full flex flex-col ".concat(isMobile ? "gap-2" : "gap-4")
+  }, /*#__PURE__*/react.createElement("p", {
+    className: "text-[2rem] font-[700] uppercase leading-none"
+  }, "FILTERS"), /*#__PURE__*/react.createElement("div", {
     className: "flex items-center gap-3"
   }, /*#__PURE__*/react.createElement("input", {
     type: "text",
@@ -18582,13 +18657,13 @@ var App = function App() {
       return setSearch(e.target.value);
     },
     placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none"
+    className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-2 py-1" : "px-4 py-3", " focus:outline-none")
   })), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-wrap items-center gap-x-8 gap-y-3"
+    className: "flex flex-wrap items-center ".concat(isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3")
   }, services.map(function (name) {
     return /*#__PURE__*/react.createElement("label", {
       key: name,
-      className: "flex items-center gap-2 cursor-pointer text-white font-[700] uppercase tracking-wide"
+      className: "flex items-center gap-2 ".concat(isMobile && "gap-1", " cursor-pointer text-white font-[700] uppercase tracking-wide")
     }, /*#__PURE__*/react.createElement("input", {
       type: "checkbox",
       checked: selectedServices.has(name),
@@ -18597,7 +18672,7 @@ var App = function App() {
       },
       className: "accent-white h-4 w-4"
     }), /*#__PURE__*/react.createElement("span", {
-      className: "text-[0.95rem]"
+      className: "text-[0.95rem] ".concat(isMobile ? "text-[0.75rem]" : "")
     }, name));
   })))), /*#__PURE__*/react.createElement("div", {
     className: "p-4"

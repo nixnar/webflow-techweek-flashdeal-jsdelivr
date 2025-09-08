@@ -24,10 +24,10 @@ export default function OfferModal({ offer, open, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center" role="dialog" aria-modal="true">
       <div className="absolute inset-0 bg-black/70" onClick={onClose} />
-      <div className="relative w-[min(1100px,95vw)] max-h-[90vh] overflow-auto text-white">
+      <div className="relative w-[min(1100px,95vw)] text-white">
         <div className="border border-white p-[4px] bg-black">
-          <div className="border border-white p-6">
-            <div className="flex items-start justify-between gap-6 mb-6">
+          <div className="border border-white p-6 flex flex-col max-h-[85vh]">
+            <div className="flex items-start justify-between gap-6 mb-6 flex-none">
               <div className="flex items-center gap-4">
                 <div className="w-[108px] h-[108px] bg-white p-3 flex items-center justify-center overflow-hidden">
                   {vendor.logo ? (
@@ -44,33 +44,38 @@ export default function OfferModal({ offer, open, onClose }) {
               <button aria-label="Close" onClick={onClose} className="text-white hover:text-white/70 text-2xl">✕</button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div>
-                <Section title="About this offer">
-                  <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(descriptionHtml) }} />
-                </Section>
+            <div className="flex-1 min-h-0 overflow-y-auto pr-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <Section title="About this offer">
+                    <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(descriptionHtml) }} />
+                  </Section>
+                </div>
+                <div>
+                  <Section title="Steps to Redeem">
+                    {redeemHtml ? (
+                      <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(redeemHtml) }} />
+                    ) : (
+                      <p className="text-white/70">Follow the partner link to redeem this offer.</p>
+                    )}
+                  </Section>
+                </div>
               </div>
-              <div>
-                <Section title="Steps to Redeem">
-                  {redeemHtml ? (
-                    <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(redeemHtml) }} />
-                  ) : (
-                    <p className="text-white/70">Follow the partner link to redeem this offer.</p>
-                  )}
-                </Section>
-                <div className="mt-6 flex items-center gap-3">
-                  <input id="wish-checkbox" type="checkbox" className="accent-white h-4 w-4" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-                  <label htmlFor="wish-checkbox" className="text-white/80">I wish to redeem the offer</label>
-                </div>
-                {agreeError ? (<p className="text-red-500 text-[0.95rem] mt-2">{agreeError}</p>) : null}
-                <div className="mt-4">
-                  <button
-                    className="inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors"
-                    onClick={handleRedeemClick}
-                  >
-                    Redeem Now
-                  </button>
-                </div>
+            </div>
+
+            <div className="flex-none mt-6">
+              <div className="flex items-center gap-3">
+                <input id="wish-checkbox" type="checkbox" className="accent-white h-4 w-4" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
+                <label htmlFor="wish-checkbox" className="text-white/80">I wish to redeem the offer</label>
+              </div>
+              {agreeError ? (<p className="text-red-500 text-[0.95rem] mt-2">{agreeError}</p>) : null}
+              <div className="mt-4">
+                <button
+                  className="inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors"
+                  onClick={handleRedeemClick}
+                >
+                  Redeem Now
+                </button>
               </div>
             </div>
           </div>
