@@ -4,7 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.tailwind { box-sizing: border-box; }
+.tailwind {
+  box-sizing: border-box;
+}
 
 /* Make the selector more specific and use !important */
 #reacttest,
@@ -42,6 +44,7 @@
 .line-clamp-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -54,11 +57,30 @@
 }
 
 @media (min-width: 1024px) {
-  .tw-offer-text { height: 180px; }
+  .tw-offer-text {
+    height: 180px;
+  }
 }
 
 .tw-offer-desc {
   flex: 1 1 auto;
   overflow: hidden;
   /* Multi-line clamp is optional; container height is the primary limiter */
+}
+
+/* Ensure links inside Steps to Redeem are clearly visible */
+.tw-steps a {
+  color: #14e8ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tw-steps a:hover {
+  color: #14e8ff;
+  text-decoration-thickness: 2px;
+}
+
+.tw-steps a:focus-visible {
+  outline: 2px solid #14e8ff;
+  outline-offset: 2px;
 }

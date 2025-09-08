@@ -537,65 +537,6 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-.container{
-  width: 100%;
-}
-.\\!container{
-  width: 100% !important;
-}
-@media (min-width: 640px){
-
-  .container{
-    max-width: 640px;
-  }
-
-  .\\!container{
-    max-width: 640px !important;
-  }
-}
-@media (min-width: 768px){
-
-  .container{
-    max-width: 768px;
-  }
-
-  .\\!container{
-    max-width: 768px !important;
-  }
-}
-@media (min-width: 1024px){
-
-  .container{
-    max-width: 1024px;
-  }
-
-  .\\!container{
-    max-width: 1024px !important;
-  }
-}
-@media (min-width: 1280px){
-
-  .container{
-    max-width: 1280px;
-  }
-
-  .\\!container{
-    max-width: 1280px !important;
-  }
-}
-@media (min-width: 1536px){
-
-  .container{
-    max-width: 1536px;
-  }
-
-  .\\!container{
-    max-width: 1536px !important;
-  }
-}
-.visible{
-  visibility: visible !important;
-}
 .fixed{
   position: fixed !important;
 }
@@ -623,11 +564,17 @@ video {
 .mb-3{
   margin-bottom: 0.75rem !important;
 }
+.mb-4{
+  margin-bottom: 1rem !important;
+}
 .mb-6{
   margin-bottom: 1.5rem !important;
 }
-.ml-3{
-  margin-left: 0.75rem !important;
+.ml-2{
+  margin-left: 0.5rem !important;
+}
+.mt-2{
+  margin-top: 0.5rem !important;
 }
 .mt-4{
   margin-top: 1rem !important;
@@ -637,15 +584,6 @@ video {
 }
 .mt-auto{
   margin-top: auto !important;
-}
-.ml-2{
-  margin-left: 0.5rem !important;
-}
-.mb-4{
-  margin-bottom: 1rem !important;
-}
-.mt-2{
-  margin-top: 0.5rem !important;
 }
 .inline-block{
   display: inline-block !important;
@@ -675,14 +613,11 @@ video {
 .h-full{
   height: 100% !important;
 }
-.max-h-\\[90vh\\]{
-  max-height: 90vh !important;
+.max-h-\\[85vh\\]{
+  max-height: 85vh !important;
 }
 .max-h-full{
   max-height: 100% !important;
-}
-.max-h-\\[85vh\\]{
-  max-height: 85vh !important;
 }
 .min-h-0{
   min-height: 0px !important;
@@ -699,11 +634,11 @@ video {
 .w-\\[min\\(1100px\\2c 95vw\\)\\]{
   width: min(1100px,95vw) !important;
 }
-.w-full{
-  width: 100% !important;
-}
 .w-\\[min\\(560px\\2c 95vw\\)\\]{
   width: min(560px,95vw) !important;
+}
+.w-full{
+  width: 100% !important;
 }
 .max-w-\\[1400px\\]{
   max-width: 1400px !important;
@@ -776,28 +711,22 @@ video {
 .gap-8{
   gap: 2rem !important;
 }
-.gap-x-8{
-  -moz-column-gap: 2rem !important;
-       column-gap: 2rem !important;
-}
-.gap-y-3{
-  row-gap: 0.75rem !important;
-}
 .gap-x-4{
   -moz-column-gap: 1rem !important;
        column-gap: 1rem !important;
 }
-.gap-y-2{
-  row-gap: 0.5rem !important;
+.gap-x-8{
+  -moz-column-gap: 2rem !important;
+       column-gap: 2rem !important;
 }
 .gap-y-1{
   row-gap: 0.25rem !important;
 }
+.gap-y-3{
+  row-gap: 0.75rem !important;
+}
 .self-start{
   align-self: flex-start !important;
-}
-.overflow-auto{
-  overflow: auto !important;
 }
 .overflow-hidden{
   overflow: hidden !important;
@@ -845,14 +774,18 @@ video {
 .p-4{
   padding: 1rem !important;
 }
+.p-5{
+  padding: 1.25rem !important;
+}
 .p-6{
   padding: 1.5rem !important;
 }
 .p-\\[4px\\]{
   padding: 4px !important;
 }
-.p-5{
-  padding: 1.25rem !important;
+.px-2{
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
 }
 .px-4{
   padding-left: 1rem !important;
@@ -861,6 +794,10 @@ video {
 .px-5{
   padding-left: 1.25rem !important;
   padding-right: 1.25rem !important;
+}
+.py-1{
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 .py-12{
   padding-top: 3rem !important;
@@ -874,18 +811,6 @@ video {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
-.py-4{
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-.py-1{
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
-}
-.px-2{
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
-}
 .pr-2{
   padding-right: 0.5rem !important;
 }
@@ -896,6 +821,9 @@ video {
   font-size: 1.5rem !important;
   line-height: 2rem !important;
 }
+.text-\\[0\\.75rem\\]{
+  font-size: 0.75rem !important;
+}
 .text-\\[0\\.95rem\\]{
   font-size: 0.95rem !important;
 }
@@ -905,32 +833,17 @@ video {
 .text-\\[1\\.25rem\\]{
   font-size: 1.25rem !important;
 }
+.text-\\[1\\.375rem\\]{
+  font-size: 1.375rem !important;
+}
 .text-\\[1\\.5rem\\]{
   font-size: 1.5rem !important;
-}
-.text-\\[1\\.6rem\\]{
-  font-size: 1.6rem !important;
-}
-.text-\\[1rem\\]{
-  font-size: 1rem !important;
-}
-.text-\\[2rem\\]{
-  font-size: 2rem !important;
-}
-.text-\\[32px\\]{
-  font-size: 32px !important;
 }
 .text-\\[2\\.25rem\\]{
   font-size: 2.25rem !important;
 }
-.text-\\[1\\.375rem\\]{
-  font-size: 1.375rem !important;
-}
-.text-\\[0\\.5rem\\]{
-  font-size: 0.5rem !important;
-}
-.text-\\[0\\.75rem\\]{
-  font-size: 0.75rem !important;
+.text-\\[2rem\\]{
+  font-size: 2rem !important;
 }
 .font-\\[700\\]{
   font-weight: 700 !important;
@@ -938,11 +851,11 @@ video {
 .font-\\[800\\]{
   font-weight: 800 !important;
 }
-.font-\\[900\\]{
-  font-weight: 900 !important;
-}
 .uppercase{
   text-transform: uppercase !important;
+}
+.leading-\\[1\\.25\\]{
+  line-height: 1.25 !important;
 }
 .leading-\\[1\\.35\\]{
   line-height: 1.35 !important;
@@ -953,24 +866,28 @@ video {
 .leading-tight{
   line-height: 1.25 !important;
 }
-.leading-\\[1\\.25\\]{
-  line-height: 1.25 !important;
-}
 .tracking-wide{
   letter-spacing: 0.025em !important;
+}
+.text-\\[\\#898989\\]{
+  --tw-text-opacity: 1 !important;
+  color: rgba(137, 137, 137, 1) !important;
+  color: rgba(137, 137, 137, var(--tw-text-opacity, 1)) !important;
 }
 .text-black{
   --tw-text-opacity: 1 !important;
   color: rgba(0, 0, 0, 1) !important;
   color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
 }
+.text-red-500{
+  --tw-text-opacity: 1 !important;
+  color: rgba(239, 68, 68, 1) !important;
+  color: rgba(239, 68, 68, var(--tw-text-opacity, 1)) !important;
+}
 .text-white{
   --tw-text-opacity: 1 !important;
   color: rgba(255, 255, 255, 1) !important;
   color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
-}
-.text-white\\/40{
-  color: rgba(255, 255, 255, 0.4) !important;
 }
 .text-white\\/60{
   color: rgba(255, 255, 255, 0.6) !important;
@@ -980,19 +897,6 @@ video {
 }
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
-}
-.text-\\[\\#898989\\]{
-  --tw-text-opacity: 1 !important;
-  color: rgba(137, 137, 137, 1) !important;
-  color: rgba(137, 137, 137, var(--tw-text-opacity, 1)) !important;
-}
-.text-\\[\\]{
-  color:  !important;
-}
-.text-red-500{
-  --tw-text-opacity: 1 !important;
-  color: rgba(239, 68, 68, 1) !important;
-  color: rgba(239, 68, 68, var(--tw-text-opacity, 1)) !important;
 }
 .placeholder-white\\/40::-moz-placeholder{
   color: rgba(255, 255, 255, 0.4) !important;
@@ -1012,7 +916,9 @@ video {
   transition-duration: 150ms !important;
 }
 
-.tailwind { box-sizing: border-box; }
+.tailwind {
+  box-sizing: border-box;
+}
 
 /* Make the selector more specific and use !important */
 #reacttest,
@@ -1047,6 +953,7 @@ video {
 .line-clamp-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1059,13 +966,33 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .tw-offer-text { height: 180px; }
+  .tw-offer-text {
+    height: 180px;
+  }
 }
 
 .tw-offer-desc {
   flex: 1 1 auto;
   overflow: hidden;
   /* Multi-line clamp is optional; container height is the primary limiter */
+}
+
+/* Ensure links inside Steps to Redeem are clearly visible */
+.tw-steps a {
+  color: #14e8ff;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tw-steps a:hover {
+  color: #14e8ff;
+  text-decoration-thickness: 2px;
+}
+
+.tw-steps a:focus-visible {
+  outline: 2px solid #14e8ff;
+  outline-offset: 2px;
 }
 
 .hover\\:bg-black:hover{
@@ -1080,6 +1007,12 @@ video {
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
 }
 
+.hover\\:text-black:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgba(0, 0, 0, 1) !important;
+  color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
+}
+
 .hover\\:text-white:hover{
   --tw-text-opacity: 1 !important;
   color: rgba(255, 255, 255, 1) !important;
@@ -1088,12 +1021,6 @@ video {
 
 .hover\\:text-white\\/70:hover{
   color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.hover\\:text-black:hover{
-  --tw-text-opacity: 1 !important;
-  color: rgba(0, 0, 0, 1) !important;
-  color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
 }
 
 .focus\\:outline-none:focus{
@@ -1109,10 +1036,6 @@ video {
 }
 
 @media (min-width: 1024px){
-
-  .lg\\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
 
   .lg\\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -18219,15 +18142,24 @@ function OfferModal(_ref) {
     _React$useState4 = _slicedToArray(_React$useState3, 2),
     agreeError = _React$useState4[0],
     setAgreeError = _React$useState4[1];
+  var _React$useState5 = react.useState(false),
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    showSteps = _React$useState6[0],
+    setShowSteps = _React$useState6[1];
+  react.useEffect(function () {
+    if (!open) {
+      setShowSteps(false);
+      setAgree(false);
+      setAgreeError("");
+    }
+  }, [open]);
   function handleRedeemClick() {
     if (!agree) {
       setAgreeError("Please check the box to continue.");
       return;
     }
     setAgreeError("");
-    if (offer.getproven_link && typeof window !== "undefined") {
-      window.open(offer.getproven_link, "_blank", "noopener");
-    }
+    setShowSteps(true);
   }
   return /*#__PURE__*/react.createElement("div", {
     className: "fixed inset-0 z-50 flex items-center justify-center",
@@ -18262,8 +18194,17 @@ function OfferModal(_ref) {
     className: "text-white hover:text-white/70 text-2xl"
   }, "\u2715")), /*#__PURE__*/react.createElement("div", {
     className: "flex-1 min-h-0 overflow-y-auto pr-2"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "grid grid-cols-1 lg:grid-cols-2 gap-8"
+  }, showSteps ? /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
+    title: "Steps to Redeem"
+  }, redeemHtml ? /*#__PURE__*/react.createElement("div", {
+    className: "prose prose-invert max-w-none tw-steps",
+    dangerouslySetInnerHTML: {
+      __html: sanitizeHtml(redeemHtml)
+    }
+  }) : /*#__PURE__*/react.createElement("p", {
+    className: "text-white/70"
+  }, "Follow the partner link to redeem this offer."))) : /*#__PURE__*/react.createElement("div", {
+    className: "flex gap-8"
   }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
     title: "About this offer"
   }, /*#__PURE__*/react.createElement("div", {
@@ -18271,16 +18212,7 @@ function OfferModal(_ref) {
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(descriptionHtml)
     }
-  }))), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
-    title: "Steps to Redeem"
-  }, redeemHtml ? /*#__PURE__*/react.createElement("div", {
-    className: "prose prose-invert max-w-none",
-    dangerouslySetInnerHTML: {
-      __html: sanitizeHtml(redeemHtml)
-    }
-  }) : /*#__PURE__*/react.createElement("p", {
-    className: "text-white/70"
-  }, "Follow the partner link to redeem this offer."))))), /*#__PURE__*/react.createElement("div", {
+  }))))), !showSteps ? /*#__PURE__*/react.createElement("div", {
     className: "flex-none mt-6"
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex items-center gap-3"
@@ -18302,7 +18234,7 @@ function OfferModal(_ref) {
   }, /*#__PURE__*/react.createElement("button", {
     className: "inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors",
     onClick: handleRedeemClick
-  }, "Redeem Now")))))));
+  }, "Redeem Now"))) : null))));
 }
 function Section(_ref2) {
   var title = _ref2.title,

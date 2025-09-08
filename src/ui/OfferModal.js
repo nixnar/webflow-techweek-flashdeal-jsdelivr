@@ -6,9 +6,20 @@ export default function OfferModal({ offer, open, onClose }) {
   if (!open || !offer) return null;
 
   const vendor = offer.vendor || {};
-  const { descriptionHtml, redeemHtml } = splitDescription(offer.description || "");
+  const { descriptionHtml, redeemHtml } = splitDescription(
+    offer.description || ""
+  );
   const [agree, setAgree] = React.useState(false);
   const [agreeError, setAgreeError] = React.useState("");
+  const [showSteps, setShowSteps] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!open) {
+      setShowSteps(false);
+      setAgree(false);
+      setAgreeError("");
+    }
+  }, [open]);
 
   function handleRedeemClick() {
     if (!agree) {
@@ -16,13 +27,15 @@ export default function OfferModal({ offer, open, onClose }) {
       return;
     }
     setAgreeError("");
-    if (offer.getproven_link && typeof window !== "undefined") {
-      window.open(offer.getproven_link, "_blank", "noopener");
-    }
+    setShowSteps(true);
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center" role="dialog" aria-modal="true">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+    >
       <div className="absolute inset-0 bg-black/70" onClick={onClose} />
       <div className="relative w-[min(1100px,95vw)] text-white">
         <div className="border border-white p-[4px] bg-black">
@@ -31,53 +44,94 @@ export default function OfferModal({ offer, open, onClose }) {
               <div className="flex items-center gap-4">
                 <div className="w-[108px] h-[108px] bg-white p-3 flex items-center justify-center overflow-hidden">
                   {vendor.logo ? (
-                    <img src={vendor.logo} alt={vendor.name} className="max-h-full max-w-full object-contain" />
+                    <img
+                      src={vendor.logo}
+                      alt={vendor.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   ) : null}
                 </div>
                 <div>
-                  <h2 className="text-[2rem] font-[800] leading-tight">{vendor.name || offer.name}</h2>
+                  <h2 className="text-[2rem] font-[800] leading-tight">
+                    {vendor.name || offer.name}
+                  </h2>
                   {vendor.name ? (
                     <p className="text-white/60 text-[0.95rem]">{offer.name}</p>
                   ) : null}
                 </div>
               </div>
-              <button aria-label="Close" onClick={onClose} className="text-white hover:text-white/70 text-2xl">✕</button>
+              <button
+                aria-label="Close"
+                onClick={onClose}
+                className="text-white hover:text-white/70 text-2xl"
+              >
+                ✕
+              </button>
             </div>
 
             <div className="flex-1 min-h-0 overflow-y-auto pr-2">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <Section title="About this offer">
-                    <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(descriptionHtml) }} />
-                  </Section>
-                </div>
+              {showSteps ? (
                 <div>
                   <Section title="Steps to Redeem">
                     {redeemHtml ? (
-                      <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizeHtml(redeemHtml) }} />
+                      <div
+                        className="prose prose-invert max-w-none tw-steps"
+                        dangerouslySetInnerHTML={{
+                          __html: sanitizeHtml(redeemHtml),
+                        }}
+                      />
                     ) : (
-                      <p className="text-white/70">Follow the partner link to redeem this offer.</p>
+                      <p className="text-white/70">
+                        Follow the partner link to redeem this offer.
+                      </p>
                     )}
                   </Section>
                 </div>
-              </div>
+              ) : (
+                <div className="flex gap-8">
+                  <div>
+                    <Section title="About this offer">
+                      <div
+                        className="prose prose-invert max-w-none"
+                        dangerouslySetInnerHTML={{
+                          __html: sanitizeHtml(descriptionHtml),
+                        }}
+                      />
+                    </Section>
+                  </div>
+                </div>
+              )}
             </div>
 
-            <div className="flex-none mt-6">
-              <div className="flex items-center gap-3">
-                <input id="wish-checkbox" type="checkbox" className="accent-white h-4 w-4" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-                <label htmlFor="wish-checkbox" className="text-white/80">I wish to redeem the offer</label>
+            {!showSteps ? (
+              <div className="flex-none mt-6">
+                <div className="flex items-center gap-3">
+                  <input
+                    id="wish-checkbox"
+                    type="checkbox"
+                    className="accent-white h-4 w-4"
+                    checked={agree}
+                    onChange={(e) => setAgree(e.target.checked)}
+                  />
+                  <label htmlFor="wish-checkbox" className="text-white/80">
+                    I wish to redeem the offer
+                  </label>
+                </div>
+                {agreeError ? (
+                  <p className="text-red-500 text-[0.95rem] mt-2">
+                    {agreeError}
+                  </p>
+                ) : null}
+                <div className="mt-4">
+                  <button
+                    className="inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors"
+                    onClick={handleRedeemClick}
+                  >
+                    Redeem Now
+                  </button>
+                </div>
               </div>
-              {agreeError ? (<p className="text-red-500 text-[0.95rem] mt-2">{agreeError}</p>) : null}
-              <div className="mt-4">
-                <button
-                  className="inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors"
-                  onClick={handleRedeemClick}
-                >
-                  Redeem Now
-                </button>
-              </div>
-            </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -95,5 +149,3 @@ function Section({ title, children }) {
     </div>
   );
 }
-
-
