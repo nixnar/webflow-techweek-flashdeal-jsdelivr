@@ -1,0 +1,478 @@
+
+
+<script> 
+(function () {
+
+    var deadline = '2024/10/22 00:00';
+
+    function pad(num, size) {
+        var s = "0" + num;
+        return s.substr(s.length - size);
+    }
+
+    // fixes "Date.parse(date)" on safari
+    function parseDate(date) {
+        const parsed = Date.parse(date);
+        if (!isNaN(parsed)) return parsed
+        return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
+    }
+
+    function getTimeRemaining(endtime) {
+        let total = parseDate(endtime) - Date.parse(new Date())
+        let seconds = Math.floor((total / 1000) % 60)
+        let minutes = Math.floor((total / 1000 / 60) % 60)
+        let hours = Math.floor((total / (1000 * 60 * 60)) % 24)
+        let days = Math.floor(total / (1000 * 60 * 60 * 24))
+
+        return { total, days, hours, minutes, seconds };
+    }
+
+    function clock(id, endtime) {
+        let days = document.getElementById(id + '-days')
+        let hours = document.getElementById(id + '-hours')
+        let minutes = document.getElementById(id + '-minutes')
+        let seconds = document.getElementById(id + '-seconds')
+
+        var timeinterval = setInterval(function () {
+            var time = getTimeRemaining(endtime);
+
+            if (time.total <= 0) {
+                clearInterval(timeinterval);
+            } else {
+                days.innerHTML = pad(time.days, 2);
+                hours.innerHTML = pad(time.hours, 2);
+                minutes.innerHTML = pad(time.minutes, 2);
+                seconds.innerHTML = pad(time.seconds, 2);
+            }
+        }, 1000);
+    }
+
+    clock('js-clock', deadline);
+})();
+</script>
+
+<script>
+const paragraphs = document.querySelectorAll('p.string-html');
+paragraphs.forEach(paragraph => {
+  const htmlString = paragraph.textContent;
+  const split = htmlString.split("<p><strong>Steps to Redeem:</strong></p>");
+  const parser = new DOMParser();
+  const parsedDoc = parser.parseFromString(split[0], 'text/html');
+  const newElement = parsedDoc.body.firstChild;
+  if (newElement) {
+  	paragraph.replaceWith(newElement);
+  } else {
+  	paragraph.innerText = "";
+  }
+});
+
+const offers = document.querySelectorAll('div.offer-item');
+offers.forEach(item => {
+	const estimated_value_type = item.querySelector('.estimated_value_type');
+  if (estimated_value_type.textContent.toLowerCase() === "fixed") { //Offer Value
+  	estimated_value_type.textContent = "Offer Value";
+  }
+  
+  if (estimated_value_type.textContent.toLowerCase() === "up_to") {
+  	estimated_value_type.textContent = "up to";
+  }
+  
+  const estimated_values = item.querySelectorAll('.estimated_value');
+  const deal_type = item.querySelector('.deal_type');
+  const marked_value = item.querySelector('.marked-value');
+  const listed_value = item.querySelector('#listed-value');
+  listed_value.textContent = addCommaToPrice(listed_value.textContent);
+
+  if (deal_type.textContent.toLowerCase() === "special_offer") { //special
+  	deal_type.textContent = "Special Offer";
+    estimated_values.forEach(value => value.style.display = "none")
+    estimated_value_type.style.display = "none";
+    marked_value.style.display = "none";
+  }
+  
+  if (deal_type.textContent.toLowerCase() === "free") { //free
+  	deal_type.style.display = "none";
+    marked_value.textContent = "free";
+  }
+  
+  const button = item.querySelector(".redeem-button");
+  if (deal_type.textContent.toLowerCase() === "price_cut") { //price cut
+    const newPrice = button.getAttribute("new_price")
+  	marked_value.textContent = "$" + addCommaToPrice(newPrice)
+    deal_type.style.display = 'none';
+  }
+  
+  if (deal_type.textContent.toLowerCase() === "discount") { //discount
+  	const dis = button.getAttribute("discount")
+    const disType = button.getAttribute("discount_type")
+    if (disType === "percentage") {
+    	marked_value.textContent = dis + "%";
+      deal_type.textContent = "off";
+    } else {
+    	marked_value.textContent = "$" + dis.toLocaleString();
+    }
+  }
+});
+
+function findPercentage(str) {
+  const match = str.match(/\d+%/);
+  return match ? match[0] : null;
+}
+
+function getChildrenTextContent(element) {
+  let textContent = '';
+  // Loop through all child nodes
+  element.childNodes.forEach((child) => {
+    // Only add the text content of element nodes (not comments, etc.)
+    if (child.nodeType === Node.ELEMENT_NODE || child.nodeType === Node.TEXT_NODE) {
+      textContent += child.textContent;
+    }
+  });
+
+  return textContent.trim(); // Remove any extra whitespace
+}
+
+function addCommaToPrice(str) {
+	return parseInt(str).toLocaleString()
+}
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var scheduleSeeMore = document.querySelector('.Schedule-See-More');
+    var header = document.getElementById('see-full-schedule');
+
+    if (scheduleSeeMore && header) {
+      scheduleSeeMore.addEventListener('mouseenter', function() {
+        header.style.background = 'linear-gradient(265deg, #ED7602 -0.07%, #EF2A00 100%)';
+      });
+
+      scheduleSeeMore.addEventListener('mouseleave', function() {
+        header.style.background = 'none';
+      });
+    }
+  });
+</script>
+<script>
+	//REDEEM NOW BUTTON
+	document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".redeem-button");
+  // Add a click event listener to each button
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+      // Get the modal element
+      const redeemForm = document.getElementById('email-form');
+      const redeemInfo = document.getElementById('redeem-info');
+      const checkbox = document.getElementById('checkbox');
+      redeemForm.style.display = "block";
+      redeemInfo.style.display = "none";
+      checkbox.checked = false;
+      
+      const modal = document.querySelector(".modal");
+      // Populate the modal with data attributes from the button
+      const header = this.getAttribute("header");
+      const wholeDescription = this.getAttribute("description");
+      const companyId = this.getAttribute("company");
+      const emails = this.getAttribute("contact_emails").split(",");
+      const firsts = this.getAttribute("contact_first_names").split(",");
+      const lasts = this.getAttribute("contact_last_names").split(",");
+      const phones = this.getAttribute("contact_phones").split(",");
+      const positions = this.getAttribute("contact_positions").split(",");
+      const deal_type = this.getAttribute("deal_type");
+      const estimated_value = this.getAttribute("estimated_value");
+      const estimated_value_type = this.getAttribute("estimated_value_type");
+      const tocText = this.getAttribute("toc_text");
+      const slug = this.getAttribute("slug");
+      
+      const [description, redeem] = splitDescription(wholeDescription)
+      
+      let companyName = "";
+      let companyLogo = "";
+      for (let i = 0; i< vendors.results.length; i++) {
+    		const vendor = vendors.results[i];
+    		if (vendor.id + "" === companyId) {
+      		companyName = vendor.name
+          companyLogo = vendor.logo
+      	}
+    	}
+      
+      const offerId = slug.split("-")[0]
+      const combined = offerId + "-" + companyName + "-" + header
+      //Google Analytics    
+      console.log("triggered", combined)
+      gtag('event', 'click', {'event_category': 'button', 'event_label': 'redeem_offer_click', 'event_value': combined, 'redeem_offer_click': combined});
+      
+      const modalId = document.getElementById('modal-offer-id');
+      modalId.textContent = combined
+      
+      let contacts = []
+      for (let i=0; i<firsts.length; i++) {
+      	let n = firsts[i] + " " + lasts[i];
+        contacts.push({ name: n, email: emails[i], phone: phones[i], position: positions[i]})
+      }
+
+      modal.querySelector(".modal-company").innerText = companyName;
+      modal.querySelector(".modal-image").src = companyLogo;
+      htmlify("modal-description", description);
+      htmlify("modal-redeem", redeem);
+      
+      const dealType = this.getAttribute("deal_type");
+      // Assuming dealType comes from the CMS
+			modal.querySelector(".modal-price").innerText = dealType;
+      // Populate the modal-price element
+      
+      const tocLabelEl = document.getElementById('toc-label');
+      const tocEl = document.getElementById('toc-text');
+      if (tocText === "") {
+      	tocLabelEl.textContent = "I wish to redeem the offer";
+        tocEl.style.display = "none";
+      } else {
+      	tocLabelEl.textContent = "I agree to the terms and conditions below";
+        htmlify("toc-text", tocText);
+        tocEl.style.display = "block";
+      }
+
+      
+      if (contacts.length > 0) {
+      	document.getElementById("modal-contact-name").innerText = contacts[0].name;
+        document.getElementById("modal-contact-email").innerText = contacts[0].email;
+      }
+    });
+  });
+});
+
+function splitDescription(str) {
+    // Split on the "Steps to Redeem" string while ensuring we capture the entire content correctly
+    const split = str.split(/<p><strong>Steps to Redeem:<\/strong><\/p>/);
+
+    if (split.length >= 2) {
+        // Ensure we return both the main description and the redeem steps properly
+        return [split[0], split[1]];
+    }
+
+    // If the split does not work as expected, return the entire string as the first part
+    return [str, ''];
+}
+
+
+function htmlify(elName, htmlString) {
+    const el = document.getElementById(elName);
+    const parser = new DOMParser();
+    const parsedDoc = parser.parseFromString(htmlString, 'text/html');
+
+    // Clear out the previous content
+    el.innerHTML = '';
+
+    // Append all child nodes instead of just the first one
+    Array.from(parsedDoc.body.childNodes).forEach((node) => {
+        el.appendChild(node);
+    });
+}
+
+</script>
+<script>
+const vendors = {
+    "count": 19,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 50017695,
+            "name": "MotherDuck",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/motherduck_R531ibo.jpg"
+        },
+        {
+            "id": 50010630,
+            "name": "Mixpanel",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/Mixpanel_Logomark_Purple.jpg"
+        },
+        {
+            "id": 50008890,
+            "name": "Zoom Video Communications",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/logo_ZM_app-icon_container.jpg"
+        },
+        {
+            "id": 50019032,
+            "name": "Atlassian",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/atlassian_logo.jpeg"
+        },
+        {
+            "id": 50008902,
+            "name": "WeWork",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/WeWork-Logo.wine.jpg"
+        },
+        {
+            "id": 50013463,
+            "name": "GitHub for Startups",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/GitHub_Logo.jpg"
+        },
+        {
+            "id": 50014854,
+            "name": "Gong",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/gong_qYigZvE.jpg"
+        },
+        {
+            "id": 50016466,
+            "name": "Replit",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/replit_mtaWfwx.jpg"
+        },
+        {
+            "id": 50012602,
+            "name": "Notion",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/notion_4zyrwx5.jpg"
+        },
+        {
+            "id": 50015879,
+            "name": "Slack",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/slack_iGaK4tK.jpg"
+        },
+        {
+            "id": 50008916,
+            "name": "Gusto",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/gusto_logo.jpg"
+        },
+                {
+            "id": 50010616,
+            "name": "Databricks",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/databricks.jpg"
+        },
+        {
+            "id": 50008872,
+            "name": "Hubspot",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/web-color-startups-centeraligned_3.jpg"
+        },
+        {
+            "id": 50008940,
+            "name": "Carta",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/CartaLogo_Black_RGB.jpg"
+        },
+        {
+            "id": 50013190,
+            "name": "Codi",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/codi.jpg"
+        },
+        {
+            "id": 50017072,
+            "name": "HSBC",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/HSBC_Innovation_banking_stacked_logo_-_color.png"
+        },
+        {
+            "id": 50010620,
+            "name": "Deel",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/Presentacion_sin_titulo_1.jpg"
+        },
+        {
+            "id": 50008898,
+            "name": "Zendesk",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/Black_Zendesk_Logo.png"
+        },
+        {
+            "id": 50018505,
+            "name": "ElevenLabs",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/elevenlabs_yuGE7em.jpg"
+        },
+        {
+            "id": 50017736,
+            "name": "Runway",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/icon_-_orange.png"
+        },
+        {
+            "id": 50013034,
+            "name": "Intercom",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/icon_dark_2x.png"
+        },
+        {
+            "id": 50012946,
+            "name": "NVIDIA",
+            "logo": "https://d3bddsqeatnr0e.cloudfront.net/images/logo/nvidia_3900WRY.jpg"
+        }
+    ]
+};
+
+
+    // Iterate over each offer item to update the name and logo
+    const companyIds = document.querySelectorAll('.offer-item');
+    companyIds.forEach(item => {
+        const idEl = item.querySelector(".company-id");
+        const imgEl = item.querySelector(".offer-image");
+        const id = idEl.textContent.trim(); // Trim whitespace around the ID
+
+        // Loop through vendors and match by ID
+        vendors.results.forEach(vendor => {
+            if (vendor.id.toString() === id) {
+                idEl.textContent = vendor.name; // Update company name
+                imgEl.classList.remove('w-dyn-bind-empty');
+                imgEl.src = vendor.logo; // Update company logo
+                imgEl.style.height = 'auto';
+                imgEl.style.width = '100%';
+            }
+        });
+    });
+</script>
+
+<script>
+const redeemForm = document.getElementById('email-form');
+const checkbox = document.getElementById('checkbox');
+const redeemInfo = document.getElementById('redeem-info');
+const redeemButton = document.getElementById('redeem-button');
+
+redeemButton.onclick = function submit(e) {
+	const modalId = document.getElementById('modal-offer-id');
+  gtag('event', 'click', {'event_category': 'button', 'event_label': 'redeem_offer_confirm', 'event_value': modalId.textContent, 'redeem_offer_confirm': modalId.textContent});
+  
+	e.preventDefault();
+  if (checkbox.checked) {
+  	redeemInfo.style.display = "block";
+  	redeemForm.style.display = "none";
+  } else {
+  	alert('You must accept the terms and conditions');
+  }
+}
+
+const closeModal = document.getElementById('close-modal');
+closeModal.addEventListener('click', (e) => {
+	redeemInfo.style.display = "none";
+})
+
+$(document).ready(function () {
+    // Find the parent of the button (or use the button itself)
+    var buttonParent = $("#reedeem-button").parent();
+
+    // Remove wfu-sort and wfu-filter from this parent or button element
+    buttonParent.removeAttr('wfu-sort');
+    buttonParent.removeAttr('wfu-filter');
+
+    // Optionally, remove attributes from the button itself if needed
+    // $('#my-button').removeAttr('wfu-sort').removeAttr('wfu-filter');
+});
+
+
+</script>
+
+
+<script>
+(function ($) {
+  $.fn.shuffle = function () {
+    var allElems = this.get(), // Get all elements in the set
+      getRandom = function (max) {
+        return Math.floor(Math.random() * max);
+      };
+
+    // Shuffle logic: Reorder the elements in-place
+    for (var i = allElems.length - 1; i > 0; i--) {
+      var j = getRandom(i + 1);
+      var temp = allElems[i];
+      allElems[i] = allElems[j];
+      allElems[j] = temp;
+    }
+
+    // Append the shuffled elements back to the DOM
+    this.each(function (i) {
+      $(this).parent().append(allElems[i]);
+    });
+
+    return this; // Maintain jQuery chaining
+  };
+})(jQuery);
+
+$(".offer-item").shuffle();
+</script>

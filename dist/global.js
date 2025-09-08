@@ -28,7 +28,7 @@ return /******/ (() => { // webpackBootstrap
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwind ::after{
+___CSS_LOADER_EXPORT___.push([module.id, `*, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -82,7 +82,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwi
   --tw-contain-style:  ;
 }
 
-.tailwind ::backdrop{
+::backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -145,14 +145,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwi
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
-.tailwind *,.tailwind ::before,.tailwind ::after {
+*,
+::before,
+::after {
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
   border-color: #e5e7eb; /* 2 */
 }
 
-.tailwind ::before,.tailwind ::after {
+::before,
+::after {
   --tw-content: '';
 }
 
@@ -166,7 +169,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwi
 7. Disable tap highlights on iOS
 */
 
-.tailwind html,.tailwind :host {
+html,
+:host {
   line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
@@ -183,7 +187,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwi
 2. Inherit line-height from \`html\` so users can set them as a class directly on the \`html\` element.
 */
 
-.tailwind body {
+body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
 }
@@ -194,7 +198,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwi
 3. Ensure horizontal rules are visible by default.
 */
 
-.tailwind hr {
+hr {
   height: 0; /* 1 */
   color: inherit; /* 2 */
   border-top-width: 1px; /* 3 */
@@ -204,7 +208,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.tailwind *,.tailwind ::before,.tailwi
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
-.tailwind abbr:where([title]) {
+abbr:where([title]) {
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
@@ -214,7 +218,12 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 Remove the default font size and weight for headings.
 */
 
-.tailwind h1,.tailwind h2,.tailwind h3,.tailwind h4,.tailwind h5,.tailwind h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -223,7 +232,7 @@ Remove the default font size and weight for headings.
 Reset links to optimize for opt-in styling instead of opt-out.
 */
 
-.tailwind a {
+a {
   color: inherit;
   text-decoration: inherit;
 }
@@ -232,7 +241,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
 Add the correct font weight in Edge and Safari.
 */
 
-.tailwind b,.tailwind strong {
+b,
+strong {
   font-weight: bolder;
 }
 
@@ -243,7 +253,10 @@ Add the correct font weight in Edge and Safari.
 4. Correct the odd \`em\` font sizing in all browsers.
 */
 
-.tailwind code,.tailwind kbd,.tailwind samp,.tailwind pre {
+code,
+kbd,
+samp,
+pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
   font-feature-settings: normal; /* 2 */
   font-variation-settings: normal; /* 3 */
@@ -254,7 +267,7 @@ Add the correct font weight in Edge and Safari.
 Add the correct font size in all browsers.
 */
 
-.tailwind small {
+small {
   font-size: 80%;
 }
 
@@ -262,18 +275,19 @@ Add the correct font size in all browsers.
 Prevent \`sub\` and \`sup\` elements from affecting the line height in all browsers.
 */
 
-.tailwind sub,.tailwind sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-.tailwind sub {
+sub {
   bottom: -0.25em;
 }
 
-.tailwind sup {
+sup {
   top: -0.5em;
 }
 
@@ -283,7 +297,7 @@ Prevent \`sub\` and \`sup\` elements from affecting the line height in all brows
 3. Remove gaps between table borders by default.
 */
 
-.tailwind table {
+table {
   text-indent: 0; /* 1 */
   border-color: inherit; /* 2 */
   border-collapse: collapse; /* 3 */
@@ -295,7 +309,11 @@ Prevent \`sub\` and \`sup\` elements from affecting the line height in all brows
 3. Remove default padding in all browsers.
 */
 
-.tailwind button,.tailwind input,.tailwind optgroup,.tailwind select,.tailwind textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit; /* 1 */
   font-feature-settings: inherit; /* 1 */
   font-variation-settings: inherit; /* 1 */
@@ -312,7 +330,8 @@ Prevent \`sub\` and \`sup\` elements from affecting the line height in all brows
 Remove the inheritance of text transform in Edge and Firefox.
 */
 
-.tailwind button,.tailwind select {
+button,
+select {
   text-transform: none;
 }
 
@@ -321,7 +340,10 @@ Remove the inheritance of text transform in Edge and Firefox.
 2. Remove default button styles.
 */
 
-.tailwind button,.tailwind input:where([type='button']),.tailwind input:where([type='reset']),.tailwind input:where([type='submit']) {
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
   -webkit-appearance: button; /* 1 */
   background-color: transparent; /* 2 */
   background-image: none; /* 2 */
@@ -331,7 +353,7 @@ Remove the inheritance of text transform in Edge and Firefox.
 Use the modern Firefox focus style for all focusable elements.
 */
 
-.tailwind :-moz-focusring {
+:-moz-focusring {
   outline: auto;
 }
 
@@ -339,7 +361,7 @@ Use the modern Firefox focus style for all focusable elements.
 Remove the additional \`:invalid\` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 */
 
-.tailwind :-moz-ui-invalid {
+:-moz-ui-invalid {
   box-shadow: none;
 }
 
@@ -347,7 +369,7 @@ Remove the additional \`:invalid\` styles in Firefox. (https://github.com/mozill
 Add the correct vertical alignment in Chrome and Firefox.
 */
 
-.tailwind progress {
+progress {
   vertical-align: baseline;
 }
 
@@ -355,7 +377,8 @@ Add the correct vertical alignment in Chrome and Firefox.
 Correct the cursor style of increment and decrement buttons in Safari.
 */
 
-.tailwind ::-webkit-inner-spin-button,.tailwind ::-webkit-outer-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -364,7 +387,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
-.tailwind [type='search'] {
+[type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -373,7 +396,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 Remove the inner padding in Chrome and Safari on macOS.
 */
 
-.tailwind ::-webkit-search-decoration {
+::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -382,7 +405,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 2. Change font properties to \`inherit\` in Safari.
 */
 
-.tailwind ::-webkit-file-upload-button {
+::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
@@ -391,7 +414,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 Add the correct display in Chrome and Safari.
 */
 
-.tailwind summary {
+summary {
   display: list-item;
 }
 
@@ -399,20 +422,34 @@ Add the correct display in Chrome and Safari.
 Removes the default spacing and border for appropriate elements.
 */
 
-.tailwind blockquote,.tailwind dl,.tailwind dd,.tailwind h1,.tailwind h2,.tailwind h3,.tailwind h4,.tailwind h5,.tailwind h6,.tailwind hr,.tailwind figure,.tailwind p,.tailwind pre {
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
   margin: 0;
 }
 
-.tailwind fieldset {
+fieldset {
   margin: 0;
   padding: 0;
 }
 
-.tailwind legend {
+legend {
   padding: 0;
 }
 
-.tailwind ol,.tailwind ul,.tailwind menu {
+ol,
+ul,
+menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -422,7 +459,7 @@ Removes the default spacing and border for appropriate elements.
 Reset default styling for dialogs.
 */
 
-.tailwind dialog {
+dialog {
   padding: 0;
 }
 
@@ -430,7 +467,7 @@ Reset default styling for dialogs.
 Prevent resizing textareas horizontally by default.
 */
 
-.tailwind textarea {
+textarea {
   resize: vertical;
 }
 
@@ -439,12 +476,13 @@ Prevent resizing textareas horizontally by default.
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-.tailwind input::-moz-placeholder, .tailwind textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
 
-.tailwind input::placeholder,.tailwind textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
@@ -453,7 +491,8 @@ Prevent resizing textareas horizontally by default.
 Set the default cursor for buttons.
 */
 
-.tailwind button,.tailwind [role="button"] {
+button,
+[role="button"] {
   cursor: pointer;
 }
 
@@ -461,7 +500,7 @@ Set the default cursor for buttons.
 Make sure disabled buttons don't get the pointer cursor.
 */
 
-.tailwind :disabled {
+:disabled {
   cursor: default;
 }
 
@@ -471,7 +510,14 @@ Make sure disabled buttons don't get the pointer cursor.
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
 
-.tailwind img,.tailwind svg,.tailwind video,.tailwind canvas,.tailwind audio,.tailwind iframe,.tailwind embed,.tailwind object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
@@ -480,311 +526,464 @@ Make sure disabled buttons don't get the pointer cursor.
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
 
-.tailwind img,.tailwind video {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-.tailwind [hidden]:where(:not([hidden="until-found"])) {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.container{
+  width: 100%;
+}
+.\\!container{
+  width: 100% !important;
+}
+@media (min-width: 640px){
 
-.tailwind .fixed{
+  .container{
+    max-width: 640px;
+  }
+
+  .\\!container{
+    max-width: 640px !important;
+  }
+}
+@media (min-width: 768px){
+
+  .container{
+    max-width: 768px;
+  }
+
+  .\\!container{
+    max-width: 768px !important;
+  }
+}
+@media (min-width: 1024px){
+
+  .container{
+    max-width: 1024px;
+  }
+
+  .\\!container{
+    max-width: 1024px !important;
+  }
+}
+@media (min-width: 1280px){
+
+  .container{
+    max-width: 1280px;
+  }
+
+  .\\!container{
+    max-width: 1280px !important;
+  }
+}
+@media (min-width: 1536px){
+
+  .container{
+    max-width: 1536px;
+  }
+
+  .\\!container{
+    max-width: 1536px !important;
+  }
+}
+.visible{
+  visibility: visible !important;
+}
+.fixed{
   position: fixed !important;
 }
-
-.tailwind .absolute{
+.absolute{
   position: absolute !important;
 }
-
-.tailwind .relative{
+.relative{
   position: relative !important;
 }
-
-.tailwind .sticky{
+.sticky{
   position: sticky !important;
 }
-
-.tailwind .inset-0{
+.inset-0{
   top: 0px !important;
   right: 0px !important;
   bottom: 0px !important;
   left: 0px !important;
 }
-
-.tailwind .top-0{
+.top-0{
   top: 0px !important;
 }
-
-.tailwind .z-\\[9999\\]{
-  z-index: 9999 !important;
+.z-50{
+  z-index: 50 !important;
 }
-
-.tailwind .mb-4{
-  margin-bottom: 1rem !important;
+.mb-3{
+  margin-bottom: 0.75rem !important;
 }
-
-.tailwind .mb-6{
+.mb-6{
   margin-bottom: 1.5rem !important;
 }
-
-.tailwind .mb-8{
-  margin-bottom: 2rem !important;
+.ml-3{
+  margin-left: 0.75rem !important;
 }
-
-.tailwind .mb-\\[-0\\.5rem\\]{
-  margin-bottom: -0.5rem !important;
+.mt-4{
+  margin-top: 1rem !important;
 }
-
-.tailwind .ml-\\[-1px\\]{
-  margin-left: -1px !important;
+.mt-6{
+  margin-top: 1.5rem !important;
 }
-
-.tailwind .mt-8{
-  margin-top: 2rem !important;
+.mt-auto{
+  margin-top: auto !important;
 }
-
-.tailwind .flex{
+.ml-2{
+  margin-left: 0.5rem !important;
+}
+.mb-4{
+  margin-bottom: 1rem !important;
+}
+.mt-2{
+  margin-top: 0.5rem !important;
+}
+.inline-block{
+  display: inline-block !important;
+}
+.flex{
   display: flex !important;
 }
-
-.tailwind .h-fit{
+.grid{
+  display: grid !important;
+}
+.hidden{
+  display: none !important;
+}
+.h-4{
+  height: 1rem !important;
+}
+.h-6{
+  height: 1.5rem !important;
+}
+.h-\\[108px\\]{
+  height: 108px !important;
+}
+.h-fit{
   height: -moz-fit-content !important;
   height: fit-content !important;
 }
-
-.tailwind .h-full{
+.h-full{
   height: 100% !important;
 }
-
-.tailwind .w-full{
+.max-h-\\[90vh\\]{
+  max-height: 90vh !important;
+}
+.max-h-full{
+  max-height: 100% !important;
+}
+.w-4{
+  width: 1rem !important;
+}
+.w-6{
+  width: 1.5rem !important;
+}
+.w-\\[108px\\]{
+  width: 108px !important;
+}
+.w-\\[min\\(1100px\\2c 95vw\\)\\]{
+  width: min(1100px,95vw) !important;
+}
+.w-full{
   width: 100% !important;
 }
-
-.tailwind .max-w-2xl{
-  max-width: 42rem !important;
+.w-\\[min\\(560px\\2c 95vw\\)\\]{
+  width: min(560px,95vw) !important;
 }
-
-.tailwind .max-w-\\[1400px\\]{
+.max-w-\\[1400px\\]{
   max-width: 1400px !important;
 }
-
-.tailwind .flex-grow{
+.max-w-full{
+  max-width: 100% !important;
+}
+.max-w-none{
+  max-width: none !important;
+}
+.grow{
   flex-grow: 1 !important;
 }
-
-.tailwind .grow{
-  flex-grow: 1 !important;
-}
-
-.tailwind .cursor-not-allowed{
-  cursor: not-allowed !important;
-}
-
-.tailwind .cursor-pointer{
+.cursor-pointer{
   cursor: pointer !important;
 }
-
-.tailwind .select-none{
+.select-none{
   -webkit-user-select: none !important;
      -moz-user-select: none !important;
           user-select: none !important;
 }
-
-.tailwind .resize{
-  resize: both !important;
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
-
-.tailwind .flex-col{
+.flex-col{
   flex-direction: column !important;
 }
-
-.tailwind .items-center{
+.flex-wrap{
+  flex-wrap: wrap !important;
+}
+.items-start{
+  align-items: flex-start !important;
+}
+.items-end{
+  align-items: flex-end !important;
+}
+.items-center{
   align-items: center !important;
 }
-
-.tailwind .justify-center{
+.justify-center{
   justify-content: center !important;
 }
-
-.tailwind .justify-between{
+.justify-between{
   justify-content: space-between !important;
 }
-
-.tailwind .gap-1{
+.gap-1{
   gap: 0.25rem !important;
 }
-
-.tailwind .gap-4{
+.gap-2{
+  gap: 0.5rem !important;
+}
+.gap-3{
+  gap: 0.75rem !important;
+}
+.gap-4{
   gap: 1rem !important;
 }
-
-.tailwind .gap-\\[0\\.375rem\\]{
-  gap: 0.375rem !important;
+.gap-6{
+  gap: 1.5rem !important;
 }
-
-.tailwind .overflow-hidden{
+.gap-8{
+  gap: 2rem !important;
+}
+.gap-x-8{
+  -moz-column-gap: 2rem !important;
+       column-gap: 2rem !important;
+}
+.gap-y-3{
+  row-gap: 0.75rem !important;
+}
+.self-start{
+  align-self: flex-start !important;
+}
+.overflow-auto{
+  overflow: auto !important;
+}
+.overflow-hidden{
   overflow: hidden !important;
 }
-
-.tailwind .border{
+.whitespace-nowrap{
+  white-space: nowrap !important;
+}
+.border{
   border-width: 1px !important;
 }
-
-.tailwind .border-\\[1px\\]{
+.border-\\[1px\\]{
   border-width: 1px !important;
 }
-
-.tailwind .border-b-0{
-  border-bottom-width: 0px !important;
-}
-
-.tailwind .border-none{
-  border-style: none !important;
-}
-
-.tailwind .border-white{
+.border-white{
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, 1) !important;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
 }
-
-.tailwind .bg-black{
+.bg-black{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(0, 0, 0, 1) !important;
   background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1)) !important;
 }
-
-.tailwind .bg-black\\/70{
+.bg-black\\/10{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.bg-black\\/70{
   background-color: rgba(0, 0, 0, 0.7) !important;
 }
-
-.tailwind .bg-gray-500{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(107, 114, 128, 1) !important;
-  background-color: rgba(107, 114, 128, var(--tw-bg-opacity, 1)) !important;
-}
-
-.tailwind .bg-white{
+.bg-white{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(255, 255, 255, 1) !important;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
 }
-
-.tailwind .p-12{
-  padding: 3rem !important;
+.object-contain{
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
 }
-
-.tailwind .p-3{
+.p-3{
   padding: 0.75rem !important;
 }
-
-.tailwind .p-4{
+.p-4{
   padding: 1rem !important;
 }
-
-.tailwind .p-\\[4px\\]{
+.p-6{
+  padding: 1.5rem !important;
+}
+.p-\\[4px\\]{
   padding: 4px !important;
 }
-
-.tailwind .px-\\[0\\.5rem\\]{
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
+.p-5{
+  padding: 1.25rem !important;
 }
-
-.tailwind .py-4{
+.px-4{
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.px-5{
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+.py-12{
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+.py-24{
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+.py-3{
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+.py-4{
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
 }
-
-.tailwind .py-\\[0\\.375rem\\]{
-  padding-top: 0.375rem !important;
-  padding-bottom: 0.375rem !important;
+.py-1{
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
-
-.tailwind .text-center{
+.text-center{
   text-align: center !important;
 }
-
-.tailwind .text-4xl{
-  font-size: 2.25rem !important;
-  line-height: 2.5rem !important;
+.text-2xl{
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
 }
-
-.tailwind .text-\\[0\\.875rem\\]{
-  font-size: 0.875rem !important;
+.text-\\[0\\.95rem\\]{
+  font-size: 0.95rem !important;
 }
-
-.tailwind .text-\\[1\\.65rem\\]{
-  font-size: 1.65rem !important;
+.text-\\[1\\.1rem\\]{
+  font-size: 1.1rem !important;
 }
-
-.tailwind .text-xl{
+.text-\\[1\\.25rem\\]{
   font-size: 1.25rem !important;
-  line-height: 1.75rem !important;
 }
-
-.tailwind .font-\\[600\\]{
-  font-weight: 600 !important;
+.text-\\[1\\.5rem\\]{
+  font-size: 1.5rem !important;
 }
-
-.tailwind .font-bold{
+.text-\\[1\\.6rem\\]{
+  font-size: 1.6rem !important;
+}
+.text-\\[1rem\\]{
+  font-size: 1rem !important;
+}
+.text-\\[2rem\\]{
+  font-size: 2rem !important;
+}
+.text-\\[32px\\]{
+  font-size: 32px !important;
+}
+.text-\\[2\\.25rem\\]{
+  font-size: 2.25rem !important;
+}
+.text-\\[1\\.375rem\\]{
+  font-size: 1.375rem !important;
+}
+.font-\\[700\\]{
   font-weight: 700 !important;
 }
-
-.tailwind .font-medium{
-  font-weight: 500 !important;
+.font-\\[800\\]{
+  font-weight: 800 !important;
 }
-
-.tailwind .uppercase{
+.font-\\[900\\]{
+  font-weight: 900 !important;
+}
+.uppercase{
   text-transform: uppercase !important;
 }
-
-.tailwind .text-black{
+.leading-\\[1\\.35\\]{
+  line-height: 1.35 !important;
+}
+.leading-none{
+  line-height: 1 !important;
+}
+.leading-tight{
+  line-height: 1.25 !important;
+}
+.leading-\\[1\\.25\\]{
+  line-height: 1.25 !important;
+}
+.tracking-wide{
+  letter-spacing: 0.025em !important;
+}
+.text-black{
   --tw-text-opacity: 1 !important;
   color: rgba(0, 0, 0, 1) !important;
   color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
 }
-
-.tailwind .text-gray-300{
-  --tw-text-opacity: 1 !important;
-  color: rgba(209, 213, 219, 1) !important;
-  color: rgba(209, 213, 219, var(--tw-text-opacity, 1)) !important;
-}
-
-.tailwind .text-white{
+.text-white{
   --tw-text-opacity: 1 !important;
   color: rgba(255, 255, 255, 1) !important;
   color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
 }
-
-.tailwind .outline-none{
-  outline: 2px solid transparent !important;
-  outline-offset: 2px !important;
+.text-white\\/40{
+  color: rgba(255, 255, 255, 0.4) !important;
 }
-
-.tailwind .filter{
+.text-white\\/60{
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.text-white\\/70{
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.text-white\\/80{
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.text-\\[\\#898989\\]{
+  --tw-text-opacity: 1 !important;
+  color: rgba(137, 137, 137, 1) !important;
+  color: rgba(137, 137, 137, var(--tw-text-opacity, 1)) !important;
+}
+.text-\\[\\]{
+  color:  !important;
+}
+.text-red-500{
+  --tw-text-opacity: 1 !important;
+  color: rgba(239, 68, 68, 1) !important;
+  color: rgba(239, 68, 68, var(--tw-text-opacity, 1)) !important;
+}
+.placeholder-white\\/40::-moz-placeholder{
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+.placeholder-white\\/40::placeholder{
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+.accent-white{
+  accent-color: #fff !important;
+}
+.filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
-
-.tailwind .backdrop-blur-sm{
-  --tw-backdrop-blur: blur(4px) !important;
-  -webkit-backdrop-filter: blur(4px) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
-  backdrop-filter: blur(4px) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
+.transition-colors{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
 }
 
-.tailwind {
-  box-sizing: border-box;
-}
+.tailwind { box-sizing: border-box; }
 
 /* Make the selector more specific and use !important */
 #reacttest,
 #reacttest * {
   font-family: "Space Grotesk", sans-serif !important;
+}
+
+/* Override font for discount/price line to match design (Webflow font loaded on site) */
+#reacttest .tw-discount,
+#reacttest .tw-discount * {
+  font-family: "Plaak 43 pradel 205tf", "Space Grotesk", sans-serif !important;
+  font-weight: 700 !important;
 }
 
 /* Hide scrollbars across browsers */
@@ -803,30 +1002,79 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   -ms-overflow-style: none;
 }
 
-.hover\\:bg-gray-200:hover{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(229, 231, 235, 1) !important;
-  background-color: rgba(229, 231, 235, var(--tw-bg-opacity, 1)) !important;
+/* Tailwind plugin-less line clamp utility for Webflow embed */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.hover\\:bg-gray-900:hover{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(17, 24, 39, 1) !important;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity, 1)) !important;
+/* Fixed-height text container for card title + description */
+.tw-offer-text {
+  display: flex;
+  flex-direction: column;
+  height: 160px; /* controls how much text area is available */
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px) {
+  .tw-offer-text { height: 180px; }
+}
 
-  .md\\:text-5xl{
-    font-size: 3rem !important;
-    line-height: 1 !important;
+.tw-offer-desc {
+  flex: 1 1 auto;
+  overflow: hidden;
+  /* Multi-line clamp is optional; container height is the primary limiter */
+}
+
+.hover\\:bg-black:hover{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 1) !important;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1)) !important;
+}
+
+.hover\\:bg-white:hover{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 1) !important;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
+}
+
+.hover\\:text-white:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
+}
+
+.hover\\:text-white\\/70:hover{
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.hover\\:text-black:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgba(0, 0, 0, 1) !important;
+  color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
+}
+
+.focus\\:outline-none:focus{
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+}
+
+@media (min-width: 640px){
+
+  .sm\\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
-@media (max-width: 1030px){
+@media (min-width: 1024px){
 
-  .mobile\\:hidden{
-    display: none !important;
+  .lg\\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .lg\\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 }
 `, ""]);
@@ -17692,13 +17940,696 @@ var update = injectStylesIntoStyleTag_default()(style/* default */.A, options);
 
        /* harmony default export */ const src_style = (style/* default */.A && style/* default */.A.locals ? style/* default */.A.locals : undefined);
 
+;// ./src/utils/format.js
+// Utility helpers for offers formatting and safe HTML parsing
+
+function formatCurrency(value) {
+  if (value == null || isNaN(Number(value))) return "";
+  try {
+    return Number(value).toLocaleString();
+  } catch (e) {
+    return String(value);
+  }
+}
+function deriveBadgeFromDeal(_ref) {
+  var deal_type = _ref.deal_type,
+    discount_type = _ref.discount_type,
+    discount = _ref.discount,
+    new_price = _ref.new_price;
+  var lower = (deal_type || "").toLowerCase();
+  if (lower === "free") return {
+    primary: "FREE",
+    secondary: ""
+  };
+  if (lower === "special_offer" || lower === "special-offer") return {
+    primary: "Special Offer",
+    secondary: ""
+  };
+  if (lower === "price_cut" || lower === "price-cut") {
+    var marked = new_price ? "$".concat(formatCurrency(new_price)) : "";
+    return {
+      primary: marked,
+      secondary: ""
+    };
+  }
+  if (lower === "discount") {
+    if ((discount_type || "").toLowerCase() === "percentage") {
+      return {
+        primary: "".concat(discount !== null && discount !== void 0 ? discount : 0, "%"),
+        secondary: "OFF"
+      };
+    }
+    var amt = discount ? "$".concat(formatCurrency(discount)) : "";
+    return {
+      primary: amt,
+      secondary: "OFF"
+    };
+  }
+  return {
+    primary: deal_type || "",
+    secondary: ""
+  };
+}
+function deriveEstimatedValueLabel(_ref2) {
+  var estimated_value_type = _ref2.estimated_value_type,
+    estimated_value = _ref2.estimated_value;
+  var typeLower = (estimated_value_type || "").toLowerCase();
+  if (!estimated_value) return {
+    label: "",
+    value: ""
+  };
+  if (typeLower === "fixed") return {
+    label: "Offer Value",
+    value: "$".concat(formatCurrency(estimated_value))
+  };
+  if (typeLower === "up_to" || typeLower === "up to") return {
+    label: "up to",
+    value: "$".concat(formatCurrency(estimated_value))
+  };
+  return {
+    label: estimated_value_type || "",
+    value: "$".concat(formatCurrency(estimated_value))
+  };
+}
+function splitDescription(html) {
+  if (!html) return {
+    descriptionHtml: "",
+    redeemHtml: ""
+  };
+  var parts = String(html).split(/<p><strong>Steps to Redeem:<\/strong><\/p>/);
+  if (parts.length >= 2) {
+    return {
+      descriptionHtml: parts[0],
+      redeemHtml: parts[1]
+    };
+  }
+  return {
+    descriptionHtml: html,
+    redeemHtml: ""
+  };
+}
+function sanitizeHtml(html) {
+  // For this embed, we trust the provided partner HTML. Keep minimal sanitization.
+  return html || "";
+}
+;// ./src/ui/OfferCard.js
+
+
+var VendorLogo = function VendorLogo(_ref) {
+  var src = _ref.src,
+    alt = _ref.alt;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "self-start w-[108px] h-[108px] bg-white p-3 flex items-center justify-center overflow-hidden"
+  }, src ? /*#__PURE__*/react.createElement("img", {
+    src: src,
+    alt: alt,
+    className: "max-h-full max-w-full object-contain"
+  }) : /*#__PURE__*/react.createElement("div", {
+    className: "h-6 w-6 bg-black/10"
+  }));
+};
+function OfferCard(_ref2) {
+  var offer = _ref2.offer,
+    onRedeem = _ref2.onRedeem;
+  var vendor = offer.vendor || {};
+  var badge = deriveBadgeFromDeal(offer);
+  var value = deriveEstimatedValueLabel(offer);
+  var _splitDescription = splitDescription(offer.description || ""),
+    descriptionHtml = _splitDescription.descriptionHtml;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-[4px] bg-black"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-4 flex flex-col gap-4 h-full"
+  }, /*#__PURE__*/react.createElement(VendorLogo, {
+    src: vendor.logo,
+    alt: vendor.name
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-col gap-2 tw-offer-text"
+  }, /*#__PURE__*/react.createElement("h3", {
+    className: "text-white text-[1.25rem] font-[700] leading-tight"
+  }, offer.name), /*#__PURE__*/react.createElement("div", {
+    className: "tw-offer-desc text-white/80 text-[0.95rem] leading-[1.35]",
+    dangerouslySetInnerHTML: {
+      __html: sanitizeHtml(descriptionHtml)
+    }
+  })), /*#__PURE__*/react.createElement("div", {
+    className: "mt-auto flex flex-col gap-3"
+  }, /*#__PURE__*/react.createElement(PriceBlock, {
+    offer: offer,
+    badge: badge,
+    value: value
+  }), /*#__PURE__*/react.createElement("button", {
+    className: "self-start tw-discount text-[2.25rem] whitespace-nowrap border border-white px-4 py-1 font-[700] leading-[1.25] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors",
+    onClick: function onClick() {
+      return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
+    }
+  }, "Redeem Now"))));
+}
+function PriceBlock(_ref3) {
+  var offer = _ref3.offer,
+    badge = _ref3.badge,
+    value = _ref3.value;
+  var dealType = (offer.deal_type || "").toLowerCase();
+  var showValue = !!value.value && dealType !== "special_offer" && dealType !== "special-offer";
+  if (dealType === "discount" && (offer.discount_type || "").toLowerCase() === "percentage") {
+    var _offer$discount;
+    return /*#__PURE__*/react.createElement("div", {
+      className: "flex flex-col gap-1"
+    }, /*#__PURE__*/react.createElement("div", {
+      className: "tw-discount flex items-end flex-wrap"
+    }, /*#__PURE__*/react.createElement("span", {
+      className: "text-white text-[2rem] font-[700] uppercase leading-none tracking-1"
+    }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0), /*#__PURE__*/react.createElement("span", {
+      className: "text-white text-[2rem] font-[700] uppercase leading-none"
+    }, "%"), /*#__PURE__*/react.createElement("span", {
+      className: "text-white text-[2rem] font-[700] uppercase leading-none"
+    }, "\xA0OFF"), showValue ? /*#__PURE__*/react.createElement("div", {
+      className: "flex items-end gap-2 ml-2 leading-none"
+    }, /*#__PURE__*/react.createElement("span", {
+      className: "text-[#898989] text-[1.375rem] uppercase tracking-wide"
+    }, value.label), /*#__PURE__*/react.createElement("span", {
+      className: "text-[#898989] text-[2rem] font-[700] uppercase"
+    }, value.value)) : null));
+  }
+  if (dealType === "special_offer" || dealType === "special-offer") {
+    return /*#__PURE__*/react.createElement("div", {
+      className: "flex flex-col gap-1"
+    }, /*#__PURE__*/react.createElement("div", {
+      className: "text-white text-[1.5rem] font-[700] uppercase"
+    }, "Special Offer"));
+  }
+  return /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-col gap-1"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "tw-discount flex items-end gap-2 flex-wrap"
+  }, /*#__PURE__*/react.createElement("span", {
+    className: "text-white text-[2rem] font-[700] uppercase leading-none"
+  }, badge.primary), badge.secondary ? /*#__PURE__*/react.createElement("span", {
+    className: "text-white text-[2rem] font-[700] uppercase leading-none"
+  }, badge.secondary) : null, showValue ? /*#__PURE__*/react.createElement("div", {
+    className: "flex items-end gap-2 ml-2 leading-none"
+  }, /*#__PURE__*/react.createElement("span", {
+    className: "text-[#898989] text-[1.375rem] uppercase tracking-wide"
+  }, value.label), /*#__PURE__*/react.createElement("span", {
+    className: "text-[#898989] text-[2rem] font-[700] uppercase"
+  }, value.value)) : null));
+}
+;// ./src/ui/OfferGrid.js
+
+
+function OfferGrid(_ref) {
+  var offers = _ref.offers,
+    onRedeem = _ref.onRedeem;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+  }, offers.map(function (offer) {
+    return /*#__PURE__*/react.createElement(OfferCard, {
+      key: offer.id,
+      offer: offer,
+      onRedeem: onRedeem
+    });
+  }));
+}
+;// ./src/ui/OfferModal.js
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+// Simple modal without email requirement or side effects
+function OfferModal(_ref) {
+  var offer = _ref.offer,
+    open = _ref.open,
+    onClose = _ref.onClose;
+  if (!open || !offer) return null;
+  var vendor = offer.vendor || {};
+  var _splitDescription = splitDescription(offer.description || ""),
+    descriptionHtml = _splitDescription.descriptionHtml,
+    redeemHtml = _splitDescription.redeemHtml;
+  var _React$useState = react.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    agree = _React$useState2[0],
+    setAgree = _React$useState2[1];
+  var _React$useState3 = react.useState(""),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    agreeError = _React$useState4[0],
+    setAgreeError = _React$useState4[1];
+  function handleRedeemClick() {
+    if (!agree) {
+      setAgreeError("Please check the box to continue.");
+      return;
+    }
+    setAgreeError("");
+    if (offer.getproven_link && typeof window !== "undefined") {
+      window.open(offer.getproven_link, "_blank", "noopener");
+    }
+  }
+  return /*#__PURE__*/react.createElement("div", {
+    className: "fixed inset-0 z-50 flex items-center justify-center",
+    role: "dialog",
+    "aria-modal": "true"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "absolute inset-0 bg-black/70",
+    onClick: onClose
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "relative w-[min(1100px,95vw)] max-h-[90vh] overflow-auto text-white"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-[4px] bg-black"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-6"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-start justify-between gap-6 mb-6"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-4"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "w-[108px] h-[108px] bg-white p-3 flex items-center justify-center overflow-hidden"
+  }, vendor.logo ? /*#__PURE__*/react.createElement("img", {
+    src: vendor.logo,
+    alt: vendor.name,
+    className: "max-h-full max-w-full object-contain"
+  }) : null), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", {
+    className: "text-[2rem] font-[800] leading-tight"
+  }, vendor.name || offer.name), vendor.name ? /*#__PURE__*/react.createElement("p", {
+    className: "text-white/60 text-[0.95rem]"
+  }, offer.name) : null)), /*#__PURE__*/react.createElement("button", {
+    "aria-label": "Close",
+    onClick: onClose,
+    className: "text-white hover:text-white/70 text-2xl"
+  }, "\u2715")), /*#__PURE__*/react.createElement("div", {
+    className: "grid grid-cols-1 lg:grid-cols-2 gap-8"
+  }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
+    title: "About this offer"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "prose prose-invert max-w-none",
+    dangerouslySetInnerHTML: {
+      __html: sanitizeHtml(descriptionHtml)
+    }
+  }))), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
+    title: "Steps to Redeem"
+  }, redeemHtml ? /*#__PURE__*/react.createElement("div", {
+    className: "prose prose-invert max-w-none",
+    dangerouslySetInnerHTML: {
+      __html: sanitizeHtml(redeemHtml)
+    }
+  }) : /*#__PURE__*/react.createElement("p", {
+    className: "text-white/70"
+  }, "Follow the partner link to redeem this offer.")), /*#__PURE__*/react.createElement("div", {
+    className: "mt-6 flex items-center gap-3"
+  }, /*#__PURE__*/react.createElement("input", {
+    id: "wish-checkbox",
+    type: "checkbox",
+    className: "accent-white h-4 w-4",
+    checked: agree,
+    onChange: function onChange(e) {
+      return setAgree(e.target.checked);
+    }
+  }), /*#__PURE__*/react.createElement("label", {
+    htmlFor: "wish-checkbox",
+    className: "text-white/80"
+  }, "I wish to redeem the offer")), agreeError ? /*#__PURE__*/react.createElement("p", {
+    className: "text-red-500 text-[0.95rem] mt-2"
+  }, agreeError) : null, /*#__PURE__*/react.createElement("div", {
+    className: "mt-4"
+  }, /*#__PURE__*/react.createElement("button", {
+    className: "inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors",
+    onClick: handleRedeemClick
+  }, "Redeem Now"))))))));
+}
+function Section(_ref2) {
+  var title = _ref2.title,
+    children = _ref2.children;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-[4px] bg-black"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-4"
+  }, /*#__PURE__*/react.createElement("h3", {
+    className: "text-[1.25rem] font-[800] mb-3"
+  }, title), children));
+}
+;// ./src/ui/EmailModal.js
+function EmailModal_slicedToArray(r, e) { return EmailModal_arrayWithHoles(r) || EmailModal_iterableToArrayLimit(r, e) || EmailModal_unsupportedIterableToArray(r, e) || EmailModal_nonIterableRest(); }
+function EmailModal_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function EmailModal_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return EmailModal_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? EmailModal_arrayLikeToArray(r, a) : void 0; } }
+function EmailModal_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function EmailModal_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function EmailModal_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+function EmailModal(_ref) {
+  var open = _ref.open,
+    onClose = _ref.onClose,
+    onSubmit = _ref.onSubmit;
+  if (!open) return null;
+  var _React$useState = react.useState(""),
+    _React$useState2 = EmailModal_slicedToArray(_React$useState, 2),
+    email = _React$useState2[0],
+    setEmail = _React$useState2[1];
+  var _React$useState3 = react.useState(""),
+    _React$useState4 = EmailModal_slicedToArray(_React$useState3, 2),
+    error = _React$useState4[0],
+    setError = _React$useState4[1];
+  function submit(e) {
+    var _e$preventDefault;
+    e === null || e === void 0 || (_e$preventDefault = e.preventDefault) === null || _e$preventDefault === void 0 || _e$preventDefault.call(e);
+    var valid = /\S+@\S+\.\S+/.test(email);
+    if (!valid) {
+      setError("Enter a valid email address.");
+      return;
+    }
+    setError("");
+    onSubmit === null || onSubmit === void 0 || onSubmit(email.trim());
+  }
+  return /*#__PURE__*/react.createElement("div", {
+    className: "fixed inset-0 z-50 flex items-center justify-center",
+    role: "dialog",
+    "aria-modal": "true"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "absolute inset-0 bg-black/70",
+    onClick: onClose
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "relative w-[min(560px,95vw)] text-white"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-[4px] bg-black"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-5"
+  }, /*#__PURE__*/react.createElement("h3", {
+    className: "text-[1.5rem] font-[800] mb-3"
+  }, "Enter your email"), /*#__PURE__*/react.createElement("p", {
+    className: "text-white/70 text-[0.95rem] mb-4"
+  }, "We'll save it for future redemptions."), /*#__PURE__*/react.createElement("form", {
+    onSubmit: submit,
+    className: "flex flex-col gap-3"
+  }, /*#__PURE__*/react.createElement("input", {
+    type: "email",
+    value: email,
+    onChange: function onChange(e) {
+      return setEmail(e.target.value);
+    },
+    placeholder: "your@email.com",
+    className: "bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none"
+  }), error ? /*#__PURE__*/react.createElement("p", {
+    className: "text-red-500 text-[0.95rem]"
+  }, error) : null, /*#__PURE__*/react.createElement("div", {
+    className: "flex gap-3 mt-2"
+  }, /*#__PURE__*/react.createElement("button", {
+    type: "submit",
+    className: "border border-white px-4 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors"
+  }, "Continue"), /*#__PURE__*/react.createElement("button", {
+    type: "button",
+    className: "border border-white px-4 py-3 font-[800] uppercase bg-black text-white hover:bg-white hover:text-black transition-colors",
+    onClick: onClose
+  }, "Cancel")))))));
+}
 ;// ./src/App.js
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = App_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function App_slicedToArray(r, e) { return App_arrayWithHoles(r) || App_iterableToArrayLimit(r, e) || App_unsupportedIterableToArray(r, e) || App_nonIterableRest(); }
+function App_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function App_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return App_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? App_arrayLikeToArray(r, a) : void 0; } }
+function App_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function App_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function App_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
+
+
+
+function fetchOffersWithFallback() {
+  return _fetchOffersWithFallback.apply(this, arguments);
+}
+function _fetchOffersWithFallback() {
+  _fetchOffersWithFallback = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+    var res, data, local, _data;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.prev = 0;
+          _context2.next = 3;
+          return fetch("https://api.tech-week.com/get_proven/");
+        case 3:
+          res = _context2.sent;
+          if (res.ok) {
+            _context2.next = 6;
+            break;
+          }
+          throw new Error("Network response was not ok");
+        case 6:
+          _context2.next = 8;
+          return res.json();
+        case 8:
+          data = _context2.sent;
+          return _context2.abrupt("return", (data.offers || []).map(function (o) {
+            return _objectSpread(_objectSpread({}, o), {}, {
+              vendor: o.vendor || {}
+            });
+          }));
+        case 12:
+          _context2.prev = 12;
+          _context2.t0 = _context2["catch"](0);
+          _context2.prev = 14;
+          _context2.next = 17;
+          return fetch("/apiresponse.json");
+        case 17:
+          local = _context2.sent;
+          _context2.next = 20;
+          return local.json();
+        case 20:
+          _data = _context2.sent;
+          return _context2.abrupt("return", (_data.offers || []).map(function (o) {
+            return _objectSpread(_objectSpread({}, o), {}, {
+              vendor: o.vendor || {}
+            });
+          }));
+        case 24:
+          _context2.prev = 24;
+          _context2.t1 = _context2["catch"](14);
+          console.error("Failed to load offers", _context2.t0, _context2.t1);
+          return _context2.abrupt("return", []);
+        case 28:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[0, 12], [14, 24]]);
+  }));
+  return _fetchOffersWithFallback.apply(this, arguments);
+}
 var App = function App() {
+  var _React$useState = react.useState([]),
+    _React$useState2 = App_slicedToArray(_React$useState, 2),
+    offers = _React$useState2[0],
+    setOffers = _React$useState2[1];
+  var _React$useState3 = react.useState(true),
+    _React$useState4 = App_slicedToArray(_React$useState3, 2),
+    isLoading = _React$useState4[0],
+    setIsLoading = _React$useState4[1];
+  var _React$useState5 = react.useState(""),
+    _React$useState6 = App_slicedToArray(_React$useState5, 2),
+    search = _React$useState6[0],
+    setSearch = _React$useState6[1];
+  var _React$useState7 = react.useState(new Set()),
+    _React$useState8 = App_slicedToArray(_React$useState7, 2),
+    selectedServices = _React$useState8[0],
+    setSelectedServices = _React$useState8[1];
+  var _React$useState9 = react.useState(null),
+    _React$useState10 = App_slicedToArray(_React$useState9, 2),
+    activeOffer = _React$useState10[0],
+    setActiveOffer = _React$useState10[1];
+  var _React$useState11 = react.useState(false),
+    _React$useState12 = App_slicedToArray(_React$useState11, 2),
+    hasOfferEmail = _React$useState12[0],
+    setHasOfferEmail = _React$useState12[1];
+  var _React$useState13 = react.useState(false),
+    _React$useState14 = App_slicedToArray(_React$useState13, 2),
+    emailModalOpen = _React$useState14[0],
+    setEmailModalOpen = _React$useState14[1];
+  react.useEffect(function () {
+    var cancelled = false;
+    _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var list;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return fetchOffersWithFallback();
+          case 2:
+            list = _context.sent;
+            if (!cancelled) {
+              setOffers(list);
+              setIsLoading(false);
+            }
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }))();
+    return function () {
+      cancelled = true;
+    };
+  }, []);
+  react.useEffect(function () {
+    try {
+      var stored = window.localStorage.getItem("offerEmail");
+      setHasOfferEmail(Boolean(stored));
+    } catch (_unused) {}
+  }, []);
+  var handleRedeem = react.useCallback(function (offer) {
+    var _offer$vendor;
+    // Placeholder: integrate Webflow modal or external click handler
+    var combined = "".concat(offer.id, "-").concat(((_offer$vendor = offer.vendor) === null || _offer$vendor === void 0 ? void 0 : _offer$vendor.name) || "Vendor", "-").concat(offer.name);
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "click", {
+        event_category: "button",
+        event_label: "redeem_offer_click",
+        event_value: combined,
+        redeem_offer_click: combined
+      });
+    }
+    if (!hasOfferEmail) {
+      setActiveOffer(offer);
+      setEmailModalOpen(true);
+      return;
+    }
+    setActiveOffer(offer);
+  }, [hasOfferEmail]);
+  var services = react.useMemo(function () {
+    var names = new Set();
+    var _iterator = _createForOfIteratorHelper(offers),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var _offer$vendor2;
+        var offer = _step.value;
+        var arr = ((_offer$vendor2 = offer.vendor) === null || _offer$vendor2 === void 0 ? void 0 : _offer$vendor2.services) || [];
+        var _iterator2 = _createForOfIteratorHelper(arr),
+          _step2;
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var s = _step2.value;
+            if (s !== null && s !== void 0 && s.name) names.add(s.name);
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+    return Array.from(names).sort();
+  }, [offers]);
+  var filteredOffers = react.useMemo(function () {
+    var query = search.trim().toLowerCase();
+    var hasServiceFilter = selectedServices.size > 0;
+    return offers.filter(function (o) {
+      var ok = true;
+      if (hasServiceFilter) {
+        var _o$vendor;
+        var vendorServices = (((_o$vendor = o.vendor) === null || _o$vendor === void 0 ? void 0 : _o$vendor.services) || []).map(function (s) {
+          return s === null || s === void 0 ? void 0 : s.name;
+        });
+        ok = vendorServices.some(function (n) {
+          return selectedServices.has(n);
+        });
+      }
+      if (!ok) return false;
+      if (query) {
+        var text = "".concat(o.name || "", " ").concat((o.description || "").replace(/<[^>]*>/g, " ")).toLowerCase();
+        return text.includes(query);
+      }
+      return true;
+    });
+  }, [offers, search, selectedServices]);
+  var toggleService = react.useCallback(function (name) {
+    setSelectedServices(function (prev) {
+      var next = new Set(prev);
+      if (next.has(name)) next["delete"](name);else next.add(name);
+      return next;
+    });
+  }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: "tailwind"
-  }, /*#__PURE__*/react.createElement("h1", null, "Hello World"));
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex w-full justify-center text-white select-none"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "max-w-[1400px] grow flex flex-col gap-4"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border-[1px] border-white p-[4px] bg-black h-fit"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex w-full p-4 sticky top-0 bg-black"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "w-full flex flex-col gap-4"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-3"
+  }, /*#__PURE__*/react.createElement("input", {
+    type: "text",
+    value: search,
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    },
+    placeholder: "Search offers\u2026",
+    className: "w-full bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none"
+  })), /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-wrap items-center gap-x-8 gap-y-3"
+  }, services.map(function (name) {
+    return /*#__PURE__*/react.createElement("label", {
+      key: name,
+      className: "flex items-center gap-2 cursor-pointer text-white font-[700] uppercase tracking-wide"
+    }, /*#__PURE__*/react.createElement("input", {
+      type: "checkbox",
+      checked: selectedServices.has(name),
+      onChange: function onChange() {
+        return toggleService(name);
+      },
+      className: "accent-white h-4 w-4"
+    }), /*#__PURE__*/react.createElement("span", {
+      className: "text-[0.95rem]"
+    }, name));
+  })))), /*#__PURE__*/react.createElement("div", {
+    className: "p-4"
+  }, isLoading ? /*#__PURE__*/react.createElement("p", {
+    className: "text-center py-12"
+  }, "Loading offers\u2026") : filteredOffers.length > 0 ? /*#__PURE__*/react.createElement(OfferGrid, {
+    offers: filteredOffers,
+    onRedeem: handleRedeem
+  }) : /*#__PURE__*/react.createElement("div", {
+    className: "py-24 flex justify-center"
+  }, /*#__PURE__*/react.createElement("p", {
+    className: "text-white/70 text-[1.1rem]"
+  }, "No result fit the search filter")))), /*#__PURE__*/react.createElement(OfferModal, {
+    offer: activeOffer,
+    open: !!activeOffer && !emailModalOpen,
+    onClose: function onClose() {
+      return setActiveOffer(null);
+    }
+  }), /*#__PURE__*/react.createElement(EmailModal, {
+    open: emailModalOpen,
+    onClose: function onClose() {
+      setEmailModalOpen(false);
+      setActiveOffer(null);
+    },
+    onSubmit: function onSubmit(email) {
+      try {
+        window.localStorage.setItem("offerEmail", email);
+      } catch (_unused2) {}
+      setHasOfferEmail(true);
+      setEmailModalOpen(false);
+    }
+  }))));
 };
 /* harmony default export */ const src_App = (App);
 ;// ./src/index.js
