@@ -23,7 +23,6 @@ async function fetchOffersWithFallback() {
   }
 }
 
-
 const App = () => {
   const [offers, setOffers] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -78,24 +77,29 @@ const App = () => {
     };
   }, [isAnyModalOpen]);
 
-  const handleRedeem = React.useCallback((offer) => {
-    // Placeholder: integrate Webflow modal or external click handler
-    const combined = `${offer.id}-${offer.vendor?.name || "Vendor"}-${offer.name}`;
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "click", {
-        event_category: "button",
-        event_label: "redeem_offer_click",
-        event_value: combined,
-        redeem_offer_click: combined,
-      });
-    }
-    if (!hasOfferEmail) {
+  const handleRedeem = React.useCallback(
+    (offer) => {
+      // Placeholder: integrate Webflow modal or external click handler
+      const combined = `${offer.id}-${offer.vendor?.name || "Vendor"}-${
+        offer.name
+      }`;
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "click", {
+          event_category: "button",
+          event_label: "redeem_offer_click",
+          event_value: combined,
+          redeem_offer_click: combined,
+        });
+      }
+      if (!hasOfferEmail) {
+        setActiveOffer(offer);
+        setEmailModalOpen(true);
+        return;
+      }
       setActiveOffer(offer);
-      setEmailModalOpen(true);
-      return;
-    }
-    setActiveOffer(offer);
-  }, [hasOfferEmail]);
+    },
+    [hasOfferEmail]
+  );
 
   const services = React.useMemo(() => {
     const names = new Set();
@@ -119,7 +123,10 @@ const App = () => {
       }
       if (!ok) return false;
       if (query) {
-        const text = `${o.name || ""} ${(o.description || "").replace(/<[^>]*>/g, " ")}`.toLowerCase();
+        const text = `${o.name || ""} ${(o.description || "").replace(
+          /<[^>]*>/g,
+          " "
+        )}`.toLowerCase();
         return text.includes(query);
       }
       return true;
@@ -141,52 +148,86 @@ const App = () => {
         <div className="max-w-[1400px] grow flex flex-col gap-4">
           <div className="border-[1px] border-white p-[4px] bg-black h-fit">
             <div className="flex w-full p-4 sticky top-0 bg-black">
-              <div className={`w-full flex flex-col ${isMobile ? "gap-2" : "gap-4"}`}>
-                <p className="text-[2rem] font-[700] uppercase leading-none">FILTERS</p>
+              <div
+                className={`w-full flex flex-col ${
+                  isMobile ? "gap-2" : "gap-4"
+                }`}
+              >
+                <p className="text-[2rem] font-[700] uppercase leading-none">
+                  FILTERS
+                </p>
                 <div className="flex items-center gap-3">
                   <input
                     type="text"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search offers…"
-                    className={`w-full bg-black text-white placeholder-white/40 border border-white ${isMobile ? "px-2 py-1" : "px-4 py-3"} focus:outline-none`}
+                    className={`w-full bg-black text-white placeholder-white/40 border border-white ${
+                      isMobile ? "px-2 py-1" : "px-4 py-3"
+                    } focus:outline-none`}
                   />
                 </div>
-                <div className={`flex flex-wrap items-center ${isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3"}`}>
+                <div
+                  className={`flex flex-wrap items-center ${
+                    isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3"
+                  }`}
+                >
                   {services.map((name) => (
-                    <label key={name} className={`flex items-center gap-2 ${isMobile && "gap-1"} cursor-pointer text-white font-[700] uppercase tracking-wide`}>
+                    <label
+                      key={name}
+                      className={`flex items-center gap-2 ${
+                        isMobile && "gap-1"
+                      } cursor-pointer text-white font-[700] uppercase tracking-wide`}
+                    >
                       <input
                         type="checkbox"
                         checked={selectedServices.has(name)}
                         onChange={() => toggleService(name)}
                         className="accent-white h-4 w-4"
                       />
-                      <span className={`text-[0.95rem] ${isMobile ? "text-[0.75rem]" : ""}`}>{name}</span>
+                      <span
+                        className={`text-[0.95rem] ${
+                          isMobile ? "text-[0.75rem]" : ""
+                        }`}
+                      >
+                        {name}
+                      </span>
                     </label>
                   ))}
                 </div>
               </div>
             </div>
-            <div className="p-4">
+            <div className="p-4 pt-0">
               {isLoading ? (
                 <p className="text-center py-12">Loading offers…</p>
+              ) : filteredOffers.length > 0 ? (
+                <OfferGrid offers={filteredOffers} onRedeem={handleRedeem} />
               ) : (
-                filteredOffers.length > 0 ? (
-                  <OfferGrid offers={filteredOffers} onRedeem={handleRedeem} />
-                ) : (
-                  <div className="py-24 flex justify-center">
-                    <p className="text-white/70 text-[1.1rem]">No result fit the search filter</p>
-                  </div>
-                )
+                <div className="py-24 flex justify-center">
+                  <p className="text-white/70 text-[1.1rem]">
+                    No result fit the search filter
+                  </p>
+                </div>
               )}
             </div>
           </div>
-          <OfferModal offer={activeOffer} open={!!activeOffer && !emailModalOpen} onClose={() => setActiveOffer(null)} />
+          <OfferModal
+            offer={activeOffer}
+            open={!!activeOffer && !emailModalOpen}
+            onClose={() => setActiveOffer(null)}
+            onRequireEmail={() => setEmailModalOpen(true)}
+            isMobile={isMobile}
+          />
           <EmailModal
             open={emailModalOpen}
-            onClose={() => { setEmailModalOpen(false); setActiveOffer(null); }}
+            onClose={() => {
+              setEmailModalOpen(false);
+              setActiveOffer(null);
+            }}
             onSubmit={(email) => {
-              try { window.localStorage.setItem("offerEmail", email); } catch {}
+              try {
+                window.localStorage.setItem("offerEmail", email);
+              } catch {}
               setHasOfferEmail(true);
               setEmailModalOpen(false);
             }}
@@ -195,6 +236,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
