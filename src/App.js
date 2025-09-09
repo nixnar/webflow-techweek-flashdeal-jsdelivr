@@ -147,7 +147,7 @@ const App = () => {
       <div className="flex w-full justify-center text-white select-none">
         <div className="max-w-[1400px] grow flex flex-col gap-4">
           <div className="border-[1px] border-white p-[4px] bg-black h-fit">
-            <div className="flex w-full p-4 sticky top-0 bg-black">
+            <div className={`flex w-full p-4 sticky top-0 bg-black`}>
               <div
                 className={`w-full flex flex-col ${
                   isMobile ? "gap-2" : "gap-4"
@@ -168,7 +168,7 @@ const App = () => {
                   />
                 </div>
                 <div
-                  className={`flex flex-wrap items-center ${
+                  className={`flex flex-wrap items-center pt-1 ${
                     isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3"
                   }`}
                 >

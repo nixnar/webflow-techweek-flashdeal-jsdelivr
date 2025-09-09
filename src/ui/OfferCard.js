@@ -46,7 +46,7 @@ export default function OfferCard({ offer, onRedeem }) {
         <div className="mt-auto flex flex-col gap-3">
           <PriceBlock offer={offer} badge={badge} value={value} />
           <button
-            className="self-start tw-discount text-[2.25rem] whitespace-nowrap border border-white px-4 py-1 font-[700] leading-[1.25] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors"
+            className="self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
             onClick={() => onRedeem?.(offer)}
           >
             Redeem Now
@@ -71,21 +71,21 @@ function PriceBlock({ offer, badge, value }) {
     return (
       <div className="flex flex-col gap-1">
         <div className="tw-discount flex items-end flex-wrap">
-          <span className="text-white text-[2rem] font-[700] uppercase leading-none tracking-1">
+          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none tracking-1">
             {offer.discount ?? 0}
           </span>
-          <span className="text-white text-[2rem] font-[700] uppercase leading-none">
+          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
             %
           </span>
-          <span className="text-white text-[2rem] font-[700] uppercase leading-none">
+          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
             &nbsp;OFF
           </span>
           {showValue ? (
-            <div className="flex items-end gap-2 ml-2 leading-none">
-              <span className="text-[#898989] text-[1.375rem] uppercase tracking-wide">
-                {value.label}
+            <div className="flex items-end gap-2 leading-none">
+              <span className="text-[#898989] text-[1rem] uppercase tracking-wide">
+                &nbsp;{value.label}
               </span>
-              <span className="text-[#898989] text-[2rem] font-[700] uppercase">
+              <span className="text-[#898989] text-[1.25rem] font-[600] uppercase">
                 {value.value}
               </span>
             </div>
@@ -98,7 +98,7 @@ function PriceBlock({ offer, badge, value }) {
   if (dealType === "special_offer" || dealType === "special-offer") {
     return (
       <div className="flex flex-col gap-1">
-        <div className="text-white text-[1.5rem] font-[700] uppercase">
+        <div className="text-white text-[1.25rem] font-[600] uppercase">
           Special Offer
         </div>
       </div>
@@ -108,20 +108,20 @@ function PriceBlock({ offer, badge, value }) {
   return (
     <div className="flex flex-col gap-1">
       <div className="tw-discount flex items-end gap-2 flex-wrap">
-        <span className="text-white text-[2rem] font-[700] uppercase leading-none">
+        <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
           {badge.primary}
         </span>
         {badge.secondary ? (
-          <span className="text-white text-[2rem] font-[700] uppercase leading-none">
+          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
             {badge.secondary}
           </span>
         ) : null}
         {showValue ? (
-          <div className="flex items-end gap-2 ml-2 leading-none">
-            <span className="text-[#898989] text-[1.375rem] uppercase tracking-wide">
+          <div className="flex items-end gap-2 leading-none">
+            <span className="text-[#898989] text-[1rem] uppercase tracking-wide">
               {value.label}
             </span>
-            <span className="text-[#898989] text-[2rem] font-[700] uppercase">
+            <span className="text-[#898989] text-[1.25rem] font-[600] uppercase">
               {value.value}
             </span>
           </div>

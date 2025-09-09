@@ -88,7 +88,7 @@ export default function OfferModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center"
+      className="fixed inset-0 p-4 z-50 flex items-center justify-center"
       role="dialog"
       aria-modal="true"
     >
@@ -193,7 +193,7 @@ export default function OfferModal({
                 ) : null}
                 <div className="mt-4">
                   <button
-                    className="inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors"
+                    className="self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
                     onClick={handleRedeemClick}
                     disabled={isSubmitting}
                   >

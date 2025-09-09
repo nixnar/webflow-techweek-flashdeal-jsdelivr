@@ -567,9 +567,6 @@ video {
 .mb-4{
   margin-bottom: 1rem !important;
 }
-.mb-6{
-  margin-bottom: 1.5rem !important;
-}
 .ml-2{
   margin-left: 0.5rem !important;
 }
@@ -578,9 +575,6 @@ video {
 }
 .mt-4{
   margin-top: 1rem !important;
-}
-.mt-6{
-  margin-top: 1.5rem !important;
 }
 .mt-auto{
   margin-top: auto !important;
@@ -613,20 +607,17 @@ video {
 .h-full{
   height: 100% !important;
 }
-.h-\\[95vh\\]{
-  height: 95vh !important;
+.max-h-\\[108px\\]{
+  max-height: 108px !important;
+}
+.max-h-\\[80vh\\]{
+  max-height: 80vh !important;
 }
 .max-h-\\[85vh\\]{
   max-height: 85vh !important;
 }
 .max-h-full{
   max-height: 100% !important;
-}
-.max-h-\\[80vh\\]{
-  max-height: 80vh !important;
-}
-.max-h-\\[108px\\]{
-  max-height: 108px !important;
 }
 .min-h-0{
   min-height: 0px !important;
@@ -666,16 +657,6 @@ video {
 }
 .grow{
   flex-grow: 1 !important;
-}
-.translate-y-\\[-0\\.25rem\\]{
-  --tw-translate-y: -0.25rem !important;
-  transform: translate(var(--tw-translate-x), -0.25rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-.translate-y-\\[0\\.25rem\\]{
-  --tw-translate-y: 0.25rem !important;
-  transform: translate(var(--tw-translate-x), 0.25rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .translate-y-\\[0\\.2rem\\]{
   --tw-translate-y: 0.2rem !important;
@@ -729,9 +710,6 @@ video {
 .gap-4{
   gap: 1rem !important;
 }
-.gap-6{
-  gap: 1.5rem !important;
-}
 .gap-8{
   gap: 2rem !important;
 }
@@ -770,9 +748,6 @@ video {
 .border-\\[1px\\]{
   border-width: 1px !important;
 }
-.border-2{
-  border-width: 2px !important;
-}
 .border-white{
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, 1) !important;
@@ -807,14 +782,8 @@ video {
 .p-5{
   padding: 1.25rem !important;
 }
-.p-6{
-  padding: 1.5rem !important;
-}
 .p-\\[4px\\]{
   padding: 4px !important;
-}
-.p-2{
-  padding: 0.5rem !important;
 }
 .px-2{
   padding-left: 0.5rem !important;
@@ -844,14 +813,26 @@ video {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
+.px-3{
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+.py-2{
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.py-\\[10px\\]{
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
 .pr-2{
   padding-right: 0.5rem !important;
 }
-.pb-0{
-  padding-bottom: 0px !important;
-}
 .pt-0{
   padding-top: 0px !important;
+}
+.pt-1{
+  padding-top: 0.25rem !important;
 }
 .text-center{
   text-align: center !important;
@@ -884,11 +865,20 @@ video {
 .text-\\[2rem\\]{
   font-size: 2rem !important;
 }
+.text-\\[1\\.75rem\\]{
+  font-size: 1.75rem !important;
+}
+.text-\\[1rem\\]{
+  font-size: 1rem !important;
+}
 .font-\\[700\\]{
   font-weight: 700 !important;
 }
 .font-\\[800\\]{
   font-weight: 800 !important;
+}
+.font-\\[600\\]{
+  font-weight: 600 !important;
 }
 .uppercase{
   text-transform: uppercase !important;
@@ -907,6 +897,18 @@ video {
 }
 .tracking-wide{
   letter-spacing: 0.025em !important;
+}
+.tracking-\\[0\\.8rem\\]{
+  letter-spacing: 0.8rem !important;
+}
+.tracking-\\[-0\\.1rem\\]{
+  letter-spacing: -0.1rem !important;
+}
+.tracking-\\[-0\\.05rem\\]{
+  letter-spacing: -0.05rem !important;
+}
+.tracking-\\[0\\.05rem\\]{
+  letter-spacing: 0.05rem !important;
 }
 .text-\\[\\#898989\\]{
   --tw-text-opacity: 1 !important;
@@ -968,7 +970,7 @@ video {
 /* Override font for discount/price line to match design (Webflow font loaded on site) */
 #reacttest .tw-discount,
 #reacttest .tw-discount * {
-  font-family: "Plaak 43 pradel 205tf", "Space Grotesk", sans-serif !important;
+  font-family: "Space Grotesk", sans-serif !important;
   font-weight: 700 !important;
 }
 
@@ -1034,34 +1036,10 @@ video {
   outline-offset: 2px;
 }
 
-.hover\\:bg-black:hover{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(0, 0, 0, 1) !important;
-  background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1)) !important;
-}
-
-.hover\\:bg-white:hover{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(255, 255, 255, 1) !important;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
-}
-
 .hover\\:bg-\\[\\#00e1ff\\]:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(0, 225, 255, 1) !important;
   background-color: rgba(0, 225, 255, var(--tw-bg-opacity, 1)) !important;
-}
-
-.hover\\:text-black:hover{
-  --tw-text-opacity: 1 !important;
-  color: rgba(0, 0, 0, 1) !important;
-  color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
-}
-
-.hover\\:text-white:hover{
-  --tw-text-opacity: 1 !important;
-  color: rgba(255, 255, 255, 1) !important;
-  color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
 }
 
 .hover\\:text-white\\/70:hover{
@@ -18088,7 +18066,7 @@ function OfferCard(_ref2) {
     badge: badge,
     value: value
   }), /*#__PURE__*/react.createElement("button", {
-    className: "self-start tw-discount text-[2.25rem] whitespace-nowrap border border-white px-4 py-1 font-[700] leading-[1.25] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors",
+    className: "self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors",
     onClick: function onClick() {
       return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
     }
@@ -18107,24 +18085,24 @@ function PriceBlock(_ref3) {
     }, /*#__PURE__*/react.createElement("div", {
       className: "tw-discount flex items-end flex-wrap"
     }, /*#__PURE__*/react.createElement("span", {
-      className: "text-white text-[2rem] font-[700] uppercase leading-none tracking-1"
+      className: "text-white text-[1.25rem] font-[600] uppercase leading-none tracking-1"
     }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0), /*#__PURE__*/react.createElement("span", {
-      className: "text-white text-[2rem] font-[700] uppercase leading-none"
+      className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
     }, "%"), /*#__PURE__*/react.createElement("span", {
-      className: "text-white text-[2rem] font-[700] uppercase leading-none"
+      className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
     }, "\xA0OFF"), showValue ? /*#__PURE__*/react.createElement("div", {
-      className: "flex items-end gap-2 ml-2 leading-none"
+      className: "flex items-end gap-2 leading-none"
     }, /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] text-[1.375rem] uppercase tracking-wide"
-    }, value.label), /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] text-[2rem] font-[700] uppercase"
+      className: "text-[#898989] text-[1rem] uppercase tracking-wide"
+    }, "\xA0", value.label), /*#__PURE__*/react.createElement("span", {
+      className: "text-[#898989] text-[1.25rem] font-[600] uppercase"
     }, value.value)) : null));
   }
   if (dealType === "special_offer" || dealType === "special-offer") {
     return /*#__PURE__*/react.createElement("div", {
       className: "flex flex-col gap-1"
     }, /*#__PURE__*/react.createElement("div", {
-      className: "text-white text-[1.5rem] font-[700] uppercase"
+      className: "text-white text-[1.25rem] font-[600] uppercase"
     }, "Special Offer"));
   }
   return /*#__PURE__*/react.createElement("div", {
@@ -18132,15 +18110,15 @@ function PriceBlock(_ref3) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "tw-discount flex items-end gap-2 flex-wrap"
   }, /*#__PURE__*/react.createElement("span", {
-    className: "text-white text-[2rem] font-[700] uppercase leading-none"
+    className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
   }, badge.primary), badge.secondary ? /*#__PURE__*/react.createElement("span", {
-    className: "text-white text-[2rem] font-[700] uppercase leading-none"
+    className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
   }, badge.secondary) : null, showValue ? /*#__PURE__*/react.createElement("div", {
-    className: "flex items-end gap-2 ml-2 leading-none"
+    className: "flex items-end gap-2 leading-none"
   }, /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] text-[1.375rem] uppercase tracking-wide"
+    className: "text-[#898989] text-[1rem] uppercase tracking-wide"
   }, value.label), /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] text-[2rem] font-[700] uppercase"
+    className: "text-[#898989] text-[1.25rem] font-[600] uppercase"
   }, value.value)) : null));
 }
 ;// ./src/ui/OfferGrid.js
@@ -18304,7 +18282,7 @@ function OfferModal(_ref) {
     return _handleRedeemClick.apply(this, arguments);
   }
   return /*#__PURE__*/react.createElement("div", {
-    className: "fixed inset-0 z-50 flex items-center justify-center",
+    className: "fixed inset-0 p-4 z-50 flex items-center justify-center",
     role: "dialog",
     "aria-modal": "true"
   }, /*#__PURE__*/react.createElement("div", {
@@ -18371,7 +18349,7 @@ function OfferModal(_ref) {
   }, submitError) : null, /*#__PURE__*/react.createElement("div", {
     className: "mt-4"
   }, /*#__PURE__*/react.createElement("button", {
-    className: "inline-block border border-white px-5 py-3 font-[800] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors",
+    className: "self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors",
     onClick: handleRedeemClick,
     disabled: isSubmitting
   }, isSubmitting ? "Redeeming…" : "Redeem Now"))) : null))));
@@ -18416,7 +18394,7 @@ function EmailModal(_ref) {
     onSubmit === null || onSubmit === void 0 || onSubmit(email.trim());
   }
   return /*#__PURE__*/react.createElement("div", {
-    className: "fixed inset-0 z-50 flex items-center justify-center",
+    className: "fixed inset-0 z-50 p-4 flex items-center justify-center",
     role: "dialog",
     "aria-modal": "true"
   }, /*#__PURE__*/react.createElement("div", {
@@ -18449,10 +18427,10 @@ function EmailModal(_ref) {
     className: "flex gap-3 mt-2"
   }, /*#__PURE__*/react.createElement("button", {
     type: "submit",
-    className: "border border-white px-4 py-3 font-[800] uppercase bg-white text-black hover:bg-black hover:text-white transition-colors"
+    className: "border border-white px-4 py-3 font-[800] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors"
   }, "Continue"), /*#__PURE__*/react.createElement("button", {
     type: "button",
-    className: "border border-white px-4 py-3 font-[800] uppercase bg-black text-white hover:bg-white hover:text-black transition-colors",
+    className: "border border-white px-4 py-3 font-[800] uppercase bg-black text-white transition-colors",
     onClick: onClose
   }, "Cancel")))))));
 }
@@ -18727,7 +18705,7 @@ var App = function App() {
     placeholder: "Search offers\u2026",
     className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-2 py-1" : "px-4 py-3", " focus:outline-none")
   })), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-wrap items-center ".concat(isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3")
+    className: "flex flex-wrap items-center pt-1 ".concat(isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3")
   }, services.map(function (name) {
     return /*#__PURE__*/react.createElement("label", {
       key: name,
