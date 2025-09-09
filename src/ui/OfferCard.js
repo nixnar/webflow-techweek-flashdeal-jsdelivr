@@ -6,9 +6,13 @@ import {
   splitDescription,
 } from "../utils/format";
 
-const VendorLogo = ({ src, alt }) => {
+const VendorLogo = ({ src, alt, isMobile }) => {
   return (
-    <div className="self-start w-[108px] h-[108px] bg-white p-3 flex items-center justify-center overflow-hidden">
+    <div
+      className={`self-start ${
+        isMobile ? "w-[6rem] h-[6rem] p-2" : "w-[7rem] h-[7rem] p-3"
+      } bg-white flex items-center justify-center overflow-hidden`}
+    >
       {src ? (
         <img
           src={src}
@@ -22,7 +26,7 @@ const VendorLogo = ({ src, alt }) => {
   );
 };
 
-export default function OfferCard({ offer, onRedeem }) {
+export default function OfferCard({ offer, onRedeem, isMobile }) {
   const vendor = offer.vendor || {};
   const badge = deriveBadgeFromDeal(offer);
   const value = deriveEstimatedValueLabel(offer);
@@ -31,7 +35,7 @@ export default function OfferCard({ offer, onRedeem }) {
   return (
     <div className="border border-white p-[4px] bg-black">
       <div className="border border-white p-4 flex flex-col gap-4 h-full">
-        <VendorLogo src={vendor.logo} alt={vendor.name} />
+        <VendorLogo src={vendor.logo} alt={vendor.name} isMobile={isMobile} />
 
         <div className="flex flex-col gap-2 tw-offer-text">
           <h3 className="text-white text-[1.25rem] font-[700] leading-tight">
@@ -78,12 +82,12 @@ function PriceBlock({ offer, badge, value }) {
             %
           </span>
           <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-            &nbsp;OFF
+            &nbsp;OFF&nbsp;
           </span>
           {showValue ? (
-            <div className="flex items-end gap-2 leading-none">
+            <div className="flex items-end leading-none">
               <span className="text-[#898989] text-[1rem] uppercase tracking-wide">
-                &nbsp;{value.label}
+                {value.label}&nbsp;
               </span>
               <span className="text-[#898989] text-[1.25rem] font-[600] uppercase">
                 {value.value}
@@ -107,19 +111,19 @@ function PriceBlock({ offer, badge, value }) {
 
   return (
     <div className="flex flex-col gap-1">
-      <div className="tw-discount flex items-end gap-2 flex-wrap">
+      <div className="tw-discount flex items-end flex-wrap">
         <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-          {badge.primary}
+          {badge.primary}&nbsp;
         </span>
         {badge.secondary ? (
           <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-            {badge.secondary}
+            {badge.secondary}&nbsp;
           </span>
         ) : null}
         {showValue ? (
-          <div className="flex items-end gap-2 leading-none">
+          <div className="flex items-end leading-none">
             <span className="text-[#898989] text-[1rem] uppercase tracking-wide">
-              {value.label}
+              {value.label}&nbsp;
             </span>
             <span className="text-[#898989] text-[1.25rem] font-[600] uppercase">
               {value.value}

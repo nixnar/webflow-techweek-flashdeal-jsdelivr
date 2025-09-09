@@ -163,13 +163,13 @@ const App = () => {
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search offers…"
                     className={`w-full bg-black text-white placeholder-white/40 border border-white ${
-                      isMobile ? "px-2 py-1" : "px-4 py-3"
+                      isMobile ? "px-3 py-1" : "px-6 py-3"
                     } focus:outline-none`}
                   />
                 </div>
                 <div
                   className={`flex flex-wrap items-center pt-1 ${
-                    isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3"
+                    isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2"
                   }`}
                 >
                   {services.map((name) => (
@@ -177,7 +177,7 @@ const App = () => {
                       key={name}
                       className={`flex items-center gap-2 ${
                         isMobile && "gap-1"
-                      } cursor-pointer text-white font-[700] uppercase tracking-wide`}
+                      } cursor-pointer text-white font-[600]`}
                     >
                       <input
                         type="checkbox"
@@ -201,7 +201,11 @@ const App = () => {
               {isLoading ? (
                 <p className="text-center py-12">Loading offers…</p>
               ) : filteredOffers.length > 0 ? (
-                <OfferGrid offers={filteredOffers} onRedeem={handleRedeem} />
+                <OfferGrid
+                  offers={filteredOffers}
+                  onRedeem={handleRedeem}
+                  isMobile={isMobile}
+                />
               ) : (
                 <div className="py-24 flex justify-center">
                   <p className="text-white/70 text-[1.1rem]">

@@ -579,6 +579,9 @@ video {
 .mt-auto{
   margin-top: auto !important;
 }
+.mt-0{
+  margin-top: 0px !important;
+}
 .inline-block{
   display: inline-block !important;
 }
@@ -606,6 +609,15 @@ video {
 }
 .h-full{
   height: 100% !important;
+}
+.h-\\[88px\\]{
+  height: 88px !important;
+}
+.h-\\[6rem\\]{
+  height: 6rem !important;
+}
+.h-\\[7rem\\]{
+  height: 7rem !important;
 }
 .max-h-\\[108px\\]{
   max-height: 108px !important;
@@ -640,6 +652,15 @@ video {
 .w-full{
   width: 100% !important;
 }
+.w-\\[88px\\]{
+  width: 88px !important;
+}
+.w-\\[6rem\\]{
+  width: 6rem !important;
+}
+.w-\\[7rem\\]{
+  width: 7rem !important;
+}
 .max-w-\\[1400px\\]{
   max-width: 1400px !important;
 }
@@ -661,6 +682,16 @@ video {
 .translate-y-\\[0\\.2rem\\]{
   --tw-translate-y: 0.2rem !important;
   transform: translate(var(--tw-translate-x), 0.2rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.translate-y-\\[0\\.05rem\\]{
+  --tw-translate-y: 0.05rem !important;
+  transform: translate(var(--tw-translate-x), 0.05rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.translate-y-\\[0\\.1rem\\]{
+  --tw-translate-y: 0.1rem !important;
+  transform: translate(var(--tw-translate-x), 0.1rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .cursor-pointer{
@@ -727,6 +758,17 @@ video {
 .gap-y-3{
   row-gap: 0.75rem !important;
 }
+.gap-x-3{
+  -moz-column-gap: 0.75rem !important;
+       column-gap: 0.75rem !important;
+}
+.gap-x-6{
+  -moz-column-gap: 1.5rem !important;
+       column-gap: 1.5rem !important;
+}
+.gap-y-2{
+  row-gap: 0.5rem !important;
+}
 .self-start{
   align-self: flex-start !important;
 }
@@ -785,6 +827,9 @@ video {
 .p-\\[4px\\]{
   padding: 4px !important;
 }
+.p-2{
+  padding: 0.5rem !important;
+}
 .px-2{
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
@@ -824,6 +869,10 @@ video {
 .py-\\[10px\\]{
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+}
+.px-6{
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 .pr-2{
   padding-right: 0.5rem !important;
@@ -871,6 +920,9 @@ video {
 .text-\\[1rem\\]{
   font-size: 1rem !important;
 }
+.text-\\[0\\.5rem\\]{
+  font-size: 0.5rem !important;
+}
 .font-\\[700\\]{
   font-weight: 700 !important;
 }
@@ -909,6 +961,9 @@ video {
 }
 .tracking-\\[0\\.05rem\\]{
   letter-spacing: 0.05rem !important;
+}
+.tracking-\\[0\\.025rem\\]{
+  letter-spacing: 0.025rem !important;
 }
 .text-\\[\\#898989\\]{
   --tw-text-opacity: 1 !important;
@@ -18024,9 +18079,10 @@ function sanitizeHtml(html) {
 
 var VendorLogo = function VendorLogo(_ref) {
   var src = _ref.src,
-    alt = _ref.alt;
+    alt = _ref.alt,
+    isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "self-start w-[108px] h-[108px] bg-white p-3 flex items-center justify-center overflow-hidden"
+    className: "self-start ".concat(isMobile ? "w-[6rem] h-[6rem] p-2" : "w-[7rem] h-[7rem] p-3", " bg-white flex items-center justify-center overflow-hidden")
   }, src ? /*#__PURE__*/react.createElement("img", {
     src: src,
     alt: alt,
@@ -18037,7 +18093,8 @@ var VendorLogo = function VendorLogo(_ref) {
 };
 function OfferCard(_ref2) {
   var offer = _ref2.offer,
-    onRedeem = _ref2.onRedeem;
+    onRedeem = _ref2.onRedeem,
+    isMobile = _ref2.isMobile;
   var vendor = offer.vendor || {};
   var badge = deriveBadgeFromDeal(offer);
   var value = deriveEstimatedValueLabel(offer);
@@ -18049,7 +18106,8 @@ function OfferCard(_ref2) {
     className: "border border-white p-4 flex flex-col gap-4 h-full"
   }, /*#__PURE__*/react.createElement(VendorLogo, {
     src: vendor.logo,
-    alt: vendor.name
+    alt: vendor.name,
+    isMobile: isMobile
   }), /*#__PURE__*/react.createElement("div", {
     className: "flex flex-col gap-2 tw-offer-text"
   }, /*#__PURE__*/react.createElement("h3", {
@@ -18090,11 +18148,11 @@ function PriceBlock(_ref3) {
       className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
     }, "%"), /*#__PURE__*/react.createElement("span", {
       className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
-    }, "\xA0OFF"), showValue ? /*#__PURE__*/react.createElement("div", {
-      className: "flex items-end gap-2 leading-none"
+    }, "\xA0OFF\xA0"), showValue ? /*#__PURE__*/react.createElement("div", {
+      className: "flex items-end leading-none"
     }, /*#__PURE__*/react.createElement("span", {
       className: "text-[#898989] text-[1rem] uppercase tracking-wide"
-    }, "\xA0", value.label), /*#__PURE__*/react.createElement("span", {
+    }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
       className: "text-[#898989] text-[1.25rem] font-[600] uppercase"
     }, value.value)) : null));
   }
@@ -18108,16 +18166,16 @@ function PriceBlock(_ref3) {
   return /*#__PURE__*/react.createElement("div", {
     className: "flex flex-col gap-1"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "tw-discount flex items-end gap-2 flex-wrap"
+    className: "tw-discount flex items-end flex-wrap"
   }, /*#__PURE__*/react.createElement("span", {
     className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
-  }, badge.primary), badge.secondary ? /*#__PURE__*/react.createElement("span", {
+  }, badge.primary, "\xA0"), badge.secondary ? /*#__PURE__*/react.createElement("span", {
     className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
-  }, badge.secondary) : null, showValue ? /*#__PURE__*/react.createElement("div", {
-    className: "flex items-end gap-2 leading-none"
+  }, badge.secondary, "\xA0") : null, showValue ? /*#__PURE__*/react.createElement("div", {
+    className: "flex items-end leading-none"
   }, /*#__PURE__*/react.createElement("span", {
     className: "text-[#898989] text-[1rem] uppercase tracking-wide"
-  }, value.label), /*#__PURE__*/react.createElement("span", {
+  }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
     className: "text-[#898989] text-[1.25rem] font-[600] uppercase"
   }, value.value)) : null));
 }
@@ -18126,14 +18184,16 @@ function PriceBlock(_ref3) {
 
 function OfferGrid(_ref) {
   var offers = _ref.offers,
-    onRedeem = _ref.onRedeem;
+    onRedeem = _ref.onRedeem,
+    isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
     className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
   }, offers.map(function (offer) {
     return /*#__PURE__*/react.createElement(OfferCard, {
       key: offer.id,
       offer: offer,
-      onRedeem: onRedeem
+      onRedeem: onRedeem,
+      isMobile: isMobile
     });
   }));
 }
@@ -18419,18 +18479,18 @@ function EmailModal(_ref) {
     onChange: function onChange(e) {
       return setEmail(e.target.value);
     },
-    placeholder: "your@email.com",
-    className: "bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none"
+    placeholder: "email@gmail.com",
+    className: "bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none translate-y-[0.2rem]"
   }), error ? /*#__PURE__*/react.createElement("p", {
     className: "text-red-500 text-[0.95rem]"
   }, error) : null, /*#__PURE__*/react.createElement("div", {
     className: "flex gap-3 mt-2"
   }, /*#__PURE__*/react.createElement("button", {
     type: "submit",
-    className: "border border-white px-4 py-3 font-[800] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors"
+    className: "self-start text-[1rem] whitespace-nowrap border tracking-[0.025rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
   }, "Continue"), /*#__PURE__*/react.createElement("button", {
     type: "button",
-    className: "border border-white px-4 py-3 font-[800] uppercase bg-black text-white transition-colors",
+    className: "self-start text-[1rem] whitespace-nowrap tracking-[0.05rem] px-3 py-[10px] uppercase font-[600] leading-[1.25]",
     onClick: onClose
   }, "Cancel")))))));
 }
@@ -18703,13 +18763,13 @@ var App = function App() {
       return setSearch(e.target.value);
     },
     placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-2 py-1" : "px-4 py-3", " focus:outline-none")
+    className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-3 py-1" : "px-6 py-3", " focus:outline-none")
   })), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-wrap items-center pt-1 ".concat(isMobile ? "gap-x-4 gap-y-1" : "gap-x-8 gap-y-3")
+    className: "flex flex-wrap items-center pt-1 ".concat(isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2")
   }, services.map(function (name) {
     return /*#__PURE__*/react.createElement("label", {
       key: name,
-      className: "flex items-center gap-2 ".concat(isMobile && "gap-1", " cursor-pointer text-white font-[700] uppercase tracking-wide")
+      className: "flex items-center gap-2 ".concat(isMobile && "gap-1", " cursor-pointer text-white font-[600]")
     }, /*#__PURE__*/react.createElement("input", {
       type: "checkbox",
       checked: selectedServices.has(name),
@@ -18726,7 +18786,8 @@ var App = function App() {
     className: "text-center py-12"
   }, "Loading offers\u2026") : filteredOffers.length > 0 ? /*#__PURE__*/react.createElement(OfferGrid, {
     offers: filteredOffers,
-    onRedeem: handleRedeem
+    onRedeem: handleRedeem,
+    isMobile: isMobile
   }) : /*#__PURE__*/react.createElement("div", {
     className: "py-24 flex justify-center"
   }, /*#__PURE__*/react.createElement("p", {

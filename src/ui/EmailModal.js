@@ -35,8 +35,8 @@ export default function EmailModal({ open, onClose, onSubmit }) {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                className="bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none"
+                placeholder="email@gmail.com"
+                className="bg-black text-white placeholder-white/40 border border-white px-4 py-3 focus:outline-none translate-y-[0.2rem]"
               />
               {error ? (
                 <p className="text-red-500 text-[0.95rem]">{error}</p>
@@ -44,13 +44,13 @@ export default function EmailModal({ open, onClose, onSubmit }) {
               <div className="flex gap-3 mt-2">
                 <button
                   type="submit"
-                  className="border border-white px-4 py-3 font-[800] uppercase bg-white text-black hover:bg-[#00e1ff] transition-colors"
+                  className="self-start text-[1rem] whitespace-nowrap border tracking-[0.025rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
                 >
                   Continue
                 </button>
                 <button
                   type="button"
-                  className="border border-white px-4 py-3 font-[800] uppercase bg-black text-white transition-colors"
+                  className="self-start text-[1rem] whitespace-nowrap tracking-[0.05rem] px-3 py-[10px] uppercase font-[600] leading-[1.25]"
                   onClick={onClose}
                 >
                   Cancel
