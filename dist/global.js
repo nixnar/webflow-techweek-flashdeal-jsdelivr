@@ -18161,7 +18161,7 @@ function OfferCard(_ref2) {
     onClick: function onClick() {
       return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
     }
-  }, "Redeem Now"), ".")));
+  }, "Redeem Now"))));
 }
 function PriceBlock(_ref3) {
   var offer = _ref3.offer,
