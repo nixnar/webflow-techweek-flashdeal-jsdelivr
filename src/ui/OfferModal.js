@@ -20,6 +20,10 @@ export default function OfferModal({
   const [submitError, setSubmitError] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [showSteps, setShowSteps] = React.useState(false);
+  const [tocOpen, setTocOpen] = React.useState(false);
+
+  const termsText = (offer.terms_and_conditions_text || "").trim();
+  const hasTerms = termsText.length > 0;
 
   React.useEffect(() => {
     if (!open) {
@@ -28,6 +32,7 @@ export default function OfferModal({
       setAgreeError("");
       setSubmitError("");
       setIsSubmitting(false);
+      setTocOpen(false);
     }
   }, [open]);
 
@@ -99,7 +104,6 @@ export default function OfferModal({
             className={`border border-white p-4 flex flex-col max-h-[85vh] ${
               isMobile ? "max-h-[80vh]" : ""
             }`}
-            e
           >
             <div className="flex items-start justify-between gap-4 mb-4 flex-none">
               <div className="flex items-center gap-4">
@@ -165,7 +169,7 @@ export default function OfferModal({
             </div>
 
             {!showSteps ? (
-              <div className="flex-none mt-4">
+              <div className="flex-none mt-[0.75rem]">
                 <div className="flex items-center gap-3">
                   <input
                     id="wish-checkbox"
@@ -178,7 +182,20 @@ export default function OfferModal({
                     htmlFor="wish-checkbox"
                     className="text-white/80 translate-y-[0.2rem]"
                   >
-                    I wish to redeem the offer
+                    {hasTerms ? (
+                      <div className="translate-x-[-0.25rem]" o>
+                        I wish to redeem the offer and I agree to the{" "}
+                        <button
+                          type="button"
+                          className="underline hover:text-white"
+                          onClick={() => setTocOpen(true)}
+                        >
+                          Terms and Conditions
+                        </button>
+                      </div>
+                    ) : (
+                      "I wish to redeem the offer"
+                    )}
                   </label>
                 </div>
                 {agreeError ? (
@@ -205,6 +222,40 @@ export default function OfferModal({
           </div>
         </div>
       </div>
+      {tocOpen ? (
+        <div
+          className="fixed inset-0 p-4 z-[60] flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="absolute inset-0 bg-black/70"
+            onClick={() => setTocOpen(false)}
+          />
+          <div className="relative w-[min(900px,95vw)] text-white">
+            <div className="border border-white p-[4px] bg-black">
+              <div className="border border-white p-4 max-h-[80vh] overflow-y-auto">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="text-[1.5rem] font-[800]">
+                    Terms and Conditions
+                  </h3>
+                  <button
+                    aria-label="Close Terms"
+                    onClick={() => setTocOpen(false)}
+                    className="text-white hover:text-white/70 text-2xl"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <div
+                  className="prose prose-invert max-w-none"
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(termsText) }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -561,6 +561,9 @@ video {
 .z-50{
   z-index: 50 !important;
 }
+.z-\\[60\\]{
+  z-index: 60 !important;
+}
 .mb-3{
   margin-bottom: 0.75rem !important;
 }
@@ -581,6 +584,9 @@ video {
 }
 .mt-0{
   margin-top: 0px !important;
+}
+.mt-\\[0\\.75rem\\]{
+  margin-top: 0.75rem !important;
 }
 .inline-block{
   display: inline-block !important;
@@ -661,6 +667,9 @@ video {
 .w-\\[7rem\\]{
   width: 7rem !important;
 }
+.w-\\[min\\(900px\\2c 95vw\\)\\]{
+  width: min(900px,95vw) !important;
+}
 .max-w-\\[1400px\\]{
   max-width: 1400px !important;
 }
@@ -692,6 +701,21 @@ video {
 .translate-y-\\[0\\.1rem\\]{
   --tw-translate-y: 0.1rem !important;
   transform: translate(var(--tw-translate-x), 0.1rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.translate-x-\\[0\\.5rem\\]{
+  --tw-translate-x: 0.5rem !important;
+  transform: translate(0.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.translate-x-\\[1rem\\]{
+  --tw-translate-x: 1rem !important;
+  transform: translate(1rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.translate-x-\\[-0\\.25rem\\]{
+  --tw-translate-x: -0.25rem !important;
+  transform: translate(-0.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .cursor-pointer{
@@ -994,6 +1018,9 @@ video {
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
 }
+.underline{
+  text-decoration-line: underline !important;
+}
 .placeholder-white\\/40::-moz-placeholder{
   color: rgba(255, 255, 255, 0.4) !important;
 }
@@ -1099,6 +1126,12 @@ video {
 
 .hover\\:text-white\\/70:hover{
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.hover\\:text-white:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
 }
 
 .focus\\:outline-none:focus{
@@ -18243,6 +18276,12 @@ function OfferModal(_ref) {
     _React$useState10 = _slicedToArray(_React$useState9, 2),
     showSteps = _React$useState10[0],
     setShowSteps = _React$useState10[1];
+  var _React$useState11 = react.useState(false),
+    _React$useState12 = _slicedToArray(_React$useState11, 2),
+    tocOpen = _React$useState12[0],
+    setTocOpen = _React$useState12[1];
+  var termsText = (offer.terms_and_conditions_text || "").trim();
+  var hasTerms = termsText.length > 0;
   react.useEffect(function () {
     if (!open) {
       setShowSteps(false);
@@ -18250,6 +18289,7 @@ function OfferModal(_ref) {
       setAgreeError("");
       setSubmitError("");
       setIsSubmitting(false);
+      setTocOpen(false);
     }
   }, [open]);
   function handleRedeemClick() {
@@ -18353,8 +18393,7 @@ function OfferModal(_ref) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "border border-white p-[4px] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border border-white p-4 flex flex-col max-h-[85vh] ".concat(isMobile ? "max-h-[80vh]" : ""),
-    e: true
+    className: "border border-white p-4 flex flex-col max-h-[85vh] ".concat(isMobile ? "max-h-[80vh]" : "")
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex items-start justify-between gap-4 mb-4 flex-none"
   }, /*#__PURE__*/react.createElement("div", {
@@ -18388,7 +18427,7 @@ function OfferModal(_ref) {
       __html: sanitizeHtml(descriptionHtml)
     }
   }))))), !showSteps ? /*#__PURE__*/react.createElement("div", {
-    className: "flex-none mt-4"
+    className: "flex-none mt-[0.75rem]"
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex items-center gap-3"
   }, /*#__PURE__*/react.createElement("input", {
@@ -18402,7 +18441,16 @@ function OfferModal(_ref) {
   }), /*#__PURE__*/react.createElement("label", {
     htmlFor: "wish-checkbox",
     className: "text-white/80 translate-y-[0.2rem]"
-  }, "I wish to redeem the offer")), agreeError ? /*#__PURE__*/react.createElement("p", {
+  }, hasTerms ? /*#__PURE__*/react.createElement("div", {
+    className: "translate-x-[-0.25rem]",
+    o: true
+  }, "I wish to redeem the offer and I agree to the", " ", /*#__PURE__*/react.createElement("button", {
+    type: "button",
+    className: "underline hover:text-white",
+    onClick: function onClick() {
+      return setTocOpen(true);
+    }
+  }, "Terms and Conditions")) : "I wish to redeem the offer")), agreeError ? /*#__PURE__*/react.createElement("p", {
     className: "text-red-500 text-[0.95rem] mt-2"
   }, agreeError) : null, submitError ? /*#__PURE__*/react.createElement("p", {
     className: "text-red-500 text-[0.95rem] mt-2"
@@ -18412,7 +18460,37 @@ function OfferModal(_ref) {
     className: "self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors",
     onClick: handleRedeemClick,
     disabled: isSubmitting
-  }, isSubmitting ? "Redeeming…" : "Redeem Now"))) : null))));
+  }, isSubmitting ? "Redeeming…" : "Redeem Now"))) : null))), tocOpen ? /*#__PURE__*/react.createElement("div", {
+    className: "fixed inset-0 p-4 z-[60] flex items-center justify-center",
+    role: "dialog",
+    "aria-modal": "true"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "absolute inset-0 bg-black/70",
+    onClick: function onClick() {
+      return setTocOpen(false);
+    }
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "relative w-[min(900px,95vw)] text-white"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-[4px] bg-black"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "border border-white p-4 max-h-[80vh] overflow-y-auto"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-start justify-between gap-4 mb-4"
+  }, /*#__PURE__*/react.createElement("h3", {
+    className: "text-[1.5rem] font-[800]"
+  }, "Terms and Conditions"), /*#__PURE__*/react.createElement("button", {
+    "aria-label": "Close Terms",
+    onClick: function onClick() {
+      return setTocOpen(false);
+    },
+    className: "text-white hover:text-white/70 text-2xl"
+  }, "\u2715")), /*#__PURE__*/react.createElement("div", {
+    className: "prose prose-invert max-w-none",
+    dangerouslySetInnerHTML: {
+      __html: sanitizeHtml(termsText)
+    }
+  }))))) : null);
 }
 function Section(_ref2) {
   var title = _ref2.title,

@@ -55,6 +55,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
           >
             Redeem Now
           </button>
+          .
         </div>
       </div>
     </div>
