@@ -23,7 +23,10 @@ export default function OfferModal({
   const [tocOpen, setTocOpen] = React.useState(false);
 
   const termsText = (offer.terms_and_conditions_text || "").trim();
-  const hasTerms = termsText.length > 0;
+  const termsLink = (offer.terms_and_conditions || "").trim();
+  const hasTermsText = termsText.length > 0;
+  const hasTermsLink = termsLink.length > 0;
+  const hasTerms = hasTermsText || hasTermsLink;
 
   React.useEffect(() => {
     if (!open) {
@@ -147,7 +150,7 @@ export default function OfferModal({
                       />
                     ) : (
                       <p className="text-white/70">
-                        Follow the partner link to redeem this offer.
+                        This offer did not provide steps to redeem.
                       </p>
                     )}
                   </Section>
@@ -183,15 +186,26 @@ export default function OfferModal({
                     className="text-white/80 translate-y-[0.2rem]"
                   >
                     {hasTerms ? (
-                      <div className="translate-x-[-0.25rem]" o>
+                      <div className="translate-x-[-0.25rem]">
                         I wish to redeem the offer and I agree to the{" "}
-                        <button
-                          type="button"
-                          className="underline hover:text-white"
-                          onClick={() => setTocOpen(true)}
-                        >
-                          Terms and Conditions
-                        </button>
+                        {hasTermsLink ? (
+                          <a
+                            href={termsLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-white"
+                          >
+                            Terms and Conditions
+                          </a>
+                        ) : (
+                          <button
+                            type="button"
+                            className="underline hover:text-white"
+                            onClick={() => setTocOpen(true)}
+                          >
+                            Terms and Conditions
+                          </button>
+                        )}
                       </div>
                     ) : (
                       "I wish to redeem the offer"

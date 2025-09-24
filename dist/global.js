@@ -570,26 +570,17 @@ video {
 .mb-4{
   margin-bottom: 1rem !important;
 }
-.ml-2{
-  margin-left: 0.5rem !important;
-}
 .mt-2{
   margin-top: 0.5rem !important;
 }
 .mt-4{
   margin-top: 1rem !important;
 }
-.mt-auto{
-  margin-top: auto !important;
-}
-.mt-0{
-  margin-top: 0px !important;
-}
 .mt-\\[0\\.75rem\\]{
   margin-top: 0.75rem !important;
 }
-.inline-block{
-  display: inline-block !important;
+.mt-auto{
+  margin-top: auto !important;
 }
 .flex{
   display: flex !important;
@@ -609,21 +600,18 @@ video {
 .h-\\[108px\\]{
   height: 108px !important;
 }
+.h-\\[6rem\\]{
+  height: 6rem !important;
+}
+.h-\\[7rem\\]{
+  height: 7rem !important;
+}
 .h-fit{
   height: -moz-fit-content !important;
   height: fit-content !important;
 }
 .h-full{
   height: 100% !important;
-}
-.h-\\[88px\\]{
-  height: 88px !important;
-}
-.h-\\[6rem\\]{
-  height: 6rem !important;
-}
-.h-\\[7rem\\]{
-  height: 7rem !important;
 }
 .max-h-\\[108px\\]{
   max-height: 108px !important;
@@ -649,26 +637,23 @@ video {
 .w-\\[108px\\]{
   width: 108px !important;
 }
-.w-\\[min\\(1100px\\2c 95vw\\)\\]{
-  width: min(1100px,95vw) !important;
-}
-.w-\\[min\\(560px\\2c 95vw\\)\\]{
-  width: min(560px,95vw) !important;
-}
-.w-full{
-  width: 100% !important;
-}
-.w-\\[88px\\]{
-  width: 88px !important;
-}
 .w-\\[6rem\\]{
   width: 6rem !important;
 }
 .w-\\[7rem\\]{
   width: 7rem !important;
 }
+.w-\\[min\\(1100px\\2c 95vw\\)\\]{
+  width: min(1100px,95vw) !important;
+}
+.w-\\[min\\(560px\\2c 95vw\\)\\]{
+  width: min(560px,95vw) !important;
+}
 .w-\\[min\\(900px\\2c 95vw\\)\\]{
   width: min(900px,95vw) !important;
+}
+.w-full{
+  width: 100% !important;
 }
 .max-w-\\[1400px\\]{
   max-width: 1400px !important;
@@ -688,34 +673,14 @@ video {
 .grow{
   flex-grow: 1 !important;
 }
-.translate-y-\\[0\\.2rem\\]{
-  --tw-translate-y: 0.2rem !important;
-  transform: translate(var(--tw-translate-x), 0.2rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-.translate-y-\\[0\\.05rem\\]{
-  --tw-translate-y: 0.05rem !important;
-  transform: translate(var(--tw-translate-x), 0.05rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-.translate-y-\\[0\\.1rem\\]{
-  --tw-translate-y: 0.1rem !important;
-  transform: translate(var(--tw-translate-x), 0.1rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-.translate-x-\\[0\\.5rem\\]{
-  --tw-translate-x: 0.5rem !important;
-  transform: translate(0.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-.translate-x-\\[1rem\\]{
-  --tw-translate-x: 1rem !important;
-  transform: translate(1rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
 .translate-x-\\[-0\\.25rem\\]{
   --tw-translate-x: -0.25rem !important;
   transform: translate(-0.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.translate-y-\\[0\\.2rem\\]{
+  --tw-translate-y: 0.2rem !important;
+  transform: translate(var(--tw-translate-x), 0.2rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .cursor-pointer{
@@ -768,20 +733,6 @@ video {
 .gap-8{
   gap: 2rem !important;
 }
-.gap-x-4{
-  -moz-column-gap: 1rem !important;
-       column-gap: 1rem !important;
-}
-.gap-x-8{
-  -moz-column-gap: 2rem !important;
-       column-gap: 2rem !important;
-}
-.gap-y-1{
-  row-gap: 0.25rem !important;
-}
-.gap-y-3{
-  row-gap: 0.75rem !important;
-}
 .gap-x-3{
   -moz-column-gap: 0.75rem !important;
        column-gap: 0.75rem !important;
@@ -789,6 +740,9 @@ video {
 .gap-x-6{
   -moz-column-gap: 1.5rem !important;
        column-gap: 1.5rem !important;
+}
+.gap-y-1{
+  row-gap: 0.25rem !important;
 }
 .gap-y-2{
   row-gap: 0.5rem !important;
@@ -839,6 +793,9 @@ video {
   -o-object-fit: contain !important;
      object-fit: contain !important;
 }
+.p-2{
+  padding: 0.5rem !important;
+}
 .p-3{
   padding: 0.75rem !important;
 }
@@ -851,20 +808,17 @@ video {
 .p-\\[4px\\]{
   padding: 4px !important;
 }
-.p-2{
-  padding: 0.5rem !important;
-}
-.px-2{
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
+.px-3{
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
 }
 .px-4{
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
-.px-5{
-  padding-left: 1.25rem !important;
-  padding-right: 1.25rem !important;
+.px-6{
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 .py-1{
   padding-top: 0.25rem !important;
@@ -882,21 +836,9 @@ video {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
-.px-3{
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important;
-}
-.py-2{
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-}
 .py-\\[10px\\]{
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-}
-.px-6{
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
 }
 .pr-2{
   padding-right: 0.5rem !important;
@@ -926,35 +868,23 @@ video {
 .text-\\[1\\.25rem\\]{
   font-size: 1.25rem !important;
 }
-.text-\\[1\\.375rem\\]{
-  font-size: 1.375rem !important;
-}
 .text-\\[1\\.5rem\\]{
   font-size: 1.5rem !important;
-}
-.text-\\[2\\.25rem\\]{
-  font-size: 2.25rem !important;
-}
-.text-\\[2rem\\]{
-  font-size: 2rem !important;
-}
-.text-\\[1\\.75rem\\]{
-  font-size: 1.75rem !important;
 }
 .text-\\[1rem\\]{
   font-size: 1rem !important;
 }
-.text-\\[0\\.5rem\\]{
-  font-size: 0.5rem !important;
+.text-\\[2rem\\]{
+  font-size: 2rem !important;
+}
+.font-\\[600\\]{
+  font-weight: 600 !important;
 }
 .font-\\[700\\]{
   font-weight: 700 !important;
 }
 .font-\\[800\\]{
   font-weight: 800 !important;
-}
-.font-\\[600\\]{
-  font-weight: 600 !important;
 }
 .uppercase{
   text-transform: uppercase !important;
@@ -971,23 +901,14 @@ video {
 .leading-tight{
   line-height: 1.25 !important;
 }
-.tracking-wide{
-  letter-spacing: 0.025em !important;
-}
-.tracking-\\[0\\.8rem\\]{
-  letter-spacing: 0.8rem !important;
-}
-.tracking-\\[-0\\.1rem\\]{
-  letter-spacing: -0.1rem !important;
-}
-.tracking-\\[-0\\.05rem\\]{
-  letter-spacing: -0.05rem !important;
+.tracking-\\[0\\.025rem\\]{
+  letter-spacing: 0.025rem !important;
 }
 .tracking-\\[0\\.05rem\\]{
   letter-spacing: 0.05rem !important;
 }
-.tracking-\\[0\\.025rem\\]{
-  letter-spacing: 0.025rem !important;
+.tracking-wide{
+  letter-spacing: 0.025em !important;
 }
 .text-\\[\\#898989\\]{
   --tw-text-opacity: 1 !important;
@@ -1124,14 +1045,14 @@ video {
   background-color: rgba(0, 225, 255, var(--tw-bg-opacity, 1)) !important;
 }
 
-.hover\\:text-white\\/70:hover{
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
 .hover\\:text-white:hover{
   --tw-text-opacity: 1 !important;
   color: rgba(255, 255, 255, 1) !important;
   color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
+}
+
+.hover\\:text-white\\/70:hover{
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .focus\\:outline-none:focus{
@@ -18281,7 +18202,10 @@ function OfferModal(_ref) {
     tocOpen = _React$useState12[0],
     setTocOpen = _React$useState12[1];
   var termsText = (offer.terms_and_conditions_text || "").trim();
-  var hasTerms = termsText.length > 0;
+  var termsLink = (offer.terms_and_conditions || "").trim();
+  var hasTermsText = termsText.length > 0;
+  var hasTermsLink = termsLink.length > 0;
+  var hasTerms = hasTermsText || hasTermsLink;
   react.useEffect(function () {
     if (!open) {
       setShowSteps(false);
@@ -18417,7 +18341,7 @@ function OfferModal(_ref) {
     }
   }) : /*#__PURE__*/react.createElement("p", {
     className: "text-white/70"
-  }, "Follow the partner link to redeem this offer."))) : /*#__PURE__*/react.createElement("div", {
+  }, "This offer did not provide steps to redeem."))) : /*#__PURE__*/react.createElement("div", {
     className: "flex gap-8"
   }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
     title: "About this offer"
@@ -18442,9 +18366,13 @@ function OfferModal(_ref) {
     htmlFor: "wish-checkbox",
     className: "text-white/80 translate-y-[0.2rem]"
   }, hasTerms ? /*#__PURE__*/react.createElement("div", {
-    className: "translate-x-[-0.25rem]",
-    o: true
-  }, "I wish to redeem the offer and I agree to the", " ", /*#__PURE__*/react.createElement("button", {
+    className: "translate-x-[-0.25rem]"
+  }, "I wish to redeem the offer and I agree to the", " ", hasTermsLink ? /*#__PURE__*/react.createElement("a", {
+    href: termsLink,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "underline hover:text-white"
+  }, "Terms and Conditions") : /*#__PURE__*/react.createElement("button", {
     type: "button",
     className: "underline hover:text-white",
     onClick: function onClick() {
