@@ -144,7 +144,7 @@ const App = () => {
 
   return (
     <div className="tailwind">
-      <div className="flex w-full justify-center text-white select-none">
+      <div className="flex w-full justify-center text-white">
         <div className="max-w-[1400px] grow flex flex-col gap-4">
           <div className="border-[1px] border-white p-[4px] bg-black h-fit">
             <div className={`flex w-full p-4 sticky top-0 bg-black`}>

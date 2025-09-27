@@ -139,11 +139,11 @@ export default function OfferModal({
             <div className="flex-1 min-h-0 overflow-y-auto pr-2">
               {showSteps ? (
                 <div>
-                  <Section title="Steps to Redeem">
+                  <Section title="Steps to Redeem" className="flex flex-col gap-4">
                     {redeemHtml ? (
                       <div
-                        className="prose prose-invert max-w-none tw-steps"
-                        dangerouslySetInnerHTML={{
+                        className={`prose prose-invert max-w-none tw-steps ${offer.details_url ? 'pb-4' : ''}`}
+                        dangerouslySetInnerHTML={{  
                           __html: sanitizeHtml(redeemHtml),
                         }}
                       />
@@ -152,6 +152,16 @@ export default function OfferModal({
                         This offer did not provide steps to redeem.
                       </p>
                     )}
+                    {offer.details_url ? (
+                      <a
+                        className="underline hover:text-white text-[#14e8ff]"
+                        href={offer.details_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        More details here
+                      </a>
+                    ) : null}
                   </Section>
                 </div>
               ) : (

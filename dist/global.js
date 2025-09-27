@@ -849,6 +849,15 @@ video {
 .pt-1{
   padding-top: 0.25rem !important;
 }
+.pt-12{
+  padding-top: 3rem !important;
+}
+.pb-12{
+  padding-bottom: 3rem !important;
+}
+.pb-4{
+  padding-bottom: 1rem !important;
+}
 .text-center{
   text-align: center !important;
 }
@@ -938,6 +947,11 @@ video {
 }
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
+}
+.text-\\[\\#14e8ff\\]{
+  --tw-text-opacity: 1 !important;
+  color: rgba(20, 232, 255, 1) !important;
+  color: rgba(20, 232, 255, var(--tw-text-opacity, 1)) !important;
 }
 .underline{
   text-decoration-line: underline !important;
@@ -18332,15 +18346,21 @@ function OfferModal(_ref) {
   }, "\u2715")), /*#__PURE__*/react.createElement("div", {
     className: "flex-1 min-h-0 overflow-y-auto pr-2"
   }, showSteps ? /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
-    title: "Steps to Redeem"
+    title: "Steps to Redeem",
+    className: "flex flex-col gap-4"
   }, redeemHtml ? /*#__PURE__*/react.createElement("div", {
-    className: "prose prose-invert max-w-none tw-steps",
+    className: "prose prose-invert max-w-none tw-steps ".concat(offer.details_url ? 'pb-4' : ''),
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(redeemHtml)
     }
   }) : /*#__PURE__*/react.createElement("p", {
     className: "text-white/70"
-  }, "This offer did not provide steps to redeem."))) : /*#__PURE__*/react.createElement("div", {
+  }, "This offer did not provide steps to redeem."), offer.details_url ? /*#__PURE__*/react.createElement("a", {
+    className: "underline hover:text-white text-[#14e8ff]",
+    href: offer.details_url,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "More details here") : null)) : /*#__PURE__*/react.createElement("div", {
     className: "flex gap-8"
   }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
     title: "About this offer"
@@ -18748,7 +18768,7 @@ var App = function App() {
   return /*#__PURE__*/react.createElement("div", {
     className: "tailwind"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex w-full justify-center text-white select-none"
+    className: "flex w-full justify-center text-white"
   }, /*#__PURE__*/react.createElement("div", {
     className: "max-w-[1400px] grow flex flex-col gap-4"
   }, /*#__PURE__*/react.createElement("div", {
