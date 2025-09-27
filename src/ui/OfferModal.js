@@ -12,9 +12,8 @@ export default function OfferModal({
   if (!open || !offer) return null;
 
   const vendor = offer.vendor || {};
-  const { descriptionHtml, redeemHtml } = splitDescription(
-    offer.description || ""
-  );
+  const descriptionHtml = offer.description;
+  const redeemHtml = offer.redeem_steps;
   const [agree, setAgree] = React.useState(false);
   const [agreeError, setAgreeError] = React.useState("");
   const [submitError, setSubmitError] = React.useState("");

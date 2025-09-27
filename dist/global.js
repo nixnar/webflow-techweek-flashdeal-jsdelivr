@@ -18174,9 +18174,8 @@ function OfferModal(_ref) {
     isMobile = _ref.isMobile;
   if (!open || !offer) return null;
   var vendor = offer.vendor || {};
-  var _splitDescription = splitDescription(offer.description || ""),
-    descriptionHtml = _splitDescription.descriptionHtml,
-    redeemHtml = _splitDescription.redeemHtml;
+  var descriptionHtml = offer.description;
+  var redeemHtml = offer.redeem_steps;
   var _React$useState = react.useState(false),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     agree = _React$useState2[0],
