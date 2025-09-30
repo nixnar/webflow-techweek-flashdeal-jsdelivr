@@ -686,11 +686,6 @@ video {
 .cursor-pointer{
   cursor: pointer !important;
 }
-.select-none{
-  -webkit-user-select: none !important;
-     -moz-user-select: none !important;
-          user-select: none !important;
-}
 .resize{
   resize: both !important;
 }
@@ -849,15 +844,6 @@ video {
 .pt-1{
   padding-top: 0.25rem !important;
 }
-.pt-12{
-  padding-top: 3rem !important;
-}
-.pb-12{
-  padding-bottom: 3rem !important;
-}
-.pb-4{
-  padding-bottom: 1rem !important;
-}
 .text-center{
   text-align: center !important;
 }
@@ -947,11 +933,6 @@ video {
 }
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
-}
-.text-\\[\\#14e8ff\\]{
-  --tw-text-opacity: 1 !important;
-  color: rgba(20, 232, 255, 1) !important;
-  color: rgba(20, 232, 255, var(--tw-text-opacity, 1)) !important;
 }
 .underline{
   text-decoration-line: underline !important;
@@ -18349,18 +18330,13 @@ function OfferModal(_ref) {
     title: "Steps to Redeem",
     className: "flex flex-col gap-4"
   }, redeemHtml ? /*#__PURE__*/react.createElement("div", {
-    className: "prose prose-invert max-w-none tw-steps ".concat(offer.details_url ? 'pb-4' : ''),
+    className: "prose prose-invert max-w-none tw-steps",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(redeemHtml)
     }
   }) : /*#__PURE__*/react.createElement("p", {
     className: "text-white/70"
-  }, "This offer did not provide steps to redeem."), offer.details_url ? /*#__PURE__*/react.createElement("a", {
-    className: "underline hover:text-white text-[#14e8ff]",
-    href: offer.details_url,
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, "More details here") : null)) : /*#__PURE__*/react.createElement("div", {
+  }, "This offer did not provide steps to redeem."))) : /*#__PURE__*/react.createElement("div", {
     className: "flex gap-8"
   }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement(Section, {
     title: "About this offer"
