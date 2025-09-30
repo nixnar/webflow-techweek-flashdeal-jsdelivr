@@ -66,6 +66,9 @@ export default function OfferModal({
         email,
         vendor_id: offer.vendor_id,
         offer_id: offer.id,
+        vendor_name: vendor.name,
+        offer_name: offer.name,
+        time_created: new Date().toISOString(),
       };
 
       const res = await fetch("https://api.tech-week.com/redeem_offer/", {
