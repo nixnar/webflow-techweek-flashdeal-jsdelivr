@@ -182,7 +182,7 @@ export default function OfferModal({
                   <input
                     id="wish-checkbox"
                     type="checkbox"
-                    className="accent-white h-4 w-4 self-center"
+                    className="tw-filter-checkbox h-4 w-4 self-center"
                     checked={agree}
                     onChange={(e) => setAgree(e.target.checked)}
                   />

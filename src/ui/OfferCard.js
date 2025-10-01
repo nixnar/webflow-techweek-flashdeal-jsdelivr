@@ -10,7 +10,7 @@ const VendorLogo = ({ src, alt, isMobile }) => {
   return (
     <div
       className={`self-start ${
-        isMobile ? "w-[6rem] h-[6rem] p-2" : "w-[7rem] h-[7rem] p-3"
+        isMobile ? "w-[4rem] h-[4rem] p-2" : "w-[5rem] h-[5rem] p-3"
       } bg-white flex items-center justify-center overflow-hidden`}
     >
       {src ? (
@@ -38,11 +38,11 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
         <VendorLogo src={vendor.logo} alt={vendor.name} isMobile={isMobile} />
 
         <div className="flex flex-col gap-2 tw-offer-text">
-          <h3 className="text-white text-[1.25rem] font-[700] leading-tight">
+          <h3 className="text-white text-[1rem] font-[700] leading-tight">
             {offer.name}
           </h3>
           <div
-            className="tw-offer-desc text-white/80 text-[0.95rem] leading-[1.35]"
+            className="tw-offer-desc text-white/80 text-[0.75rem] sm:text-[0.5rem] leading-[1.35] "
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(descriptionHtml) }}
           />
         </div>
@@ -50,7 +50,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
         <div className="mt-auto flex flex-col gap-3">
           <PriceBlock offer={offer} badge={badge} value={value} />
           <button
-            className="self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
+            className="self-start text-[1rem] sm:text-[0.875rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
             onClick={() => onRedeem?.(offer)}
           >
             Redeem Now

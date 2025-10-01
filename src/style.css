@@ -68,6 +68,32 @@
   /* Multi-line clamp is optional; container height is the primary limiter */
 }
 
+/* Custom checkbox: white box with black check mark */
+.tw-filter-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  display: grid;
+  place-content: center;
+}
+
+.tw-filter-checkbox:checked::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.7rem;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tw-filter-checkbox:focus-visible {
+  outline: 2px solid #14e8ff;
+  outline-offset: 2px;
+}
+
 /* Ensure links inside Steps to Redeem are clearly visible */
 .tw-steps a {
   color: #14e8ff;

@@ -32,6 +32,9 @@ const App = () => {
   const [hasOfferEmail, setHasOfferEmail] = React.useState(false);
   const [emailModalOpen, setEmailModalOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
+  const [filtersOpen, setFiltersOpen] = React.useState(false);
+  const [searchMode, setSearchMode] = React.useState(false);
+  const searchInputRef = React.useRef(null);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -41,6 +44,21 @@ const App = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Auto-open filters on desktop, collapse on mobile
+  React.useEffect(() => {
+    setFiltersOpen(!isMobile);
+  }, [isMobile]);
+
+  // When triggering search mode, ensure filters are open on mobile and focus input
+  React.useEffect(() => {
+    if (!searchMode) return;
+    if (isMobile) setFiltersOpen(true);
+    try {
+      searchInputRef.current?.focus();
+    } catch {}
+    setSearchMode(false);
+  }, [searchMode, isMobile]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -153,48 +171,86 @@ const App = () => {
                   isMobile ? "gap-2" : "gap-4"
                 }`}
               >
-                <p className="text-[2rem] font-[700] uppercase leading-none">
-                  FILTERS
-                </p>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="text"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search offers…"
-                    className={`w-full bg-black text-white placeholder-white/40 border border-white ${
-                      isMobile ? "px-3 py-1" : "px-6 py-3"
-                    } focus:outline-none`}
-                  />
-                </div>
-                <div
-                  className={`flex flex-wrap items-center pt-1 ${
-                    isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2"
-                  }`}
-                >
-                  {services.map((name) => (
-                    <label
-                      key={name}
-                      className={`flex items-center gap-2 ${
-                        isMobile && "gap-1"
-                      } cursor-pointer text-white font-[600]`}
+                <div className="flex items-center justify-between">
+                  <p className="text-[2rem] font-[700] uppercase leading-none">
+                    OFFERS
+                  </p>
+                  {isMobile ? (
+                    <button
+                      onClick={() => {
+                        setSearchMode(false);
+                        setFiltersOpen((v) => !v);
+                      }}
+                      className="uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black"
+                      aria-label="Toggle filters"
                     >
-                      <input
-                        type="checkbox"
-                        checked={selectedServices.has(name)}
-                        onChange={() => toggleService(name)}
-                        className="accent-white h-4 w-4"
-                      />
-                      <span
-                        className={`text-[0.95rem] ${
-                          isMobile ? "text-[0.75rem]" : ""
-                        }`}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
                       >
-                        {name}
-                      </span>
-                    </label>
-                  ))}
+                        <path
+                          d="M2.625 1.75V3.47949C2.625 3.91016 2.83691 4.31348 3.19238 4.55957L6.125 6.78125V12.25L7.875 10.5V6.78125L10.8076 4.55957C11.1631 4.31348 11.375 3.91016 11.375 3.47949V1.75H2.625ZM3.5 2.625H10.5V3.47949C10.5 3.62305 10.4282 3.75635 10.3086 3.83838L10.3018 3.8418L7.29053 6.125H6.70947L3.69824 3.8418L3.69141 3.83838C3.57178 3.75635 3.5 3.62305 3.5 3.47949V2.625Z"
+                          fill="black"
+                        />
+                      </svg>
+                      <p>FILTERS</p>
+                    </button>
+                  ) : null}
                 </div>
+
+                {!isMobile || filtersOpen ? (
+                  <>
+                    <div className="flex items-center gap-3 pt-2">
+                      <input
+                        type="text"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Search offers…"
+                        className={`w-full bg-black text-white placeholder-white/40 border border-white ${
+                          isMobile ? "px-3 py-1" : "px-6 py-3"
+                        } focus:outline-none`}
+                        ref={searchInputRef}
+                      />
+                    </div>
+                    <div
+                      className={`flex flex-wrap items-center pt-1 ${
+                        isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2"
+                      }`}
+                    >
+                      {services.map((name) => (
+                        <label
+                          key={name}
+                          className={`flex items-center gap-2 ${
+                            isMobile && "gap-1"
+                          } cursor-pointer text-white font-[600]`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={selectedServices.has(name)}
+                            onChange={() => toggleService(name)}
+                            className="tw-filter-checkbox h-4 w-4"
+                          />
+                          <span
+                            className={`text-[0.95rem] ${
+                              isMobile ? "text-[0.75rem]" : ""
+                            }`}
+                          >
+                            {name}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </>
+                ) : isMobile ? (
+                  <div className="text-white/60 text-[0.9rem]">
+                    {selectedServices.size > 0
+                      ? `${selectedServices.size} selected`
+                      : ""}
+                  </div>
+                ) : null}
               </div>
             </div>
             <div className="p-4 pt-0">

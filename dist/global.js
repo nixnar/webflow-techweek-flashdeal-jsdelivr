@@ -537,6 +537,9 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.collapse{
+  visibility: collapse !important;
+}
 .fixed{
   position: fixed !important;
 }
@@ -600,11 +603,11 @@ video {
 .h-\\[108px\\]{
   height: 108px !important;
 }
-.h-\\[6rem\\]{
-  height: 6rem !important;
+.h-\\[4rem\\]{
+  height: 4rem !important;
 }
-.h-\\[7rem\\]{
-  height: 7rem !important;
+.h-\\[5rem\\]{
+  height: 5rem !important;
 }
 .h-fit{
   height: -moz-fit-content !important;
@@ -637,11 +640,11 @@ video {
 .w-\\[108px\\]{
   width: 108px !important;
 }
-.w-\\[6rem\\]{
-  width: 6rem !important;
+.w-\\[4rem\\]{
+  width: 4rem !important;
 }
-.w-\\[7rem\\]{
-  width: 7rem !important;
+.w-\\[5rem\\]{
+  width: 5rem !important;
 }
 .w-\\[min\\(1100px\\2c 95vw\\)\\]{
   width: min(1100px,95vw) !important;
@@ -727,6 +730,9 @@ video {
 }
 .gap-8{
   gap: 2rem !important;
+}
+.gap-\\[0\\.375rem\\]{
+  gap: 0.375rem !important;
 }
 .gap-x-3{
   -moz-column-gap: 0.75rem !important;
@@ -815,6 +821,10 @@ video {
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
 }
+.px-\\[0\\.5rem\\]{
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
 .py-1{
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
@@ -831,6 +841,10 @@ video {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
+.py-\\[0\\.375rem\\]{
+  padding-top: 0.375rem !important;
+  padding-bottom: 0.375rem !important;
+}
 .py-\\[10px\\]{
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -844,6 +858,9 @@ video {
 .pt-1{
   padding-top: 0.25rem !important;
 }
+.pt-2{
+  padding-top: 0.5rem !important;
+}
 .text-center{
   text-align: center !important;
 }
@@ -854,8 +871,14 @@ video {
 .text-\\[0\\.75rem\\]{
   font-size: 0.75rem !important;
 }
+.text-\\[0\\.875rem\\]{
+  font-size: 0.875rem !important;
+}
 .text-\\[0\\.95rem\\]{
   font-size: 0.95rem !important;
+}
+.text-\\[0\\.9rem\\]{
+  font-size: 0.9rem !important;
 }
 .text-\\[1\\.1rem\\]{
   font-size: 1.1rem !important;
@@ -880,6 +903,9 @@ video {
 }
 .font-\\[800\\]{
   font-weight: 800 !important;
+}
+.font-medium{
+  font-weight: 500 !important;
 }
 .uppercase{
   text-transform: uppercase !important;
@@ -942,9 +968,6 @@ video {
 }
 .placeholder-white\\/40::placeholder{
   color: rgba(255, 255, 255, 0.4) !important;
-}
-.accent-white{
-  accent-color: #fff !important;
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -1016,6 +1039,35 @@ video {
   /* Multi-line clamp is optional; container height is the primary limiter */
 }
 
+/* Custom checkbox: white box with black check mark */
+.tw-filter-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  place-content: center;
+}
+
+.tw-filter-checkbox:checked::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.7rem;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tw-filter-checkbox:focus-visible {
+  outline: 2px solid #14e8ff;
+  outline-offset: 2px;
+}
+
 /* Ensure links inside Steps to Redeem are clearly visible */
 .tw-steps a {
   color: #14e8ff;
@@ -1059,6 +1111,21 @@ video {
 
   .sm\\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .sm\\:text-\\[0\\.5rem\\]{
+    font-size: 0.5rem !important;
+  }
+
+  .sm\\:text-\\[0\\.875rem\\]{
+    font-size: 0.875rem !important;
+  }
+}
+
+@media (min-width: 768px){
+
+  .md\\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 }
 
@@ -18031,7 +18098,7 @@ var VendorLogo = function VendorLogo(_ref) {
     alt = _ref.alt,
     isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "self-start ".concat(isMobile ? "w-[6rem] h-[6rem] p-2" : "w-[7rem] h-[7rem] p-3", " bg-white flex items-center justify-center overflow-hidden")
+    className: "self-start ".concat(isMobile ? "w-[4rem] h-[4rem] p-2" : "w-[5rem] h-[5rem] p-3", " bg-white flex items-center justify-center overflow-hidden")
   }, src ? /*#__PURE__*/react.createElement("img", {
     src: src,
     alt: alt,
@@ -18060,9 +18127,9 @@ function OfferCard(_ref2) {
   }), /*#__PURE__*/react.createElement("div", {
     className: "flex flex-col gap-2 tw-offer-text"
   }, /*#__PURE__*/react.createElement("h3", {
-    className: "text-white text-[1.25rem] font-[700] leading-tight"
+    className: "text-white text-[1rem] font-[700] leading-tight"
   }, offer.name), /*#__PURE__*/react.createElement("div", {
-    className: "tw-offer-desc text-white/80 text-[0.95rem] leading-[1.35]",
+    className: "tw-offer-desc text-white/80 text-[0.75rem] sm:text-[0.5rem] leading-[1.35] ",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(descriptionHtml)
     }
@@ -18073,7 +18140,7 @@ function OfferCard(_ref2) {
     badge: badge,
     value: value
   }), /*#__PURE__*/react.createElement("button", {
-    className: "self-start text-[1rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors",
+    className: "self-start text-[1rem] sm:text-[0.875rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors",
     onClick: function onClick() {
       return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
     }
@@ -18136,7 +18203,7 @@ function OfferGrid(_ref) {
     onRedeem = _ref.onRedeem,
     isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+    className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
   }, offers.map(function (offer) {
     return /*#__PURE__*/react.createElement(OfferCard, {
       key: offer.id,
@@ -18355,7 +18422,7 @@ function OfferModal(_ref) {
   }, /*#__PURE__*/react.createElement("input", {
     id: "wish-checkbox",
     type: "checkbox",
-    className: "accent-white h-4 w-4 self-center",
+    className: "tw-filter-checkbox h-4 w-4 self-center",
     checked: agree,
     onChange: function onChange(e) {
       return setAgree(e.target.checked);
@@ -18612,6 +18679,15 @@ var App = function App() {
     _React$useState16 = App_slicedToArray(_React$useState15, 2),
     isMobile = _React$useState16[0],
     setIsMobile = _React$useState16[1];
+  var _React$useState17 = react.useState(false),
+    _React$useState18 = App_slicedToArray(_React$useState17, 2),
+    filtersOpen = _React$useState18[0],
+    setFiltersOpen = _React$useState18[1];
+  var _React$useState19 = react.useState(false),
+    _React$useState20 = App_slicedToArray(_React$useState19, 2),
+    searchMode = _React$useState20[0],
+    setSearchMode = _React$useState20[1];
+  var searchInputRef = react.useRef(null);
   react.useEffect(function () {
     var handleResize = function handleResize() {
       setIsMobile(window.innerWidth < 900);
@@ -18622,6 +18698,22 @@ var App = function App() {
       return window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Auto-open filters on desktop, collapse on mobile
+  react.useEffect(function () {
+    setFiltersOpen(!isMobile);
+  }, [isMobile]);
+
+  // When triggering search mode, ensure filters are open on mobile and focus input
+  react.useEffect(function () {
+    if (!searchMode) return;
+    if (isMobile) setFiltersOpen(true);
+    try {
+      var _searchInputRef$curre;
+      (_searchInputRef$curre = searchInputRef.current) === null || _searchInputRef$curre === void 0 || _searchInputRef$curre.focus();
+    } catch (_unused) {}
+    setSearchMode(false);
+  }, [searchMode, isMobile]);
   react.useEffect(function () {
     var cancelled = false;
     App_asyncToGenerator(/*#__PURE__*/App_regeneratorRuntime().mark(function _callee() {
@@ -18651,7 +18743,7 @@ var App = function App() {
     try {
       var stored = window.localStorage.getItem("offerEmail");
       setHasOfferEmail(Boolean(stored));
-    } catch (_unused) {}
+    } catch (_unused2) {}
   }, []);
 
   // Lock page scroll when any modal is open
@@ -18756,10 +18848,30 @@ var App = function App() {
     className: "flex w-full p-4 sticky top-0 bg-black"
   }, /*#__PURE__*/react.createElement("div", {
     className: "w-full flex flex-col ".concat(isMobile ? "gap-2" : "gap-4")
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center justify-between"
   }, /*#__PURE__*/react.createElement("p", {
     className: "text-[2rem] font-[700] uppercase leading-none"
-  }, "FILTERS"), /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-3"
+  }, "OFFERS"), isMobile ? /*#__PURE__*/react.createElement("button", {
+    onClick: function onClick() {
+      setSearchMode(false);
+      setFiltersOpen(function (v) {
+        return !v;
+      });
+    },
+    className: "uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black",
+    "aria-label": "Toggle filters"
+  }, /*#__PURE__*/react.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "14",
+    height: "14",
+    viewBox: "0 0 14 14",
+    fill: "none"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M2.625 1.75V3.47949C2.625 3.91016 2.83691 4.31348 3.19238 4.55957L6.125 6.78125V12.25L7.875 10.5V6.78125L10.8076 4.55957C11.1631 4.31348 11.375 3.91016 11.375 3.47949V1.75H2.625ZM3.5 2.625H10.5V3.47949C10.5 3.62305 10.4282 3.75635 10.3086 3.83838L10.3018 3.8418L7.29053 6.125H6.70947L3.69824 3.8418L3.69141 3.83838C3.57178 3.75635 3.5 3.62305 3.5 3.47949V2.625Z",
+    fill: "black"
+  })), /*#__PURE__*/react.createElement("p", null, "FILTERS")) : null), !isMobile || filtersOpen ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-3 pt-2"
   }, /*#__PURE__*/react.createElement("input", {
     type: "text",
     value: search,
@@ -18767,7 +18879,8 @@ var App = function App() {
       return setSearch(e.target.value);
     },
     placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-3 py-1" : "px-6 py-3", " focus:outline-none")
+    className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-3 py-1" : "px-6 py-3", " focus:outline-none"),
+    ref: searchInputRef
   })), /*#__PURE__*/react.createElement("div", {
     className: "flex flex-wrap items-center pt-1 ".concat(isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2")
   }, services.map(function (name) {
@@ -18780,11 +18893,13 @@ var App = function App() {
       onChange: function onChange() {
         return toggleService(name);
       },
-      className: "accent-white h-4 w-4"
+      className: "tw-filter-checkbox h-4 w-4"
     }), /*#__PURE__*/react.createElement("span", {
       className: "text-[0.95rem] ".concat(isMobile ? "text-[0.75rem]" : "")
     }, name));
-  })))), /*#__PURE__*/react.createElement("div", {
+  }))) : isMobile ? /*#__PURE__*/react.createElement("div", {
+    className: "text-white/60 text-[0.9rem]"
+  }, selectedServices.size > 0 ? "".concat(selectedServices.size, " selected") : "") : null)), /*#__PURE__*/react.createElement("div", {
     className: "p-4 pt-0"
   }, isLoading ? /*#__PURE__*/react.createElement("p", {
     className: "text-center py-12"
@@ -18815,7 +18930,7 @@ var App = function App() {
     onSubmit: function onSubmit(email) {
       try {
         window.localStorage.setItem("offerEmail", email);
-      } catch (_unused2) {}
+      } catch (_unused3) {}
       setHasOfferEmail(true);
       setEmailModalOpen(false);
     }
