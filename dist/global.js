@@ -1044,14 +1044,19 @@ video {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
   border: 1px solid #ffffff;
   background-color: #ffffff;
   display: grid;
   align-content: center;
   justify-content: center;
   place-content: center;
+  box-sizing: border-box;
+  border-radius: 0;
+  flex-shrink: 0;
 }
 
 .tw-filter-checkbox:checked::after {
