@@ -567,6 +567,12 @@ video {
 .z-\\[60\\]{
   z-index: 60 !important;
 }
+.z-10{
+  z-index: 10 !important;
+}
+.z-20{
+  z-index: 20 !important;
+}
 .mb-3{
   margin-bottom: 0.75rem !important;
 }
@@ -584,6 +590,9 @@ video {
 }
 .mt-auto{
   margin-top: auto !important;
+}
+.mt-3{
+  margin-top: 0.75rem !important;
 }
 .flex{
   display: flex !important;
@@ -769,10 +778,24 @@ video {
 .border-\\[1px\\]{
   border-width: 1px !important;
 }
+.border-2{
+  border-width: 2px !important;
+}
+.border-b{
+  border-bottom-width: 1px !important;
+}
+.border-b-2{
+  border-bottom-width: 2px !important;
+}
 .border-white{
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, 1) !important;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
+}
+.border-red-500{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(239, 68, 68, 1) !important;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity, 1)) !important;
 }
 .bg-black{
   --tw-bg-opacity: 1 !important;
@@ -849,6 +872,10 @@ video {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+.py-2{
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
 .pr-2{
   padding-right: 0.5rem !important;
 }
@@ -860,6 +887,12 @@ video {
 }
 .pt-2{
   padding-top: 0.5rem !important;
+}
+.pt-3{
+  padding-top: 0.75rem !important;
+}
+.pb-4{
+  padding-bottom: 1rem !important;
 }
 .text-center{
   text-align: center !important;
@@ -18468,13 +18501,13 @@ function OfferModal(_ref) {
       return setTocOpen(false);
     }
   }), /*#__PURE__*/react.createElement("div", {
-    className: "relative w-[min(900px,95vw)] text-white"
+    className: "relative w-[min(900px,95vw)] text-white bg-black"
   }, /*#__PURE__*/react.createElement("div", {
     className: "border border-white p-[4px] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border border-white p-4 max-h-[80vh] overflow-y-auto"
+    className: "border border-white max-h-[80vh] overflow-y-auto bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-start justify-between gap-4 mb-4"
+    className: "sticky top-0 z-10 flex items-start justify-between gap-4 mb-4 bg-black border-b-2 border-white p-4"
   }, /*#__PURE__*/react.createElement("h3", {
     className: "text-[1.5rem] font-[800]"
   }, "Terms and Conditions"), /*#__PURE__*/react.createElement("button", {
@@ -18484,7 +18517,7 @@ function OfferModal(_ref) {
     },
     className: "text-white hover:text-white/70 text-2xl"
   }, "\u2715")), /*#__PURE__*/react.createElement("div", {
-    className: "prose prose-invert max-w-none",
+    className: "prose prose-invert max-w-none px-4 pb-4",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(termsText)
     }

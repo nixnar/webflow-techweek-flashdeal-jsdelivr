@@ -251,10 +251,10 @@ export default function OfferModal({
             className="absolute inset-0 bg-black/70"
             onClick={() => setTocOpen(false)}
           />
-          <div className="relative w-[min(900px,95vw)] text-white">
+          <div className="relative w-[min(900px,95vw)] text-white bg-black">
             <div className="border border-white p-[4px] bg-black">
-              <div className="border border-white p-4 max-h-[80vh] overflow-y-auto">
-                <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="border border-white max-h-[80vh] overflow-y-auto bg-black">
+                <div className="sticky top-0 z-10 flex items-start justify-between gap-4 mb-4 bg-black border-b-2 border-white p-4">
                   <h3 className="text-[1.5rem] font-[800]">
                     Terms and Conditions
                   </h3>
@@ -267,7 +267,7 @@ export default function OfferModal({
                   </button>
                 </div>
                 <div
-                  className="prose prose-invert max-w-none"
+                  className="prose prose-invert max-w-none px-4 pb-4"
                   dangerouslySetInnerHTML={{ __html: sanitizeHtml(termsText) }}
                 />
               </div>
