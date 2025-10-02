@@ -9,16 +9,14 @@ import {
 const VendorLogo = ({ src, alt, isMobile }) => {
   return (
     <div
-      className={`self-start ${
-        isMobile ? "w-[4rem] h-[4rem] p-2" : "w-[5rem] h-[5rem] p-3"
+      className={`self-start shrink-0 ${
+        isMobile
+          ? "w-[3.625rem] aspect-square p-2"
+          : "w-[3.875rem] aspect-square p-3"
       } bg-white flex items-center justify-center overflow-hidden`}
     >
       {src ? (
-        <img
-          src={src}
-          alt={alt}
-          className="max-h-full max-w-full object-contain"
-        />
+        <img src={src} alt={alt} className="h-full w-full object-contain" />
       ) : (
         <div className="h-6 w-6 bg-black/10" />
       )}
@@ -33,24 +31,35 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
   const { descriptionHtml } = splitDescription(offer.description || "");
 
   return (
-    <div className="border border-white p-[4px] bg-black">
-      <div className="border border-white p-4 flex flex-col gap-4 h-full">
-        <VendorLogo src={vendor.logo} alt={vendor.name} isMobile={isMobile} />
-
-        <div className="flex flex-col gap-2 tw-offer-text">
-          <h3 className="text-white text-[1rem] font-[700] leading-tight">
-            {offer.name}
-          </h3>
+    <div className="border border-white/30 p-[4px] bg-black">
+      <div className="border border-white py-3 flex flex-col gap-3 h-full">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-3 px-3">
+            <VendorLogo
+              src={vendor.logo}
+              alt={vendor.name}
+              isMobile={isMobile}
+            />
+            <h3 className="text-white text-[1rem] font-[700] leading-[1.25] line-clamp-3">
+              {offer.name}
+            </h3>
+          </div>
           <div
-            className="tw-offer-desc text-white/80 text-[0.75rem] sm:text-[0.5rem] leading-[1.35] "
-            dangerouslySetInnerHTML={{ __html: sanitizeHtml(descriptionHtml) }}
+            className="px-3 utext-white/70 text-[0.75rem] sm:text-[0.5rem] max-h-[4rem] border-b-[1px] border-white  overflow-hidden"
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(descriptionHtml),
+            }}
           />
         </div>
 
-        <div className="mt-auto flex flex-col gap-3">
+        <div className="mt-auto flex flex-col gap-3 px-3" uo>
           <PriceBlock offer={offer} badge={badge} value={value} />
           <button
-            className="self-start text-[1rem] sm:text-[0.875rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors"
+            className={`self-start font-medium whitespace-nowrap border border-white  uppercase  bg-white text-black hover:bg-[#00e1ff] transition-colors ${
+              isMobile
+                ? "text-[0.875rem] py-[0.375rem] px-[0.5rem] leading-[1.25]"
+                : "text-[1rem] tracking-[0.05rem] px-3 py-[10px] leading-[1.25]"
+            }`}
             onClick={() => onRedeem?.(offer)}
           >
             Redeem Now
@@ -73,28 +82,26 @@ function PriceBlock({ offer, badge, value }) {
     (offer.discount_type || "").toLowerCase() === "percentage"
   ) {
     return (
-      <div className="flex flex-col gap-1">
-        <div className="tw-discount flex items-end flex-wrap">
-          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none tracking-1">
-            {offer.discount ?? 0}
-          </span>
-          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-            %
-          </span>
-          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-            &nbsp;OFF&nbsp;
-          </span>
-          {showValue ? (
-            <div className="flex items-end leading-none">
-              <span className="text-[#898989] text-[1rem] uppercase tracking-wide">
-                {value.label}&nbsp;
-              </span>
-              <span className="text-[#898989] text-[1.25rem] font-[600] uppercase">
-                {value.value}
-              </span>
-            </div>
-          ) : null}
-        </div>
+      <div className="tw-discount leading-none">
+        <span className="text-white text-[1.25rem] font-[600] uppercase leading-none tracking-1">
+          {offer.discount ?? 0}
+        </span>
+        <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
+          %
+        </span>
+        <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
+          &nbsp;OFF&nbsp;
+        </span>
+        {showValue ? (
+          <>
+            <span className="text-[#898989] text-[1.25rem] uppercase leading-none">
+              {value.label}&nbsp;
+            </span>
+            <span className="text-[#898989] text-[1.25rem] font-[600] uppercase leading-none">
+              {value.value}
+            </span>
+          </>
+        ) : null}
       </div>
     );
   }
@@ -110,27 +117,25 @@ function PriceBlock({ offer, badge, value }) {
   }
 
   return (
-    <div className="flex flex-col gap-1">
-      <div className="tw-discount flex items-end flex-wrap">
+    <div className="tw-discount leading-none">
+      <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
+        {badge.primary}&nbsp;
+      </span>
+      {badge.secondary ? (
         <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-          {badge.primary}&nbsp;
+          {badge.secondary}&nbsp;
         </span>
-        {badge.secondary ? (
-          <span className="text-white text-[1.25rem] font-[600] uppercase leading-none">
-            {badge.secondary}&nbsp;
+      ) : null}
+      {showValue ? (
+        <>
+          <span className="text-[#898989] text-[1.25rem] uppercase leading-none">
+            {value.label}&nbsp;
           </span>
-        ) : null}
-        {showValue ? (
-          <div className="flex items-end leading-none">
-            <span className="text-[#898989] text-[1rem] uppercase tracking-wide">
-              {value.label}&nbsp;
-            </span>
-            <span className="text-[#898989] text-[1.25rem] font-[600] uppercase">
-              {value.value}
-            </span>
-          </div>
-        ) : null}
-      </div>
+          <span className="text-[#898989] text-[1.25rem] font-[600] uppercase leading-none">
+            {value.value}
+          </span>
+        </>
+      ) : null}
     </div>
   );
 }

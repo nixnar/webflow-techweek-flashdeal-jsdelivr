@@ -588,6 +588,15 @@ video {
 .mt-auto{
   margin-top: auto !important;
 }
+.line-clamp-3{
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+}
+.inline{
+  display: inline !important;
+}
 .flex{
   display: flex !important;
 }
@@ -596,6 +605,9 @@ video {
 }
 .hidden{
   display: none !important;
+}
+.aspect-square{
+  aspect-ratio: 1 / 1 !important;
 }
 .h-4{
   height: 1rem !important;
@@ -606,12 +618,6 @@ video {
 .h-\\[108px\\]{
   height: 108px !important;
 }
-.h-\\[4rem\\]{
-  height: 4rem !important;
-}
-.h-\\[5rem\\]{
-  height: 5rem !important;
-}
 .h-fit{
   height: -moz-fit-content !important;
   height: fit-content !important;
@@ -621,6 +627,9 @@ video {
 }
 .max-h-\\[108px\\]{
   max-height: 108px !important;
+}
+.max-h-\\[4rem\\]{
+  max-height: 4rem !important;
 }
 .max-h-\\[80vh\\]{
   max-height: 80vh !important;
@@ -643,11 +652,11 @@ video {
 .w-\\[108px\\]{
   width: 108px !important;
 }
-.w-\\[4rem\\]{
-  width: 4rem !important;
+.w-\\[3\\.625rem\\]{
+  width: 3.625rem !important;
 }
-.w-\\[5rem\\]{
-  width: 5rem !important;
+.w-\\[3\\.875rem\\]{
+  width: 3.875rem !important;
 }
 .w-\\[min\\(1100px\\2c 95vw\\)\\]{
   width: min(1100px,95vw) !important;
@@ -675,6 +684,9 @@ video {
 }
 .flex-none{
   flex: none !important;
+}
+.shrink-0{
+  flex-shrink: 0 !important;
 }
 .grow{
   flex-grow: 1 !important;
@@ -766,8 +778,14 @@ video {
 .whitespace-nowrap{
   white-space: nowrap !important;
 }
+.text-wrap{
+  text-wrap: wrap !important;
+}
 .border{
   border-width: 1px !important;
+}
+.border-2{
+  border-width: 2px !important;
 }
 .border-\\[1px\\]{
   border-width: 1px !important;
@@ -775,10 +793,21 @@ video {
 .border-b-2{
   border-bottom-width: 2px !important;
 }
+.border-b-\\[1px\\]{
+  border-bottom-width: 1px !important;
+}
+.border-red-500{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(239, 68, 68, 1) !important;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity, 1)) !important;
+}
 .border-white{
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, 1) !important;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
+}
+.border-white\\/30{
+  border-color: rgba(255, 255, 255, 0.3) !important;
 }
 .bg-black{
   --tw-bg-opacity: 1 !important;
@@ -922,9 +951,6 @@ video {
 .leading-\\[1\\.25\\]{
   line-height: 1.25 !important;
 }
-.leading-\\[1\\.35\\]{
-  line-height: 1.35 !important;
-}
 .leading-none{
   line-height: 1 !important;
 }
@@ -1058,6 +1084,11 @@ h1 {
   }
 }
 
+p {
+  line-height: 130%;
+  font-size: 0.875rem;
+}
+
 .tw-offer-desc {
   flex: 1 1 auto;
   overflow: hidden;
@@ -1145,10 +1176,6 @@ h1 {
 
   .sm\\:text-\\[0\\.5rem\\]{
     font-size: 0.5rem !important;
-  }
-
-  .sm\\:text-\\[0\\.875rem\\]{
-    font-size: 0.875rem !important;
   }
 }
 
@@ -18128,11 +18155,11 @@ var VendorLogo = function VendorLogo(_ref) {
     alt = _ref.alt,
     isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "self-start ".concat(isMobile ? "w-[4rem] h-[4rem] p-2" : "w-[5rem] h-[5rem] p-3", " bg-white flex items-center justify-center overflow-hidden")
+    className: "self-start shrink-0 ".concat(isMobile ? "w-[3.625rem] aspect-square p-2" : "w-[3.875rem] aspect-square p-3", " bg-white flex items-center justify-center overflow-hidden")
   }, src ? /*#__PURE__*/react.createElement("img", {
     src: src,
     alt: alt,
-    className: "max-h-full max-w-full object-contain"
+    className: "h-full w-full object-contain"
   }) : /*#__PURE__*/react.createElement("div", {
     className: "h-6 w-6 bg-black/10"
   }));
@@ -18147,30 +18174,33 @@ function OfferCard(_ref2) {
   var _splitDescription = splitDescription(offer.description || ""),
     descriptionHtml = _splitDescription.descriptionHtml;
   return /*#__PURE__*/react.createElement("div", {
-    className: "border border-white p-[4px] bg-black"
+    className: "border border-white/30 p-[4px] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border border-white p-4 flex flex-col gap-4 h-full"
+    className: "border border-white py-3 flex flex-col gap-3 h-full"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-col gap-3"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-3 px-3"
   }, /*#__PURE__*/react.createElement(VendorLogo, {
     src: vendor.logo,
     alt: vendor.name,
     isMobile: isMobile
-  }), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-col gap-2 tw-offer-text"
-  }, /*#__PURE__*/react.createElement("h3", {
-    className: "text-white text-[1rem] font-[700] leading-tight"
-  }, offer.name), /*#__PURE__*/react.createElement("div", {
-    className: "tw-offer-desc text-white/80 text-[0.75rem] sm:text-[0.5rem] leading-[1.35] ",
+  }), /*#__PURE__*/react.createElement("h3", {
+    className: "text-white text-[1rem] font-[700] leading-[1.25] line-clamp-3"
+  }, offer.name)), /*#__PURE__*/react.createElement("div", {
+    className: "px-3 utext-white/70 text-[0.75rem] sm:text-[0.5rem] max-h-[4rem] border-b-[1px] border-white  overflow-hidden",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(descriptionHtml)
     }
   })), /*#__PURE__*/react.createElement("div", {
-    className: "mt-auto flex flex-col gap-3"
+    className: "mt-auto flex flex-col gap-3 px-3",
+    uo: true
   }, /*#__PURE__*/react.createElement(PriceBlock, {
     offer: offer,
     badge: badge,
     value: value
   }), /*#__PURE__*/react.createElement("button", {
-    className: "self-start text-[1rem] sm:text-[0.875rem] whitespace-nowrap border tracking-[0.05rem] border-white px-3 py-[10px] uppercase font-[600] leading-[1.25] bg-white text-black hover:bg-[#00e1ff] transition-colors",
+    className: "self-start font-medium whitespace-nowrap border border-white  uppercase  bg-white text-black hover:bg-[#00e1ff] transition-colors ".concat(isMobile ? "text-[0.875rem] py-[0.375rem] px-[0.5rem] leading-[1.25]" : "text-[1rem] tracking-[0.05rem] px-3 py-[10px] leading-[1.25]"),
     onClick: function onClick() {
       return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
     }
@@ -18185,22 +18215,18 @@ function PriceBlock(_ref3) {
   if (dealType === "discount" && (offer.discount_type || "").toLowerCase() === "percentage") {
     var _offer$discount;
     return /*#__PURE__*/react.createElement("div", {
-      className: "flex flex-col gap-1"
-    }, /*#__PURE__*/react.createElement("div", {
-      className: "tw-discount flex items-end flex-wrap"
+      className: "tw-discount leading-none"
     }, /*#__PURE__*/react.createElement("span", {
       className: "text-white text-[1.25rem] font-[600] uppercase leading-none tracking-1"
     }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0), /*#__PURE__*/react.createElement("span", {
       className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
     }, "%"), /*#__PURE__*/react.createElement("span", {
       className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
-    }, "\xA0OFF\xA0"), showValue ? /*#__PURE__*/react.createElement("div", {
-      className: "flex items-end leading-none"
-    }, /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] text-[1rem] uppercase tracking-wide"
+    }, "\xA0OFF\xA0"), showValue ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", {
+      className: "text-[#898989] text-[1.25rem] uppercase leading-none"
     }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] text-[1.25rem] font-[600] uppercase"
-    }, value.value)) : null));
+      className: "text-[#898989] text-[1.25rem] font-[600] uppercase leading-none"
+    }, value.value)) : null);
   }
   if (dealType === "special_offer" || dealType === "special-offer") {
     return /*#__PURE__*/react.createElement("div", {
@@ -18210,20 +18236,16 @@ function PriceBlock(_ref3) {
     }, "Special Offer"));
   }
   return /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-col gap-1"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "tw-discount flex items-end flex-wrap"
+    className: "tw-discount leading-none"
   }, /*#__PURE__*/react.createElement("span", {
     className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
   }, badge.primary, "\xA0"), badge.secondary ? /*#__PURE__*/react.createElement("span", {
     className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
-  }, badge.secondary, "\xA0") : null, showValue ? /*#__PURE__*/react.createElement("div", {
-    className: "flex items-end leading-none"
-  }, /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] text-[1rem] uppercase tracking-wide"
+  }, badge.secondary, "\xA0") : null, showValue ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", {
+    className: "text-[#898989] text-[1.25rem] uppercase leading-none"
   }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] text-[1.25rem] font-[600] uppercase"
-  }, value.value)) : null));
+    className: "text-[#898989] text-[1.25rem] font-[600] uppercase leading-none"
+  }, value.value)) : null);
 }
 ;// ./src/ui/OfferGrid.js
 
