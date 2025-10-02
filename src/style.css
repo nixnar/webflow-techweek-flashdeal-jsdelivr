@@ -32,6 +32,10 @@
   scrollbar-width: none;
 }
 
+h1 {
+  @apply text-[3.25rem] font-[600] uppercase leading-none;
+}
+
 /* For Internet Explorer and older Edge */
 * {
   -ms-overflow-style: none;

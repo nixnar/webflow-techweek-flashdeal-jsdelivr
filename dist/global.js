@@ -561,17 +561,14 @@ video {
 .top-0{
   top: 0px !important;
 }
+.z-10{
+  z-index: 10 !important;
+}
 .z-50{
   z-index: 50 !important;
 }
 .z-\\[60\\]{
   z-index: 60 !important;
-}
-.z-10{
-  z-index: 10 !important;
-}
-.z-20{
-  z-index: 20 !important;
 }
 .mb-3{
   margin-bottom: 0.75rem !important;
@@ -590,9 +587,6 @@ video {
 }
 .mt-auto{
   margin-top: auto !important;
-}
-.mt-3{
-  margin-top: 0.75rem !important;
 }
 .flex{
   display: flex !important;
@@ -778,12 +772,6 @@ video {
 .border-\\[1px\\]{
   border-width: 1px !important;
 }
-.border-2{
-  border-width: 2px !important;
-}
-.border-b{
-  border-bottom-width: 1px !important;
-}
 .border-b-2{
   border-bottom-width: 2px !important;
 }
@@ -791,11 +779,6 @@ video {
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, 1) !important;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
-}
-.border-red-500{
-  --tw-border-opacity: 1 !important;
-  border-color: rgba(239, 68, 68, 1) !important;
-  border-color: rgba(239, 68, 68, var(--tw-border-opacity, 1)) !important;
 }
 .bg-black{
   --tw-bg-opacity: 1 !important;
@@ -872,9 +855,8 @@ video {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
-.py-2{
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+.pb-4{
+  padding-bottom: 1rem !important;
 }
 .pr-2{
   padding-right: 0.5rem !important;
@@ -887,12 +869,6 @@ video {
 }
 .pt-2{
   padding-top: 0.5rem !important;
-}
-.pt-3{
-  padding-top: 0.75rem !important;
-}
-.pb-4{
-  padding-bottom: 1rem !important;
 }
 .text-center{
   text-align: center !important;
@@ -1037,6 +1013,13 @@ video {
 /* For Firefox */
 * {
   scrollbar-width: none;
+}
+
+h1{
+  font-size: 3.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 /* For Internet Explorer and older Edge */
