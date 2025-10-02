@@ -1015,11 +1015,20 @@ video {
   scrollbar-width: none;
 }
 
-h1{
+h1 {
   font-size: 3.25rem;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 10vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+  }
 }
 
 /* For Internet Explorer and older Edge */
