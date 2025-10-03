@@ -537,6 +537,9 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.pointer-events-none{
+  pointer-events: none !important;
+}
 .collapse{
   visibility: collapse !important;
 }
@@ -558,8 +561,26 @@ video {
   bottom: 0px !important;
   left: 0px !important;
 }
+.right-2{
+  right: 0.5rem !important;
+}
+.right-3{
+  right: 0.75rem !important;
+}
 .top-0{
   top: 0px !important;
+}
+.top-1\\/2{
+  top: 50% !important;
+}
+.bottom-0{
+  bottom: 0px !important;
+}
+.left-0{
+  left: 0px !important;
+}
+.right-0{
+  right: 0px !important;
 }
 .z-10{
   z-index: 10 !important;
@@ -569,6 +590,12 @@ video {
 }
 .z-\\[60\\]{
   z-index: 60 !important;
+}
+.z-\\[999\\]{
+  z-index: 999 !important;
+}
+.z-\\[9999\\]{
+  z-index: 9999 !important;
 }
 .mb-3{
   margin-bottom: 0.75rem !important;
@@ -594,8 +621,11 @@ video {
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 3 !important;
 }
-.inline{
-  display: inline !important;
+.line-clamp-2{
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
 }
 .flex{
   display: flex !important;
@@ -625,6 +655,9 @@ video {
 .h-full{
   height: 100% !important;
 }
+.h-8{
+  height: 2rem !important;
+}
 .max-h-\\[108px\\]{
   max-height: 108px !important;
 }
@@ -639,6 +672,12 @@ video {
 }
 .max-h-full{
   max-height: 100% !important;
+}
+.max-h-\\[4\\.25rem\\]{
+  max-height: 4.25rem !important;
+}
+.max-h-\\[3\\.25rem\\]{
+  max-height: 3.25rem !important;
 }
 .min-h-0{
   min-height: 0px !important;
@@ -670,6 +709,15 @@ video {
 .w-full{
   width: 100% !important;
 }
+.w-\\[3rem\\]{
+  width: 3rem !important;
+}
+.w-\\[2\\.75rem\\]{
+  width: 2.75rem !important;
+}
+.w-\\[2\\.5rem\\]{
+  width: 2.5rem !important;
+}
 .max-w-\\[1400px\\]{
   max-width: 1400px !important;
 }
@@ -690,6 +738,11 @@ video {
 }
 .grow{
   flex-grow: 1 !important;
+}
+.-translate-y-1\\/2{
+  --tw-translate-y: -50% !important;
+  transform: translate(var(--tw-translate-x), -50%) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .translate-x-\\[-0\\.25rem\\]{
   --tw-translate-x: -0.25rem !important;
@@ -718,9 +771,6 @@ video {
 }
 .items-start{
   align-items: flex-start !important;
-}
-.items-end{
-  align-items: flex-end !important;
 }
 .items-center{
   align-items: center !important;
@@ -778,14 +828,11 @@ video {
 .whitespace-nowrap{
   white-space: nowrap !important;
 }
-.text-wrap{
-  text-wrap: wrap !important;
+.break-words{
+  word-wrap: break-word !important;
 }
 .border{
   border-width: 1px !important;
-}
-.border-2{
-  border-width: 2px !important;
 }
 .border-\\[1px\\]{
   border-width: 1px !important;
@@ -795,11 +842,6 @@ video {
 }
 .border-b-\\[1px\\]{
   border-bottom-width: 1px !important;
-}
-.border-red-500{
-  --tw-border-opacity: 1 !important;
-  border-color: rgba(239, 68, 68, 1) !important;
-  border-color: rgba(239, 68, 68, var(--tw-border-opacity, 1)) !important;
 }
 .border-white{
   --tw-border-opacity: 1 !important;
@@ -825,9 +867,47 @@ video {
   background-color: rgba(255, 255, 255, 1) !important;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
 }
+.bg-gradient-to-t{
+  background-image: linear-gradient(to top, var(--tw-gradient-stops)) !important;
+}
+.from-black{
+  --tw-gradient-from: #000 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.from-black\\/50{
+  --tw-gradient-from: rgba(0, 0, 0, 0.5) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.from-black\\/30{
+  --tw-gradient-from: rgba(0, 0, 0, 0.3) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.from-black\\/70{
+  --tw-gradient-from: rgba(0, 0, 0, 0.7) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.from-0\\%{
+  --tw-gradient-from-position: 0% !important;
+}
+.to-transparent{
+  --tw-gradient-to: transparent var(--tw-gradient-to-position) !important;
+}
+.to-40\\%{
+  --tw-gradient-to-position: 40% !important;
+}
+.to-80\\%{
+  --tw-gradient-to-position: 80% !important;
+}
 .object-contain{
   -o-object-fit: contain !important;
      object-fit: contain !important;
+}
+.p-1{
+  padding: 0.25rem !important;
 }
 .p-2{
   padding: 0.5rem !important;
@@ -851,10 +931,6 @@ video {
 .px-4{
   padding-left: 1rem !important;
   padding-right: 1rem !important;
-}
-.px-6{
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
 }
 .px-\\[0\\.5rem\\]{
   padding-left: 0.5rem !important;
@@ -884,8 +960,21 @@ video {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+.py-\\[6px\\]{
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+.pb-1{
+  padding-bottom: 0.25rem !important;
+}
+.pb-2{
+  padding-bottom: 0.5rem !important;
+}
 .pb-4{
   padding-bottom: 1rem !important;
+}
+.pr-10{
+  padding-right: 2.5rem !important;
 }
 .pr-2{
   padding-right: 0.5rem !important;
@@ -898,6 +987,9 @@ video {
 }
 .pt-2{
   padding-top: 0.5rem !important;
+}
+.pt-3{
+  padding-top: 0.75rem !important;
 }
 .text-center{
   text-align: center !important;
@@ -933,6 +1025,9 @@ video {
 .text-\\[2rem\\]{
   font-size: 2rem !important;
 }
+.text-\\[1\\.125rem\\]{
+  font-size: 1.125rem !important;
+}
 .font-\\[600\\]{
   font-weight: 600 !important;
 }
@@ -962,9 +1057,6 @@ video {
 }
 .tracking-\\[0\\.05rem\\]{
   letter-spacing: 0.05rem !important;
-}
-.tracking-wide{
-  letter-spacing: 0.025em !important;
 }
 .text-\\[\\#898989\\]{
   --tw-text-opacity: 1 !important;
@@ -1050,7 +1142,7 @@ h1 {
 
 @media (max-width: 500px) {
   h1 {
-    font-size: 10vw;
+    font-size: 8vw;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1;
@@ -1085,6 +1177,11 @@ h1 {
 }
 
 p {
+  line-height: 130%;
+  font-size: 0.875rem;
+}
+
+li {
   line-height: 130%;
   font-size: 0.875rem;
 }
@@ -18155,7 +18252,7 @@ var VendorLogo = function VendorLogo(_ref) {
     alt = _ref.alt,
     isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "self-start shrink-0 ".concat(isMobile ? "w-[3.625rem] aspect-square p-2" : "w-[3.875rem] aspect-square p-3", " bg-white flex items-center justify-center overflow-hidden")
+    className: "self-start shrink-0 ".concat(isMobile ? "w-[2.5rem] aspect-square p-2" : "w-[3.875rem] aspect-square p-3", " bg-white flex items-center justify-center overflow-hidden")
   }, src ? /*#__PURE__*/react.createElement("img", {
     src: src,
     alt: alt,
@@ -18185,14 +18282,22 @@ function OfferCard(_ref2) {
     src: vendor.logo,
     alt: vendor.name,
     isMobile: isMobile
-  }), /*#__PURE__*/react.createElement("h3", {
-    className: "text-white text-[1rem] font-[700] leading-[1.25] line-clamp-3"
-  }, offer.name)), /*#__PURE__*/react.createElement("div", {
-    className: "px-3 utext-white/70 text-[0.75rem] sm:text-[0.5rem] max-h-[4rem] border-b-[1px] border-white  overflow-hidden",
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-col text-white"
+  }, !isMobile && /*#__PURE__*/react.createElement("div", {
+    className: "text-[1.25rem] font-[800] leading-[1.25]"
+  }, vendor.name), /*#__PURE__*/react.createElement("h3", {
+    className: "text-white text-[1rem] font-[600] leading-[1.25] ".concat(isMobile ? "line-clamp-2" : "line-clamp-2")
+  }, offer.name))), /*#__PURE__*/react.createElement("div", {
+    className: "relative px-3 border-b-[1px] border-white"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "text-white/70 max-h-[3.25rem] overflow-hidden",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(descriptionHtml)
     }
-  })), /*#__PURE__*/react.createElement("div", {
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/70 to-transparent from-0% to-80% pointer-events-none"
+  }))), /*#__PURE__*/react.createElement("div", {
     className: "mt-auto flex flex-col gap-3 px-3",
     uo: true
   }, /*#__PURE__*/react.createElement(PriceBlock, {
@@ -18215,36 +18320,36 @@ function PriceBlock(_ref3) {
   if (dealType === "discount" && (offer.discount_type || "").toLowerCase() === "percentage") {
     var _offer$discount;
     return /*#__PURE__*/react.createElement("div", {
-      className: "tw-discount leading-none"
+      className: "tw-discount leading-none text-[1.125rem] font-[600] break-words"
     }, /*#__PURE__*/react.createElement("span", {
-      className: "text-white text-[1.25rem] font-[600] uppercase leading-none tracking-1"
+      className: "text-white uppercase leading-none tracking-1"
     }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0), /*#__PURE__*/react.createElement("span", {
-      className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
+      className: "text-white uppercase leading-none"
     }, "%"), /*#__PURE__*/react.createElement("span", {
-      className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
+      className: "text-white uppercase leading-none"
     }, "\xA0OFF\xA0"), showValue ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] text-[1.25rem] uppercase leading-none"
+      className: "text-[#898989] uppercase leading-none"
     }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] text-[1.25rem] font-[600] uppercase leading-none"
+      className: "text-[#898989] uppercase leading-none"
     }, value.value)) : null);
   }
   if (dealType === "special_offer" || dealType === "special-offer") {
     return /*#__PURE__*/react.createElement("div", {
-      className: "flex flex-col gap-1"
+      className: "flex flex-col gap-1 text-[1.125rem] font-[600]"
     }, /*#__PURE__*/react.createElement("div", {
-      className: "text-white text-[1.25rem] font-[600] uppercase"
+      className: "text-white uppercase"
     }, "Special Offer"));
   }
   return /*#__PURE__*/react.createElement("div", {
-    className: "tw-discount leading-none"
+    className: "tw-discount leading-none text-[1.125rem] font-[600] break-words"
   }, /*#__PURE__*/react.createElement("span", {
-    className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
+    className: "text-white uppercase leading-none"
   }, badge.primary, "\xA0"), badge.secondary ? /*#__PURE__*/react.createElement("span", {
-    className: "text-white text-[1.25rem] font-[600] uppercase leading-none"
+    className: "text-white uppercase leading-none"
   }, badge.secondary, "\xA0") : null, showValue ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] text-[1.25rem] uppercase leading-none"
+    className: "text-[#898989] uppercase leading-none"
   }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] text-[1.25rem] font-[600] uppercase leading-none"
+    className: "text-[#898989] uppercase leading-none"
   }, value.value)) : null);
 }
 ;// ./src/ui/OfferGrid.js
@@ -18859,6 +18964,47 @@ var App = function App() {
     }
     return Array.from(names).sort();
   }, [offers]);
+
+  // Calculate offer counts for each service based on search query
+  var serviceCounts = react.useMemo(function () {
+    var query = search.trim().toLowerCase();
+    var counts = new Map();
+
+    // Initialize all services with 0
+    services.forEach(function (name) {
+      return counts.set(name, 0);
+    });
+
+    // Count matching offers for each service
+    var _iterator3 = _createForOfIteratorHelper(offers),
+      _step3;
+    try {
+      for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+        var offer = _step3.value;
+        var matchesSearch = true;
+        if (query) {
+          var text = "".concat(offer.name || "", " ").concat((offer.description || "").replace(/<[^>]*>/g, " ")).toLowerCase();
+          matchesSearch = text.includes(query);
+        }
+        if (matchesSearch) {
+          var _offer$vendor3;
+          var vendorServices = (((_offer$vendor3 = offer.vendor) === null || _offer$vendor3 === void 0 ? void 0 : _offer$vendor3.services) || []).map(function (s) {
+            return s === null || s === void 0 ? void 0 : s.name;
+          });
+          vendorServices.forEach(function (name) {
+            if (name && counts.has(name)) {
+              counts.set(name, counts.get(name) + 1);
+            }
+          });
+        }
+      }
+    } catch (err) {
+      _iterator3.e(err);
+    } finally {
+      _iterator3.f();
+    }
+    return counts;
+  }, [offers, search, services]);
   var filteredOffers = react.useMemo(function () {
     var query = search.trim().toLowerCase();
     var hasServiceFilter = selectedServices.size > 0;
@@ -18897,21 +19043,48 @@ var App = function App() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "border-[1px] border-white p-[4px] bg-black h-fit"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex w-full p-4 sticky top-0 bg-black"
+    className: "flex w-full p-4 pt-3 pb-1 sticky top-0 bg-black z-10"
   }, /*#__PURE__*/react.createElement("div", {
     className: "w-full flex flex-col ".concat(isMobile ? "gap-2" : "gap-4")
+  }, isMobile ? /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-2 border-[1px] border-white/30 p-1 z-[9999] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center justify-between"
-  }, /*#__PURE__*/react.createElement("p", {
-    className: "text-[2rem] font-[700] uppercase leading-none"
-  }, "OFFERS"), isMobile ? /*#__PURE__*/react.createElement("button", {
+    className: "flex-1 relative"
+  }, /*#__PURE__*/react.createElement("input", {
+    type: "text",
+    value: search,
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    },
+    placeholder: "Search offers\u2026",
+    className: "w-full bg-black text-white placeholder-white/40 border border-white px-3 py-[6px] pr-10 focus:outline-none",
+    ref: searchInputRef
+  }), search && /*#__PURE__*/react.createElement("button", {
+    onClick: function onClick() {
+      return setSearch("");
+    },
+    className: "absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-white/70 transition-colors",
+    "aria-label": "Clear search"
+  }, /*#__PURE__*/react.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M15 5L5 15M5 5L15 15",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })))), /*#__PURE__*/react.createElement("button", {
     onClick: function onClick() {
       setSearchMode(false);
       setFiltersOpen(function (v) {
         return !v;
       });
     },
-    className: "uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black",
+    className: "uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black whitespace-nowrap",
     "aria-label": "Toggle filters"
   }, /*#__PURE__*/react.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -18922,8 +19095,12 @@ var App = function App() {
   }, /*#__PURE__*/react.createElement("path", {
     d: "M2.625 1.75V3.47949C2.625 3.91016 2.83691 4.31348 3.19238 4.55957L6.125 6.78125V12.25L7.875 10.5V6.78125L10.8076 4.55957C11.1631 4.31348 11.375 3.91016 11.375 3.47949V1.75H2.625ZM3.5 2.625H10.5V3.47949C10.5 3.62305 10.4282 3.75635 10.3086 3.83838L10.3018 3.8418L7.29053 6.125H6.70947L3.69824 3.8418L3.69141 3.83838C3.57178 3.75635 3.5 3.62305 3.5 3.47949V2.625Z",
     fill: "black"
-  })), /*#__PURE__*/react.createElement("p", null, "FILTERS")) : null), !isMobile || filtersOpen ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-3 pt-2"
+  })), /*#__PURE__*/react.createElement("p", null, "FILTERS"))) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center justify-between"
+  }, /*#__PURE__*/react.createElement("p", {
+    className: "text-[2rem] font-[700] uppercase leading-none"
+  }, "OFFERS")), /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-3 pt-2 relative"
   }, /*#__PURE__*/react.createElement("input", {
     type: "text",
     value: search,
@@ -18931,11 +19108,30 @@ var App = function App() {
       return setSearch(e.target.value);
     },
     placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white ".concat(isMobile ? "px-3 py-1" : "px-6 py-3", " focus:outline-none"),
+    className: "w-full bg-black text-white placeholder-white/40 border border-white px-3 py-1 pr-10 focus:outline-none",
     ref: searchInputRef
-  })), /*#__PURE__*/react.createElement("div", {
+  }), search && /*#__PURE__*/react.createElement("button", {
+    onClick: function onClick() {
+      return setSearch("");
+    },
+    className: "absolute right-3 text-white hover:text-white/70 transition-colors",
+    "aria-label": "Clear search"
+  }, /*#__PURE__*/react.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M15 5L5 15M5 5L15 15",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }))))), !isMobile || filtersOpen ? /*#__PURE__*/react.createElement("div", {
     className: "flex flex-wrap items-center pt-1 ".concat(isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2")
   }, services.map(function (name) {
+    var count = serviceCounts.get(name) || 0;
     return /*#__PURE__*/react.createElement("label", {
       key: name,
       className: "flex items-center gap-2 ".concat(isMobile && "gap-1", " cursor-pointer text-white font-[600]")
@@ -18948,10 +19144,20 @@ var App = function App() {
       className: "tw-filter-checkbox h-4 w-4"
     }), /*#__PURE__*/react.createElement("span", {
       className: "text-[0.95rem] ".concat(isMobile ? "text-[0.75rem]" : "")
-    }, name));
-  }))) : isMobile ? /*#__PURE__*/react.createElement("div", {
-    className: "text-white/60 text-[0.9rem]"
-  }, selectedServices.size > 0 ? "".concat(selectedServices.size, " selected") : "") : null)), /*#__PURE__*/react.createElement("div", {
+    }, name, " (", count, ")"));
+  })) : isMobile ? /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center gap-3 text-[0.9rem]"
+  }, selectedServices.size > 0 && /*#__PURE__*/react.createElement("div", {
+    className: "pb-2"
+  }, /*#__PURE__*/react.createElement("span", {
+    className: "text-white/60"
+  }, selectedServices.size, " filter(s) selected"), /*#__PURE__*/react.createElement("button", {
+    onClick: function onClick() {
+      setSelectedServices(new Set());
+      setSearch("");
+    },
+    className: "text-white underline hover:text-white/70 transition-colors"
+  }, "clear"))) : null)), /*#__PURE__*/react.createElement("div", {
     className: "p-4 pt-0"
   }, isLoading ? /*#__PURE__*/react.createElement("p", {
     className: "text-center py-12"

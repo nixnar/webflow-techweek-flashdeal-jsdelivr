@@ -130,6 +130,40 @@ const App = () => {
     return Array.from(names).sort();
   }, [offers]);
 
+  // Calculate offer counts for each service based on search query
+  const serviceCounts = React.useMemo(() => {
+    const query = search.trim().toLowerCase();
+    const counts = new Map();
+
+    // Initialize all services with 0
+    services.forEach((name) => counts.set(name, 0));
+
+    // Count matching offers for each service
+    for (const offer of offers) {
+      let matchesSearch = true;
+      if (query) {
+        const text = `${offer.name || ""} ${(offer.description || "").replace(
+          /<[^>]*>/g,
+          " "
+        )}`.toLowerCase();
+        matchesSearch = text.includes(query);
+      }
+
+      if (matchesSearch) {
+        const vendorServices = (offer.vendor?.services || []).map(
+          (s) => s?.name
+        );
+        vendorServices.forEach((name) => {
+          if (name && counts.has(name)) {
+            counts.set(name, counts.get(name) + 1);
+          }
+        });
+      }
+    }
+
+    return counts;
+  }, [offers, search, services]);
+
   const filteredOffers = React.useMemo(() => {
     const query = search.trim().toLowerCase();
     const hasServiceFilter = selectedServices.size > 0;
@@ -165,23 +199,55 @@ const App = () => {
       <div className="flex w-full justify-center text-white">
         <div className="max-w-[1400px] grow flex flex-col gap-4">
           <div className="border-[1px] border-white p-[4px] bg-black h-fit">
-            <div className={`flex w-full p-4 sticky top-0 bg-black`}>
+            <div
+              className={`flex w-full p-4 pt-3 pb-1 sticky top-0 bg-black z-10`}
+            >
               <div
                 className={`w-full flex flex-col ${
                   isMobile ? "gap-2" : "gap-4"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <p className="text-[2rem] font-[700] uppercase leading-none">
-                    OFFERS
-                  </p>
-                  {isMobile ? (
+                {isMobile ? (
+                  <div className="flex items-center gap-2 border-[1px] border-white/30 p-1 z-[9999] bg-black">
+                    <div className="flex-1 relative">
+                      <input
+                        type="text"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Search offers…"
+                        className="w-full bg-black text-white placeholder-white/40 border border-white px-3 py-[6px] pr-10 focus:outline-none"
+                        ref={searchInputRef}
+                      />
+                      {search && (
+                        <button
+                          onClick={() => setSearch("")}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-white/70 transition-colors"
+                          aria-label="Clear search"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 5L5 15M5 5L15 15"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
                     <button
                       onClick={() => {
                         setSearchMode(false);
                         setFiltersOpen((v) => !v);
                       }}
-                      className="uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black"
+                      className="uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black whitespace-nowrap"
                       aria-label="Toggle filters"
                     >
                       <svg
@@ -198,29 +264,59 @@ const App = () => {
                       </svg>
                       <p>FILTERS</p>
                     </button>
-                  ) : null}
-                </div>
-
-                {!isMobile || filtersOpen ? (
+                  </div>
+                ) : (
                   <>
-                    <div className="flex items-center gap-3 pt-2">
+                    <div className="flex items-center justify-between">
+                      <p className="text-[2rem] font-[700] uppercase leading-none">
+                        OFFERS
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 pt-2 relative">
                       <input
                         type="text"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         placeholder="Search offers…"
-                        className={`w-full bg-black text-white placeholder-white/40 border border-white ${
-                          isMobile ? "px-3 py-1" : "px-6 py-3"
-                        } focus:outline-none`}
+                        className="w-full bg-black text-white placeholder-white/40 border border-white px-3 py-1 pr-10 focus:outline-none"
                         ref={searchInputRef}
                       />
+                      {search && (
+                        <button
+                          onClick={() => setSearch("")}
+                          className="absolute right-3 text-white hover:text-white/70 transition-colors"
+                          aria-label="Clear search"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 5L5 15M5 5L15 15"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      )}
                     </div>
-                    <div
-                      className={`flex flex-wrap items-center pt-1 ${
-                        isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2"
-                      }`}
-                    >
-                      {services.map((name) => (
+                  </>
+                )}
+
+                {!isMobile || filtersOpen ? (
+                  <div
+                    className={`flex flex-wrap items-center pt-1 ${
+                      isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2"
+                    }`}
+                  >
+                    {services.map((name) => {
+                      const count = serviceCounts.get(name) || 0;
+                      return (
                         <label
                           key={name}
                           className={`flex items-center gap-2 ${
@@ -238,17 +334,30 @@ const App = () => {
                               isMobile ? "text-[0.75rem]" : ""
                             }`}
                           >
-                            {name}
+                            {name} ({count})
                           </span>
                         </label>
-                      ))}
-                    </div>
-                  </>
+                      );
+                    })}
+                  </div>
                 ) : isMobile ? (
-                  <div className="text-white/60 text-[0.9rem]">
-                    {selectedServices.size > 0
-                      ? `${selectedServices.size} selected`
-                      : ""}
+                  <div className="flex items-center gap-3 text-[0.9rem]">
+                    {selectedServices.size > 0 && (
+                      <div className="pb-2">
+                        <span className="text-white/60">
+                          {selectedServices.size} filter(s) selected
+                        </span>
+                        <button
+                          onClick={() => {
+                            setSelectedServices(new Set());
+                            setSearch("");
+                          }}
+                          className="text-white underline hover:text-white/70 transition-colors"
+                        >
+                          clear
+                        </button>
+                      </div>
+                    )}
                   </div>
                 ) : null}
               </div>
