@@ -597,6 +597,22 @@ video {
 .z-\\[9999\\]{
   z-index: 9999 !important;
 }
+.my-2{
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.mx-2{
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+.mx-4{
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+.my-auto{
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
 .mb-3{
   margin-bottom: 0.75rem !important;
 }
@@ -727,6 +743,9 @@ video {
 .max-w-none{
   max-width: none !important;
 }
+.max-w-\\[20rem\\]{
+  max-width: 20rem !important;
+}
 .flex-1{
   flex: 1 1 0% !important;
 }
@@ -760,6 +779,11 @@ video {
 .resize{
   resize: both !important;
 }
+.appearance-none{
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+}
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
@@ -774,6 +798,9 @@ video {
 }
 .items-center{
   align-items: center !important;
+}
+.justify-end{
+  justify-content: flex-end !important;
 }
 .justify-center{
   justify-content: center !important;
@@ -837,6 +864,9 @@ video {
 .border-\\[1px\\]{
   border-width: 1px !important;
 }
+.border-2{
+  border-width: 2px !important;
+}
 .border-b-2{
   border-bottom-width: 2px !important;
 }
@@ -850,6 +880,11 @@ video {
 }
 .border-white\\/30{
   border-color: rgba(255, 255, 255, 0.3) !important;
+}
+.border-red-500{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(239, 68, 68, 1) !important;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity, 1)) !important;
 }
 .bg-black{
   --tw-bg-opacity: 1 !important;
@@ -866,6 +901,21 @@ video {
   --tw-bg-opacity: 1 !important;
   background-color: rgba(255, 255, 255, 1) !important;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
+}
+.bg-\\[\\#090909\\]{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(9, 9, 9, 1) !important;
+  background-color: rgba(9, 9, 9, var(--tw-bg-opacity, 1)) !important;
+}
+.bg-\\[\\#ffffff\\]{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 1) !important;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
+}
+.bg-\\[\\#191919\\]{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(25, 25, 25, 1) !important;
+  background-color: rgba(25, 25, 25, var(--tw-bg-opacity, 1)) !important;
 }
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops)) !important;
@@ -964,6 +1014,26 @@ video {
   padding-top: 6px !important;
   padding-bottom: 6px !important;
 }
+.py-2{
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.px-2{
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+.px-1{
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+.py-\\[0\\.18rem\\]{
+  padding-top: 0.18rem !important;
+  padding-bottom: 0.18rem !important;
+}
+.py-\\[5px\\]{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
 .pb-1{
   padding-bottom: 0.25rem !important;
 }
@@ -990,6 +1060,15 @@ video {
 }
 .pt-3{
   padding-top: 0.75rem !important;
+}
+.pb-0{
+  padding-bottom: 0px !important;
+}
+.pb-3{
+  padding-bottom: 0.75rem !important;
+}
+.pt-4{
+  padding-top: 1rem !important;
 }
 .text-center{
   text-align: center !important;
@@ -1095,6 +1174,12 @@ video {
 }
 .placeholder-white\\/40::placeholder{
   color: rgba(255, 255, 255, 0.4) !important;
+}
+.opacity-80{
+  opacity: 0.8 !important;
+}
+.opacity-65{
+  opacity: 0.65 !important;
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -1258,6 +1343,12 @@ li {
 
 .hover\\:text-white\\/70:hover{
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.focus\\:border-white:focus{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
 }
 
 .focus\\:outline-none:focus{
@@ -18273,7 +18364,7 @@ function OfferCard(_ref2) {
   return /*#__PURE__*/react.createElement("div", {
     className: "border border-white/30 p-[4px] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border border-white py-3 flex flex-col gap-3 h-full"
+    className: "border border-white pt-3 flex flex-col h-full"
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex flex-col gap-3"
   }, /*#__PURE__*/react.createElement("div", {
@@ -18285,7 +18376,7 @@ function OfferCard(_ref2) {
   }), /*#__PURE__*/react.createElement("div", {
     className: "flex flex-col text-white"
   }, !isMobile && /*#__PURE__*/react.createElement("div", {
-    className: "text-[1.25rem] font-[800] leading-[1.25]"
+    className: "text-[1rem] font-[800] leading-[1.25] opacity-65"
   }, vendor.name), /*#__PURE__*/react.createElement("h3", {
     className: "text-white text-[1rem] font-[600] leading-[1.25] ".concat(isMobile ? "line-clamp-2" : "line-clamp-2")
   }, offer.name))), /*#__PURE__*/react.createElement("div", {
@@ -18298,14 +18389,13 @@ function OfferCard(_ref2) {
   }), /*#__PURE__*/react.createElement("div", {
     className: "absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/70 to-transparent from-0% to-80% pointer-events-none"
   }))), /*#__PURE__*/react.createElement("div", {
-    className: "mt-auto flex flex-col gap-3 px-3",
-    uo: true
+    className: "flex flex-col flex-1 justify-end gap-3 py-3 px-3 bg-[#191919]"
   }, /*#__PURE__*/react.createElement(PriceBlock, {
     offer: offer,
     badge: badge,
     value: value
   }), /*#__PURE__*/react.createElement("button", {
-    className: "self-start font-medium whitespace-nowrap border border-white  uppercase  bg-white text-black hover:bg-[#00e1ff] transition-colors ".concat(isMobile ? "text-[0.875rem] py-[0.375rem] px-[0.5rem] leading-[1.25]" : "text-[1rem] tracking-[0.05rem] px-3 py-[10px] leading-[1.25]"),
+    className: "self-start font-medium whitespace-nowrap border border-white  uppercase  bg-white text-black hover:bg-[#00e1ff] transition-colors ".concat(isMobile ? "text-[0.875rem] py-[0.375rem] px-[0.5rem] leading-[1.25]" : "text-[0.875rem] tracking-[0.05rem] px-2 py-2 font-[700] leading-[1.25]"),
     onClick: function onClick() {
       return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
     }
@@ -19041,13 +19131,13 @@ var App = function App() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "max-w-[1400px] grow flex flex-col gap-4"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border-[1px] border-white p-[4px] bg-black h-fit"
+    className: "border-[1px] border-white bg-black h-fit"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex w-full p-4 pt-3 pb-1 sticky top-0 bg-black z-10"
+    className: "flex w-full ".concat(isMobile ? "pt-2" : "", " sticky top-0 bg-black z-10")
   }, /*#__PURE__*/react.createElement("div", {
-    className: "w-full flex flex-col ".concat(isMobile ? "gap-2" : "gap-4")
+    className: "w-full flex flex-col ".concat(isMobile ? "gap-2" : "gap-2 border-[1px] border-white/30 mx-4 mt-4")
   }, isMobile ? /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-2 border-[1px] border-white/30 p-1 z-[9999] bg-black"
+    className: "flex items-center gap-2 border-[1px] mx-2 border-white/30 p-1 z-[9999] bg-black"
   }, /*#__PURE__*/react.createElement("div", {
     className: "flex-1 relative"
   }, /*#__PURE__*/react.createElement("input", {
@@ -19057,7 +19147,7 @@ var App = function App() {
       return setSearch(e.target.value);
     },
     placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white px-3 py-[6px] pr-10 focus:outline-none",
+    className: "w-full bg-black text-white placeholder-white/40  px-3 py-[6px] pr-10 focus:outline-none appearance-none",
     ref: searchInputRef
   }), search && /*#__PURE__*/react.createElement("button", {
     onClick: function onClick() {
@@ -19096,11 +19186,7 @@ var App = function App() {
     d: "M2.625 1.75V3.47949C2.625 3.91016 2.83691 4.31348 3.19238 4.55957L6.125 6.78125V12.25L7.875 10.5V6.78125L10.8076 4.55957C11.1631 4.31348 11.375 3.91016 11.375 3.47949V1.75H2.625ZM3.5 2.625H10.5V3.47949C10.5 3.62305 10.4282 3.75635 10.3086 3.83838L10.3018 3.8418L7.29053 6.125H6.70947L3.69824 3.8418L3.69141 3.83838C3.57178 3.75635 3.5 3.62305 3.5 3.47949V2.625Z",
     fill: "black"
   })), /*#__PURE__*/react.createElement("p", null, "FILTERS"))) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center justify-between"
-  }, /*#__PURE__*/react.createElement("p", {
-    className: "text-[2rem] font-[700] uppercase leading-none"
-  }, "OFFERS")), /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-3 pt-2 relative"
+    className: "flex items-center gap-3 px-4 pt-4 relative"
   }, /*#__PURE__*/react.createElement("input", {
     type: "text",
     value: search,
@@ -19108,7 +19194,7 @@ var App = function App() {
       return setSearch(e.target.value);
     },
     placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white px-3 py-1 pr-10 focus:outline-none",
+    className: "w-full bg-black text-white placeholder-white/40 border border-white/30 focus:border-white px-3 py-1 pr-10 focus:outline-none appearance-none",
     ref: searchInputRef
   }), search && /*#__PURE__*/react.createElement("button", {
     onClick: function onClick() {
@@ -19129,7 +19215,7 @@ var App = function App() {
     strokeLinecap: "round",
     strokeLinejoin: "round"
   }))))), !isMobile || filtersOpen ? /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-wrap items-center pt-1 ".concat(isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2")
+    className: "flex flex-wrap items-center px-4 pt-1 pb-2 border-b-[1px] border-white ".concat(isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2 border-white/30")
   }, services.map(function (name) {
     var count = serviceCounts.get(name) || 0;
     return /*#__PURE__*/react.createElement("label", {
@@ -19158,7 +19244,7 @@ var App = function App() {
     },
     className: "text-white underline hover:text-white/70 transition-colors"
   }, "clear"))) : null)), /*#__PURE__*/react.createElement("div", {
-    className: "p-4 pt-0"
+    className: isMobile ? "p-2 pt-0" : "p-4"
   }, isLoading ? /*#__PURE__*/react.createElement("p", {
     className: "text-center py-12"
   }, "Loading offers\u2026") : filteredOffers.length > 0 ? /*#__PURE__*/react.createElement(OfferGrid, {

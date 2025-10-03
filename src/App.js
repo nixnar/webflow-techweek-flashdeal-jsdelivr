@@ -198,24 +198,28 @@ const App = () => {
     <div className="tailwind">
       <div className="flex w-full justify-center text-white">
         <div className="max-w-[1400px] grow flex flex-col gap-4">
-          <div className="border-[1px] border-white p-[4px] bg-black h-fit">
+          <div className="border-[1px] border-white bg-black h-fit">
             <div
-              className={`flex w-full p-4 pt-3 pb-1 sticky top-0 bg-black z-10`}
+              className={`flex w-full ${
+                isMobile ? "pt-2" : ""
+              } sticky top-0 bg-black z-10`}
             >
               <div
                 className={`w-full flex flex-col ${
-                  isMobile ? "gap-2" : "gap-4"
+                  isMobile
+                    ? "gap-2"
+                    : "gap-2 border-[1px] border-white/30 mx-4 mt-4"
                 }`}
               >
                 {isMobile ? (
-                  <div className="flex items-center gap-2 border-[1px] border-white/30 p-1 z-[9999] bg-black">
+                  <div className="flex items-center gap-2 border-[1px] mx-2 border-white/30 p-1 z-[9999] bg-black">
                     <div className="flex-1 relative">
                       <input
                         type="text"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         placeholder="Search offers…"
-                        className="w-full bg-black text-white placeholder-white/40 border border-white px-3 py-[6px] pr-10 focus:outline-none"
+                        className="w-full bg-black text-white placeholder-white/40  px-3 py-[6px] pr-10 focus:outline-none appearance-none"
                         ref={searchInputRef}
                       />
                       {search && (
@@ -267,18 +271,15 @@ const App = () => {
                   </div>
                 ) : (
                   <>
-                    <div className="flex items-center justify-between">
-                      <p className="text-[2rem] font-[700] uppercase leading-none">
-                        OFFERS
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 pt-2 relative">
+                    <div
+                      className={`flex items-center gap-3 px-4 pt-4 relative`}
+                    >
                       <input
                         type="text"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         placeholder="Search offers…"
-                        className="w-full bg-black text-white placeholder-white/40 border border-white px-3 py-1 pr-10 focus:outline-none"
+                        className="w-full bg-black text-white placeholder-white/40 border border-white/30 focus:border-white px-3 py-1 pr-10 focus:outline-none appearance-none"
                         ref={searchInputRef}
                       />
                       {search && (
@@ -310,8 +311,10 @@ const App = () => {
 
                 {!isMobile || filtersOpen ? (
                   <div
-                    className={`flex flex-wrap items-center pt-1 ${
-                      isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2"
+                    className={`flex flex-wrap items-center px-4 pt-1 pb-2 border-b-[1px] border-white ${
+                      isMobile
+                        ? "gap-x-3 gap-y-1"
+                        : "gap-x-6 gap-y-2 border-white/30"
                     }`}
                   >
                     {services.map((name) => {
@@ -362,7 +365,7 @@ const App = () => {
                 ) : null}
               </div>
             </div>
-            <div className="p-4 pt-0">
+            <div className={isMobile ? "p-2 pt-0" : "p-4"}>
               {isLoading ? (
                 <p className="text-center py-12">Loading offers…</p>
               ) : filteredOffers.length > 0 ? (

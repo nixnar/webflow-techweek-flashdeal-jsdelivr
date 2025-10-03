@@ -32,7 +32,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
 
   return (
     <div className="border border-white/30 p-[4px] bg-black">
-      <div className="border border-white py-3 flex flex-col gap-3 h-full">
+      <div className="border border-white pt-3 flex flex-col h-full">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3 px-3">
             <VendorLogo
@@ -42,7 +42,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
             />
             <div className="flex flex-col text-white">
               {!isMobile && (
-                <div className="text-[1.25rem] font-[800] leading-[1.25]">
+                <div className="text-[1rem] font-[800] leading-[1.25] opacity-65">
                   {vendor.name}
                 </div>
               )}
@@ -66,13 +66,13 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
           </div>
         </div>
 
-        <div className="mt-auto flex flex-col gap-3 px-3" uo>
+        <div className="flex flex-col flex-1 justify-end gap-3 py-3 px-3 bg-[#191919]">
           <PriceBlock offer={offer} badge={badge} value={value} />
           <button
             className={`self-start font-medium whitespace-nowrap border border-white  uppercase  bg-white text-black hover:bg-[#00e1ff] transition-colors ${
               isMobile
                 ? "text-[0.875rem] py-[0.375rem] px-[0.5rem] leading-[1.25]"
-                : "text-[1rem] tracking-[0.05rem] px-3 py-[10px] leading-[1.25]"
+                : "text-[0.875rem] tracking-[0.05rem] px-2 py-2 font-[700] leading-[1.25]"
             }`}
             onClick={() => onRedeem?.(offer)}
           >
