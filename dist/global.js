@@ -537,9 +537,6 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-.pointer-events-none{
-  pointer-events: none !important;
-}
 .collapse{
   visibility: collapse !important;
 }
@@ -576,11 +573,11 @@ video {
 .bottom-0{
   bottom: 0px !important;
 }
-.left-0{
-  left: 0px !important;
-}
 .right-0{
   right: 0px !important;
+}
+.left-0{
+  left: 0px !important;
 }
 .z-10{
   z-index: 10 !important;
@@ -591,15 +588,8 @@ video {
 .z-\\[60\\]{
   z-index: 60 !important;
 }
-.z-\\[999\\]{
-  z-index: 999 !important;
-}
 .z-\\[9999\\]{
   z-index: 9999 !important;
-}
-.my-2{
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
 }
 .mx-2{
   margin-left: 0.5rem !important;
@@ -609,9 +599,9 @@ video {
   margin-left: 1rem !important;
   margin-right: 1rem !important;
 }
-.my-auto{
-  margin-top: auto !important;
-  margin-bottom: auto !important;
+.mx-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .mb-3{
   margin-bottom: 0.75rem !important;
@@ -628,14 +618,20 @@ video {
 .mt-\\[0\\.75rem\\]{
   margin-top: 0.75rem !important;
 }
+.ml-2{
+  margin-left: 0.5rem !important;
+}
+.mb-6{
+  margin-bottom: 1.5rem !important;
+}
+.mb-2{
+  margin-bottom: 0.5rem !important;
+}
+.mb-8{
+  margin-bottom: 2rem !important;
+}
 .mt-auto{
   margin-top: auto !important;
-}
-.line-clamp-3{
-  overflow: hidden !important;
-  display: -webkit-box !important;
-  -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 3 !important;
 }
 .line-clamp-2{
   overflow: hidden !important;
@@ -646,14 +642,14 @@ video {
 .flex{
   display: flex !important;
 }
+.inline-flex{
+  display: inline-flex !important;
+}
 .grid{
   display: grid !important;
 }
 .hidden{
   display: none !important;
-}
-.aspect-square{
-  aspect-ratio: 1 / 1 !important;
 }
 .h-4{
   height: 1rem !important;
@@ -664,6 +660,9 @@ video {
 .h-\\[108px\\]{
   height: 108px !important;
 }
+.h-\\[4\\.75rem\\]{
+  height: 4.75rem !important;
+}
 .h-fit{
   height: -moz-fit-content !important;
   height: fit-content !important;
@@ -671,14 +670,14 @@ video {
 .h-full{
   height: 100% !important;
 }
-.h-8{
-  height: 2rem !important;
+.h-32{
+  height: 8rem !important;
 }
 .max-h-\\[108px\\]{
   max-height: 108px !important;
 }
-.max-h-\\[4rem\\]{
-  max-height: 4rem !important;
+.max-h-\\[4\\.5rem\\]{
+  max-height: 4.5rem !important;
 }
 .max-h-\\[80vh\\]{
   max-height: 80vh !important;
@@ -689,14 +688,14 @@ video {
 .max-h-full{
   max-height: 100% !important;
 }
-.max-h-\\[4\\.25rem\\]{
-  max-height: 4.25rem !important;
-}
-.max-h-\\[3\\.25rem\\]{
-  max-height: 3.25rem !important;
-}
 .min-h-0{
   min-height: 0px !important;
+}
+.min-h-screen{
+  min-height: 100vh !important;
+}
+.min-h-\\[3rem\\]{
+  min-height: 3rem !important;
 }
 .w-4{
   width: 1rem !important;
@@ -707,11 +706,11 @@ video {
 .w-\\[108px\\]{
   width: 108px !important;
 }
-.w-\\[3\\.625rem\\]{
-  width: 3.625rem !important;
+.w-\\[4\\.5rem\\]{
+  width: 4.5rem !important;
 }
-.w-\\[3\\.875rem\\]{
-  width: 3.875rem !important;
+.w-\\[4\\.75rem\\]{
+  width: 4.75rem !important;
 }
 .w-\\[min\\(1100px\\2c 95vw\\)\\]{
   width: min(1100px,95vw) !important;
@@ -725,14 +724,17 @@ video {
 .w-full{
   width: 100% !important;
 }
-.w-\\[3rem\\]{
-  width: 3rem !important;
+.w-32{
+  width: 8rem !important;
 }
-.w-\\[2\\.75rem\\]{
-  width: 2.75rem !important;
+.w-\\[2px\\]{
+  width: 2px !important;
 }
-.w-\\[2\\.5rem\\]{
-  width: 2.5rem !important;
+.min-w-\\[200px\\]{
+  min-width: 200px !important;
+}
+.min-w-0{
+  min-width: 0px !important;
 }
 .max-w-\\[1400px\\]{
   max-width: 1400px !important;
@@ -743,14 +745,29 @@ video {
 .max-w-none{
   max-width: none !important;
 }
-.max-w-\\[20rem\\]{
-  max-width: 20rem !important;
+.max-w-\\[28rem\\]{
+  max-width: 28rem !important;
+}
+.max-w-\\[26rem\\]{
+  max-width: 26rem !important;
+}
+.max-w-\\[84\\.5rem\\]{
+  max-width: 84.5rem !important;
+}
+.max-w-\\[88rem\\]{
+  max-width: 88rem !important;
+}
+.max-w-\\[87\\.5rem\\]{
+  max-width: 87.5rem !important;
 }
 .flex-1{
   flex: 1 1 0% !important;
 }
 .flex-none{
   flex: none !important;
+}
+.flex-shrink-0{
+  flex-shrink: 0 !important;
 }
 .shrink-0{
   flex-shrink: 0 !important;
@@ -771,6 +788,9 @@ video {
 .translate-y-\\[0\\.2rem\\]{
   --tw-translate-y: 0.2rem !important;
   transform: translate(var(--tw-translate-x), 0.2rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+.transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .cursor-pointer{
@@ -799,8 +819,8 @@ video {
 .items-center{
   align-items: center !important;
 }
-.justify-end{
-  justify-content: flex-end !important;
+.justify-start{
+  justify-content: flex-start !important;
 }
 .justify-center{
   justify-content: center !important;
@@ -826,6 +846,12 @@ video {
 .gap-\\[0\\.375rem\\]{
   gap: 0.375rem !important;
 }
+.gap-6{
+  gap: 1.5rem !important;
+}
+.gap-\\[0\\.38rem\\]{
+  gap: 0.38rem !important;
+}
 .gap-x-3{
   -moz-column-gap: 0.75rem !important;
        column-gap: 0.75rem !important;
@@ -839,6 +865,9 @@ video {
 }
 .gap-y-2{
   row-gap: 0.5rem !important;
+}
+.gap-y-6{
+  row-gap: 1.5rem !important;
 }
 .self-start{
   align-self: flex-start !important;
@@ -858,6 +887,9 @@ video {
 .break-words{
   word-wrap: break-word !important;
 }
+.rounded-full{
+  border-radius: 9999px !important;
+}
 .border{
   border-width: 1px !important;
 }
@@ -867,11 +899,28 @@ video {
 .border-2{
   border-width: 2px !important;
 }
+.border-\\[2px\\]{
+  border-width: 2px !important;
+}
 .border-b-2{
   border-bottom-width: 2px !important;
 }
 .border-b-\\[1px\\]{
   border-bottom-width: 1px !important;
+}
+.border-l-\\[1px\\]{
+  border-left-width: 1px !important;
+}
+.border-r-\\[1px\\]{
+  border-right-width: 1px !important;
+}
+.border-solid{
+  border-style: solid !important;
+}
+.border-\\[\\#989898\\]{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(152, 152, 152, 1) !important;
+  border-color: rgba(152, 152, 152, var(--tw-border-opacity, 1)) !important;
 }
 .border-white{
   --tw-border-opacity: 1 !important;
@@ -881,10 +930,26 @@ video {
 .border-white\\/30{
   border-color: rgba(255, 255, 255, 0.3) !important;
 }
+.border-white\\/65{
+  border-color: rgba(255, 255, 255, 0.65) !important;
+}
+.border-white\\/40{
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.border-\\[\\#979797\\]{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(151, 151, 151, 1) !important;
+  border-color: rgba(151, 151, 151, var(--tw-border-opacity, 1)) !important;
+}
 .border-red-500{
   --tw-border-opacity: 1 !important;
   border-color: rgba(239, 68, 68, 1) !important;
   border-color: rgba(239, 68, 68, var(--tw-border-opacity, 1)) !important;
+}
+.border-\\[\\#ff0000\\]{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(255, 0, 0, 1) !important;
+  border-color: rgba(255, 0, 0, var(--tw-border-opacity, 1)) !important;
 }
 .bg-black{
   --tw-bg-opacity: 1 !important;
@@ -902,55 +967,63 @@ video {
   background-color: rgba(255, 255, 255, 1) !important;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
 }
-.bg-\\[\\#090909\\]{
+.bg-\\[\\#1D1B17\\]\\/80{
+  background-color: rgba(29, 27, 23, 0.8) !important;
+}
+.bg-white\\/5{
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+.bg-\\[\\#4CAF50\\]{
   --tw-bg-opacity: 1 !important;
-  background-color: rgba(9, 9, 9, 1) !important;
-  background-color: rgba(9, 9, 9, var(--tw-bg-opacity, 1)) !important;
+  background-color: rgba(76, 175, 80, 1) !important;
+  background-color: rgba(76, 175, 80, var(--tw-bg-opacity, 1)) !important;
 }
-.bg-\\[\\#ffffff\\]{
+.bg-transparent{
+  background-color: transparent !important;
+}
+.bg-white\\/10{
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.bg-\\[\\#1a1916\\]{
   --tw-bg-opacity: 1 !important;
-  background-color: rgba(255, 255, 255, 1) !important;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
+  background-color: rgba(26, 25, 22, 1) !important;
+  background-color: rgba(26, 25, 22, var(--tw-bg-opacity, 1)) !important;
 }
-.bg-\\[\\#191919\\]{
+.bg-\\[\\#2d2d2d\\]{
   --tw-bg-opacity: 1 !important;
-  background-color: rgba(25, 25, 25, 1) !important;
-  background-color: rgba(25, 25, 25, var(--tw-bg-opacity, 1)) !important;
+  background-color: rgba(45, 45, 45, 1) !important;
+  background-color: rgba(45, 45, 45, var(--tw-bg-opacity, 1)) !important;
 }
-.bg-gradient-to-t{
-  background-image: linear-gradient(to top, var(--tw-gradient-stops)) !important;
+.bg-white\\/40{
+  background-color: rgba(255, 255, 255, 0.4) !important;
 }
-.from-black{
-  --tw-gradient-from: #000 var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops)) !important;
+}
+.bg-gradient-to-tr{
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops)) !important;
+}
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+}
+.from-purple-600\\/40{
+  --tw-gradient-from: rgba(147, 51, 234, 0.4) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(147, 51, 234, 0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
-.from-black\\/50{
-  --tw-gradient-from: rgba(0, 0, 0, 0.5) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
+.from-\\[\\#4A5AFF\\]{
+  --tw-gradient-from: #4A5AFF var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(74, 90, 255, 0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
-.from-black\\/30{
-  --tw-gradient-from: rgba(0, 0, 0, 0.3) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+.to-\\[\\#080808\\]{
+  --tw-gradient-to: #080808 var(--tw-gradient-to-position) !important;
 }
-.from-black\\/70{
-  --tw-gradient-from: rgba(0, 0, 0, 0.7) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+.to-blue-600\\/40{
+  --tw-gradient-to: rgba(37, 99, 235, 0.4) var(--tw-gradient-to-position) !important;
 }
-.from-0\\%{
-  --tw-gradient-from-position: 0% !important;
-}
-.to-transparent{
-  --tw-gradient-to: transparent var(--tw-gradient-to-position) !important;
-}
-.to-40\\%{
-  --tw-gradient-to-position: 40% !important;
-}
-.to-80\\%{
-  --tw-gradient-to-position: 80% !important;
+.to-\\[\\#7B3EFF\\]{
+  --tw-gradient-to: #7B3EFF var(--tw-gradient-to-position) !important;
 }
 .object-contain{
   -o-object-fit: contain !important;
@@ -973,6 +1046,12 @@ video {
 }
 .p-\\[4px\\]{
   padding: 4px !important;
+}
+.p-6{
+  padding: 1.5rem !important;
+}
+.p-0{
+  padding: 0px !important;
 }
 .px-3{
   padding-left: 0.75rem !important;
@@ -1014,34 +1093,45 @@ video {
   padding-top: 6px !important;
   padding-bottom: 6px !important;
 }
-.py-2{
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+.px-\\[0\\.62rem\\]{
+  padding-left: 0.62rem !important;
+  padding-right: 0.62rem !important;
+}
+.px-6{
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+.py-8{
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.py-\\[0\\.53rem\\]{
+  padding-top: 0.53rem !important;
+  padding-bottom: 0.53rem !important;
 }
 .px-2{
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
 }
-.px-1{
-  padding-left: 0.25rem !important;
-  padding-right: 0.25rem !important;
+.px-\\[0\\.19rem\\]{
+  padding-left: 0.19rem !important;
+  padding-right: 0.19rem !important;
 }
-.py-\\[0\\.18rem\\]{
-  padding-top: 0.18rem !important;
-  padding-bottom: 0.18rem !important;
-}
-.py-\\[5px\\]{
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-}
-.pb-1{
-  padding-bottom: 0.25rem !important;
+.py-\\[0\\.44rem\\]{
+  padding-top: 0.44rem !important;
+  padding-bottom: 0.44rem !important;
 }
 .pb-2{
   padding-bottom: 0.5rem !important;
 }
+.pb-3{
+  padding-bottom: 0.75rem !important;
+}
 .pb-4{
   padding-bottom: 1rem !important;
+}
+.pl-\\[0\\.62rem\\]{
+  padding-left: 0.62rem !important;
 }
 .pr-10{
   padding-right: 2.5rem !important;
@@ -1058,17 +1148,20 @@ video {
 .pt-2{
   padding-top: 0.5rem !important;
 }
+.pt-4{
+  padding-top: 1rem !important;
+}
+.pr-12{
+  padding-right: 3rem !important;
+}
+.pb-6{
+  padding-bottom: 1.5rem !important;
+}
 .pt-3{
   padding-top: 0.75rem !important;
 }
-.pb-0{
-  padding-bottom: 0px !important;
-}
-.pb-3{
-  padding-bottom: 0.75rem !important;
-}
-.pt-4{
-  padding-top: 1rem !important;
+.text-left{
+  text-align: left !important;
 }
 .text-center{
   text-align: center !important;
@@ -1104,8 +1197,17 @@ video {
 .text-\\[2rem\\]{
   font-size: 2rem !important;
 }
-.text-\\[1\\.125rem\\]{
-  font-size: 1.125rem !important;
+.text-\\[1\\.375rem\\]{
+  font-size: 1.375rem !important;
+}
+.text-\\[1\\.75rem\\]{
+  font-size: 1.75rem !important;
+}
+.text-\\[0\\.625rem\\]{
+  font-size: 0.625rem !important;
+}
+.font-\\[500\\]{
+  font-weight: 500 !important;
 }
 .font-\\[600\\]{
   font-weight: 600 !important;
@@ -1119,11 +1221,20 @@ video {
 .font-medium{
   font-weight: 500 !important;
 }
+.font-\\[400\\]{
+  font-weight: 400 !important;
+}
 .uppercase{
   text-transform: uppercase !important;
 }
+.leading-\\[1\\.1\\]{
+  line-height: 1.1 !important;
+}
 .leading-\\[1\\.25\\]{
   line-height: 1.25 !important;
+}
+.leading-\\[1\\.35\\]{
+  line-height: 1.35 !important;
 }
 .leading-none{
   line-height: 1 !important;
@@ -1131,16 +1242,29 @@ video {
 .leading-tight{
   line-height: 1.25 !important;
 }
+.tracking-\\[-0\\.02188rem\\]{
+  letter-spacing: -0.02188rem !important;
+}
+.tracking-\\[0\\.0175rem\\]{
+  letter-spacing: 0.0175rem !important;
+}
 .tracking-\\[0\\.025rem\\]{
   letter-spacing: 0.025rem !important;
+}
+.tracking-\\[0\\.02rem\\]{
+  letter-spacing: 0.02rem !important;
 }
 .tracking-\\[0\\.05rem\\]{
   letter-spacing: 0.05rem !important;
 }
-.text-\\[\\#898989\\]{
-  --tw-text-opacity: 1 !important;
-  color: rgba(137, 137, 137, 1) !important;
-  color: rgba(137, 137, 137, var(--tw-text-opacity, 1)) !important;
+.tracking-tight{
+  letter-spacing: -0.025em !important;
+}
+.tracking-\\[0\\.05em\\]{
+  letter-spacing: 0.05em !important;
+}
+.tracking-\\[0\\.015em\\]{
+  letter-spacing: 0.015em !important;
 }
 .text-black{
   --tw-text-opacity: 1 !important;
@@ -1160,11 +1284,22 @@ video {
 .text-white\\/60{
   color: rgba(255, 255, 255, 0.6) !important;
 }
+.text-white\\/65{
+  color: rgba(255, 255, 255, 0.65) !important;
+}
 .text-white\\/70{
   color: rgba(255, 255, 255, 0.7) !important;
 }
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
+}
+.text-purple-500\\/50{
+  color: rgba(168, 85, 247, 0.5) !important;
+}
+.text-\\[\\#EB55E5\\]{
+  --tw-text-opacity: 1 !important;
+  color: rgba(235, 85, 229, 1) !important;
+  color: rgba(235, 85, 229, var(--tw-text-opacity, 1)) !important;
 }
 .underline{
   text-decoration-line: underline !important;
@@ -1175,17 +1310,37 @@ video {
 .placeholder-white\\/40::placeholder{
   color: rgba(255, 255, 255, 0.4) !important;
 }
+.placeholder-white\\/60::-moz-placeholder{
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.placeholder-white\\/60::placeholder{
+  color: rgba(255, 255, 255, 0.6) !important;
+}
 .opacity-80{
   opacity: 0.8 !important;
 }
-.opacity-65{
-  opacity: 0.65 !important;
+.opacity-30{
+  opacity: 0.3 !important;
+}
+.opacity-60{
+  opacity: 0.6 !important;
+}
+.opacity-50{
+  opacity: 0.5 !important;
+}
+.opacity-40{
+  opacity: 0.4 !important;
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+}
+.transition-all{
+  transition-property: all !important;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
   transition-duration: 150ms !important;
 }
@@ -1204,7 +1359,6 @@ video {
 #reacttest .tw-discount,
 #reacttest .tw-discount * {
   font-family: "Space Grotesk", sans-serif !important;
-  font-weight: 700 !important;
 }
 
 /* Hide scrollbars across browsers */
@@ -1262,8 +1416,10 @@ h1 {
 }
 
 p {
-  line-height: 130%;
+  line-height: 125%;
   font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.02188rem;
 }
 
 li {
@@ -1329,10 +1485,18 @@ li {
   outline-offset: 2px;
 }
 
+.hover\\:border-white\\/60:hover{
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
 .hover\\:bg-\\[\\#00e1ff\\]:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(0, 225, 255, 1) !important;
   background-color: rgba(0, 225, 255, var(--tw-bg-opacity, 1)) !important;
+}
+
+.hover\\:bg-white\\/5:hover{
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 .hover\\:text-white:hover{
@@ -1361,16 +1525,20 @@ li {
   .sm\\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
-
-  .sm\\:text-\\[0\\.5rem\\]{
-    font-size: 0.5rem !important;
-  }
 }
 
 @media (min-width: 768px){
 
+  .md\\:flex-1{
+    flex: 1 1 0% !important;
+  }
+
   .md\\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .md\\:flex-nowrap{
+    flex-wrap: nowrap !important;
   }
 }
 
@@ -1378,6 +1546,17 @@ li {
 
   .lg\\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .lg\\:flex-nowrap{
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (min-width: 1280px){
+
+  .xl\\:grid-cols-6{
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   }
 }
 `, ""]);
@@ -18343,7 +18522,7 @@ var VendorLogo = function VendorLogo(_ref) {
     alt = _ref.alt,
     isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "self-start shrink-0 ".concat(isMobile ? "w-[2.5rem] aspect-square p-2" : "w-[3.875rem] aspect-square p-3", " bg-white flex items-center justify-center overflow-hidden")
+    className: "self-start shrink-0 ".concat(isMobile ? "w-[4.75rem] h-[4.75rem] p-2" : "w-[4.75rem] h-[4.75rem] p-4", " bg-white flex items-center justify-center overflow-hidden")
   }, src ? /*#__PURE__*/react.createElement("img", {
     src: src,
     alt: alt,
@@ -18361,87 +18540,348 @@ function OfferCard(_ref2) {
   var value = deriveEstimatedValueLabel(offer);
   var _splitDescription = splitDescription(offer.description || ""),
     descriptionHtml = _splitDescription.descriptionHtml;
+  var isSpeedrun = (vendor.services || []).some(function (s) {
+    return (s === null || s === void 0 ? void 0 : s.name) === "A16z Speedrun Portfolio";
+  });
   return /*#__PURE__*/react.createElement("div", {
-    className: "border border-white/30 p-[4px] bg-black"
+    className: "border-[1px] border-[#989898] bg-[#1D1B17]/80 flex flex-col h-full gap-3"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "border border-white pt-3 flex flex-col h-full"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-col gap-3"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-3 px-3"
+    className: "flex items-start border-b-[1px] border-[#989898]"
   }, /*#__PURE__*/react.createElement(VendorLogo, {
     src: vendor.logo,
     alt: vendor.name,
     isMobile: isMobile
   }), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-col text-white"
-  }, !isMobile && /*#__PURE__*/react.createElement("div", {
-    className: "text-[1rem] font-[800] leading-[1.25] opacity-65"
-  }, vendor.name), /*#__PURE__*/react.createElement("h3", {
-    className: "text-white text-[1rem] font-[600] leading-[1.25] ".concat(isMobile ? "line-clamp-2" : "line-clamp-2")
-  }, offer.name))), /*#__PURE__*/react.createElement("div", {
-    className: "relative px-3 border-b-[1px] border-white"
+    className: "flex items-center h-full w-full justify-between overflow-hidden relative",
+    style: isSpeedrun ? {
+      background: "linear-gradient(0deg, rgba(247, 1, 255, 0.08) 0%, rgba(247, 1, 255, 0.08) 100%), #000"
+    } : {}
+  }, isSpeedrun && /*#__PURE__*/react.createElement(SpeedrunBackground, null), /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-col text-white flex-1 px-[0.62rem] items-start justify-center h-full relative z-10 w-full"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "text-white/70 max-h-[3.25rem] overflow-hidden",
+    className: "text-[1rem] font-[700] leading-[1.1] uppercase tracking-[0.02rem]"
+  }, vendor.name), /*#__PURE__*/react.createElement("div", {
+    className: "text-white text-[0.875rem] font-[700] leading-[1.25] tracking-[-0.02188rem] line-clamp-2"
+  }, offer.name)), isSpeedrun && /*#__PURE__*/react.createElement("div", {
+    className: "text-white border-r-[1px] border-[#989898] text-[0.75rem] font-[700] tracking-[0.015em] uppercase whitespace-nowrap px-[0.19rem] py-[0.44rem] flex items-center justify-center relative z-10",
+    style: {
+      writingMode: "vertical-lr",
+      textOrientation: "mixed",
+      transform: "rotate(180deg)"
+    }
+  }, "Speedrun"))), /*#__PURE__*/react.createElement("div", {
+    className: "flex flex-col gap-3 px-3 pb-3"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "text-white opacity-80 max-h-[4.5rem] overflow-hidden",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(descriptionHtml)
     }
   }), /*#__PURE__*/react.createElement("div", {
-    className: "absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/70 to-transparent from-0% to-80% pointer-events-none"
-  }))), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-col flex-1 justify-end gap-3 py-3 px-3 bg-[#191919]"
+    className: "flex items-center gap-2 border-[1px] border-white/65 bg-white/5"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex-1 min-w-0"
   }, /*#__PURE__*/react.createElement(PriceBlock, {
     offer: offer,
     badge: badge,
-    value: value
-  }), /*#__PURE__*/react.createElement("button", {
-    className: "self-start font-medium whitespace-nowrap border border-white  uppercase  bg-white text-black hover:bg-[#00e1ff] transition-colors ".concat(isMobile ? "text-[0.875rem] py-[0.375rem] px-[0.5rem] leading-[1.25]" : "text-[0.875rem] tracking-[0.05rem] px-2 py-2 font-[700] leading-[1.25]"),
+    value: value,
+    isMobile: isMobile,
+    isSpeedrun: isSpeedrun
+  })), /*#__PURE__*/react.createElement("button", {
+    className: "flex-shrink-0 w-[4.5rem] p-2 h-full flex items-center justify-center bg-white border-[1px] border-white text-[0.875rem] font-[700] uppercase tracking-[0.0175rem] leading-[1.35] text-black",
     onClick: function onClick() {
       return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
     }
-  }, "Redeem Now"))));
+  }, "Redeem"))));
 }
 function PriceBlock(_ref3) {
   var offer = _ref3.offer,
     badge = _ref3.badge,
-    value = _ref3.value;
+    value = _ref3.value,
+    isMobile = _ref3.isMobile,
+    isSpeedrun = _ref3.isSpeedrun;
   var dealType = (offer.deal_type || "").toLowerCase();
   var showValue = !!value.value && dealType !== "special_offer" && dealType !== "special-offer";
   if (dealType === "discount" && (offer.discount_type || "").toLowerCase() === "percentage") {
     var _offer$discount;
     return /*#__PURE__*/react.createElement("div", {
-      className: "tw-discount leading-none text-[1.125rem] font-[600] break-words"
+      className: "leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] py-[0.53rem] text-white"
     }, /*#__PURE__*/react.createElement("span", {
-      className: "text-white uppercase leading-none tracking-1"
-    }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0), /*#__PURE__*/react.createElement("span", {
-      className: "text-white uppercase leading-none"
-    }, "%"), /*#__PURE__*/react.createElement("span", {
-      className: "text-white uppercase leading-none"
-    }, "\xA0OFF\xA0"), showValue ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] uppercase leading-none"
-    }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
-      className: "text-[#898989] uppercase leading-none"
-    }, value.value)) : null);
+      className: "whitespace-nowrap ".concat(isSpeedrun ? "text-[#EB55E5]" : "text-white")
+    }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0, "% OFF"), showValue ? /*#__PURE__*/react.createElement("span", {
+      className: "text-white/65 font-[500] leading-[1.25]"
+    }, " ", value.label, " ", value.value) : null);
   }
   if (dealType === "special_offer" || dealType === "special-offer") {
     return /*#__PURE__*/react.createElement("div", {
-      className: "flex flex-col gap-1 text-[1.125rem] font-[600]"
-    }, /*#__PURE__*/react.createElement("div", {
-      className: "text-white uppercase"
-    }, "Special Offer"));
+      className: "leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] text-white"
+    }, "Special Offer");
   }
   return /*#__PURE__*/react.createElement("div", {
-    className: "tw-discount leading-none text-[1.125rem] font-[600] break-words"
+    className: "leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] text-white"
   }, /*#__PURE__*/react.createElement("span", {
-    className: "text-white uppercase leading-none"
-  }, badge.primary, "\xA0"), badge.secondary ? /*#__PURE__*/react.createElement("span", {
-    className: "text-white uppercase leading-none"
-  }, badge.secondary, "\xA0") : null, showValue ? /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] uppercase leading-none"
-  }, value.label, "\xA0"), /*#__PURE__*/react.createElement("span", {
-    className: "text-[#898989] uppercase leading-none"
-  }, value.value)) : null);
+    className: "whitespace-nowrap ".concat(isSpeedrun ? "text-[#EB55E5]" : "text-white")
+  }, badge.primary, badge.secondary ? " ".concat(badge.secondary) : ""), showValue ? /*#__PURE__*/react.createElement("span", {
+    className: "text-white/65 font-[500] leading-[1.25]"
+  }, " ", value.label, " ", value.value) : null);
 }
+var SpeedrunBackground = function SpeedrunBackground() {
+  return /*#__PURE__*/react.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "97",
+    height: "75",
+    viewBox: "0 0 97 75",
+    fill: "none",
+    className: "absolute right-2 top-1/2 -translate-y-1/2"
+  }, /*#__PURE__*/react.createElement("g", {
+    opacity: "0.9"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M0.630773 -0.387451H2.83496V4.3369H0.630773V-0.387451Z",
+    fill: "#3557FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M7.28231 -0.387451H9.59082V4.3369H7.28231V-0.387451Z",
+    fill: "#527AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M7.33487 4.33691H9.53906V9.06126H7.33487V4.33691Z",
+    fill: "#3459FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M14.0122 -0.387451H16.2686V4.3369H14.0122V-0.387451Z",
+    fill: "#4452FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M14.0246 9.06104H16.2549V13.7854H14.0246V9.06104Z",
+    fill: "#4343FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M20.7163 -0.387451H22.9727V4.3369H20.7163V-0.387451Z",
+    fill: "#4469FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M20.6507 4.33691H23.0244V9.06126H20.6507V4.33691Z",
+    fill: "#6161FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M20.7029 13.7952H22.9854V18.5195H20.7029V13.7952Z",
+    fill: "#5A4CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M27.4589 -0.387451H29.6631V4.3369H27.4589V-0.387451Z",
+    fill: "#365EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M27.3675 4.33691H29.7412V9.06126H27.3675V4.33691Z",
+    fill: "#7064FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M27.3675 9.06104H29.7412V13.7854H27.3675V9.06104Z",
+    fill: "#7064FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M27.4197 13.7952H29.7021V18.5195H27.4197V13.7952Z",
+    fill: "#7E4BFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M34.163 -0.387451H36.3672V4.3369H34.163V-0.387451Z",
+    fill: "#5437FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M34.1496 4.33691H36.3799V9.06126H34.1496V4.33691Z",
+    fill: "#4040FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M34.1496 9.06104H36.3799V13.7854H34.1496V9.06104Z",
+    fill: "#4040FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M34.1754 18.519H36.3535V23.2434H34.1754V18.519Z",
+    fill: "#4C23FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M40.8145 -0.387451H43.123V4.3369H40.8145V-0.387451Z",
+    fill: "#5757FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M40.8012 4.33691H43.1357V9.06126H40.8012V4.33691Z",
+    fill: "#675CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M40.8012 9.06104H43.1357V13.7854H40.8012V9.06104Z",
+    fill: "#675CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M40.8279 13.7952H43.1104V18.5195H40.8279V13.7952Z",
+    fill: "#AB4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M40.8279 18.519H43.1104V23.2434H40.8279V18.519Z",
+    fill: "#AB4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M47.5571 -0.387451H49.8135V4.3369H47.5571V-0.387451Z",
+    fill: "#F249FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M47.5705 4.33691H49.8008V9.06126H47.5705V4.33691Z",
+    fill: "#FF39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M47.5705 9.06104H49.8008V13.7854H47.5705V9.06104Z",
+    fill: "#FF39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M47.5447 13.7952H49.8271V18.5195H47.5447V13.7952Z",
+    fill: "#FF52CC"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M47.5447 18.519H49.8271V23.2434H47.5447V18.519Z",
+    fill: "#FF52CC"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M47.4275 27.9768H49.9316V32.7012H47.4275V27.9768Z",
+    fill: "#FF84DA"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M54.2354 -0.387451H56.5439V4.3369H54.2354V-0.387451Z",
+    fill: "#5A5AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M54.2612 4.33691H56.5176V9.06126H54.2612V4.33691Z",
+    fill: "#5448FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M54.2612 9.06104H56.5176V13.7854H54.2612V9.06104Z",
+    fill: "#5448FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M54.2354 13.7952H56.5439V18.5195H54.2354V13.7952Z",
+    fill: "#FF52F4"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M54.2354 18.519H56.5439V23.2434H54.2354V18.519Z",
+    fill: "#FF52F4"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M54.2354 27.9768H56.5439V32.7012H54.2354V27.9768Z",
+    fill: "#FF5AB7"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.8997 -0.387451H63.2734V4.3369H60.8997V-0.387451Z",
+    fill: "#6262FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.9654 4.33691H63.2217V9.06126H60.9654V4.33691Z",
+    fill: "#5F4AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.9654 9.06104H63.2217V13.7854H60.9654V9.06104Z",
+    fill: "#5F4AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.9654 13.7952H63.2217V18.5195H60.9654V13.7952Z",
+    fill: "#6746FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.9654 18.519H63.2217V23.2434H60.9654V18.519Z",
+    fill: "#6746FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.9911 23.2432H63.1953V27.9675H60.9911V23.2432Z",
+    fill: "#EC35FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M60.8997 32.7017H63.2734V37.426H60.8997V32.7017Z",
+    fill: "#FF67D0"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.6427 -0.387451H69.9512V4.3369H67.6427V-0.387451Z",
+    fill: "#6A57FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.6684 4.33691H69.9248V9.06126H67.6684V4.33691Z",
+    fill: "#634FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.6684 9.06104H69.9248V13.7854H67.6684V9.06104Z",
+    fill: "#634FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.656 13.7952H69.9385V18.5195H67.656V13.7952Z",
+    fill: "#8F4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.656 18.519H69.9385V23.2434H67.656V18.519Z",
+    fill: "#8F4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.656 23.2432H69.9385V27.9675H67.656V23.2432Z",
+    fill: "#B053FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.656 27.9768H69.9385V32.7012H67.656V27.9768Z",
+    fill: "#B053FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M67.6038 37.4258H69.9775V42.1501H67.6038V37.4258Z",
+    fill: "#FF65D0"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.3728 -0.387451H76.6553V4.3369H74.3728V-0.387451Z",
+    fill: "#6D52FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.3986 4.33691H76.6289V9.06126H74.3986V4.33691Z",
+    fill: "#5941FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.3986 9.06104H76.6289V13.7854H74.3986V9.06104Z",
+    fill: "#5941FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.347 13.7952H76.6816V18.5195H74.347V13.7952Z",
+    fill: "#8E5DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.347 18.519H76.6816V23.2434H74.347V18.519Z",
+    fill: "#8E5DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.268 23.2432H76.7461V27.9675H74.268V23.2432Z",
+    fill: "#E6C3FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M74.3986 32.7017H76.6289V37.426H74.3986V32.7017Z",
+    fill: "#9D42FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.1285 -0.387451H83.3066V4.3369H81.1285V-0.387451Z",
+    fill: "#5331FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.0894 4.33691H83.3457V9.06126H81.0894V4.33691Z",
+    fill: "#6B4DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.0894 9.06104H83.3457V13.7854H81.0894V9.06104Z",
+    fill: "#6B4DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.1027 13.7952H83.333V18.5195H81.1027V13.7952Z",
+    fill: "#853FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.1027 18.519H83.333V23.2434H81.1027V18.519Z",
+    fill: "#853FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.0769 23.2432H83.3594V27.9675H81.0769V23.2432Z",
+    fill: "#A953FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.0769 27.9768H83.3594V32.7012H81.0769V27.9768Z",
+    fill: "#A953FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.1285 32.7017H83.3066V37.426H81.1285V32.7017Z",
+    fill: "#DF21FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M81.0635 37.4258H83.3721V42.1501H81.0635V37.4258Z",
+    fill: "#D354FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.7676 -0.387451H90.0762V4.3369H87.7676V-0.387451Z",
+    fill: "#765CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.8202 4.33691H90.0244V9.06126H87.8202V4.33691Z",
+    fill: "#6A3CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.8202 9.06104H90.0244V13.7854H87.8202V9.06104Z",
+    fill: "#6A3CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.8068 13.7952H90.0371V18.5195H87.8068V13.7952Z",
+    fill: "#6B48FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.8068 18.519H90.0371V23.2434H87.8068V18.519Z",
+    fill: "#6B48FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.6762 23.2432H90.1543V27.9675H87.6762V23.2432Z",
+    fill: "#CD78FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.6762 27.9768H90.1543V32.7012H87.6762V27.9768Z",
+    fill: "#CD78FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.8202 32.7017H90.0244V37.426H87.8202V32.7017Z",
+    fill: "#B535FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M87.8202 42.1497H90.0244V46.874H87.8202V42.1497Z",
+    fill: "#A135FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.4978 -0.387451H96.7803V4.3369H94.4978V-0.387451Z",
+    fill: "#7451FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.5494 4.33691H96.7275V9.06126H94.5494V4.33691Z",
+    fill: "#5B28FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.5494 9.06104H96.7275V13.7854H94.5494V9.06104Z",
+    fill: "#5B28FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.537 13.7952H96.7412V18.5195H94.537V13.7952Z",
+    fill: "#6F39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.537 18.519H96.7412V23.2434H94.537V18.519Z",
+    fill: "#6F39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.537 23.2432H96.7412V27.9675H94.537V23.2432Z",
+    fill: "#9736FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.537 27.9768H96.7412V32.7012H94.537V27.9768Z",
+    fill: "#9736FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.5494 37.4258H96.7275V42.1501H94.5494V37.4258Z",
+    fill: "#8D2BFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M94.393 46.8838H96.8711V51.6081H94.393V46.8838Z",
+    fill: "#E87CFF"
+  })));
+};
 ;// ./src/ui/OfferGrid.js
 
 
@@ -18450,7 +18890,7 @@ function OfferGrid(_ref) {
     onRedeem = _ref.onRedeem,
     isMobile = _ref.isMobile;
   return /*#__PURE__*/react.createElement("div", {
-    className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+    className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6"
   }, offers.map(function (offer) {
     return /*#__PURE__*/react.createElement(OfferCard, {
       key: offer.id,
@@ -18812,8 +19252,449 @@ function EmailModal(_ref) {
     onClick: onClose
   }, "Cancel")))))));
 }
+;// ./src/ui/SearchBar.js
+
+function SearchBar(_ref) {
+  var search = _ref.search,
+    setSearch = _ref.setSearch,
+    isMobile = _ref.isMobile,
+    searchInputRef = _ref.searchInputRef;
+  return isMobile ? /*#__PURE__*/React.createElement("div", {
+    className: "flex-1 relative"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: search,
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    },
+    placeholder: "Search offers\u2026",
+    className: "w-full bg-black text-white placeholder-white/40  px-3 py-[6px] pr-10 focus:outline-none appearance-none",
+    ref: searchInputRef
+  }), search && /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      return setSearch("");
+    },
+    className: "absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-white/70 transition-colors",
+    "aria-label": "Clear search"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M15 5L5 15M5 5L15 15",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })))) : /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-3 px-4 pt-4 relative"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: search,
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    },
+    placeholder: "Search offers\u2026",
+    className: "w-full bg-black text-white placeholder-white/40 border border-white/30 focus:border-white px-3 py-1 pr-10 focus:outline-none appearance-none",
+    ref: searchInputRef
+  }), search && /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      return setSearch("");
+    },
+    className: "absolute right-3 text-white hover:text-white/70 transition-colors",
+    "aria-label": "Clear search"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M15 5L5 15M5 5L15 15",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }))));
+}
+;// ./src/ui/BrowseHeader.js
+
+
+function BrowseHeader(_ref) {
+  var search = _ref.search,
+    setSearch = _ref.setSearch,
+    searchInputRef = _ref.searchInputRef;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "flex items-center justify-between gap-6 mb-6"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "text-white text-[1.75rem] font-[700] uppercase"
+  }, "Browse Offers"), /*#__PURE__*/react.createElement("div", {
+    className: "flex-1 max-w-[26rem] relative"
+  }, /*#__PURE__*/react.createElement("input", {
+    type: "text",
+    value: search,
+    onChange: function onChange(e) {
+      return setSearch(e.target.value);
+    },
+    placeholder: "Search Offers...",
+    className: "w-full bg-transparent text-white placeholder-white/60 border-[1px] border-white bg-[#2d2d2d] px-4 py-3 pr-12 focus:outline-none focus:border-white transition-colors",
+    ref: searchInputRef
+  })));
+}
+;// ./src/ui/CategoryCard.js
+
+var A16zBackground = function A16zBackground() {
+  return /*#__PURE__*/react.createElement("svg", {
+    className: "absolute right-0 bottom-0 w-full h-full",
+    viewBox: "0 0 200 80",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    preserveAspectRatio: "xMaxYMax slice"
+  }, /*#__PURE__*/react.createElement("g", {
+    opacity: "0.9"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M97.4489 79.4219H99.748V74.6975H97.4489V79.4219Z",
+    fill: "#3557FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M104.387 79.4219H106.795V74.6975H104.387V79.4219Z",
+    fill: "#527AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M104.441 74.6973H106.74V69.9729H104.441V74.6973Z",
+    fill: "#3459FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M111.407 79.4219H113.761V74.6975H111.407V79.4219Z",
+    fill: "#4452FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M111.421 69.9736H113.747V65.2493H111.421V69.9736Z",
+    fill: "#4343FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M118.399 79.4219H120.753V74.6975H118.399V79.4219Z",
+    fill: "#4469FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M118.332 74.6973H120.808V69.9729H118.332V74.6973Z",
+    fill: "#6161FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M118.386 65.2393H120.767V60.5149H118.386V65.2393Z",
+    fill: "#5A4CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M125.433 79.4219H127.732V74.6975H125.433V79.4219Z",
+    fill: "#365EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M125.337 74.6973H127.813V69.9729H125.337V74.6973Z",
+    fill: "#7064FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M125.337 69.9736H127.813V65.2493H125.337V69.9736Z",
+    fill: "#7064FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M125.393 65.2393H127.773V60.5149H125.393V65.2393Z",
+    fill: "#7E4BFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M132.425 79.4219H134.725V74.6975H132.425V79.4219Z",
+    fill: "#5437FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M132.412 74.6973H134.738V69.9729H132.412V74.6973Z",
+    fill: "#4040FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M132.412 69.9736H134.738V65.2493H132.412V69.9736Z",
+    fill: "#4040FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M132.439 60.5151H134.711V55.7908H132.439V60.5151Z",
+    fill: "#4C23FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.364 79.4219H141.772V74.6975H139.364V79.4219Z",
+    fill: "#5757FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.35 74.6973H141.785V69.9729H139.35V74.6973Z",
+    fill: "#675CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.35 69.9736H141.785V65.2493H139.35V69.9736Z",
+    fill: "#675CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.378 65.2393H141.759V60.5149H139.378V65.2393Z",
+    fill: "#AB4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.378 60.5151H141.759V55.7908H139.378V60.5151Z",
+    fill: "#AB4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.397 79.4219H148.751V74.6975H146.397V79.4219Z",
+    fill: "#F249FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.411 74.6973H148.737V69.9729H146.411V74.6973Z",
+    fill: "#FF39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.411 69.9736H148.737V65.2493H146.411V69.9736Z",
+    fill: "#FF39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.384 65.2393H148.765V60.5149H146.384V65.2393Z",
+    fill: "#FF52CC"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.384 60.5151H148.765V55.7908H146.384V60.5151Z",
+    fill: "#FF52CC"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.261 51.0576H148.873V46.3333H146.261V51.0576Z",
+    fill: "#FF84DA"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 79.4219H155.771V74.6975H153.363V79.4219Z",
+    fill: "#5A5AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.39 74.6973H155.743V69.9729H153.39V74.6973Z",
+    fill: "#5448FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.39 69.9736H155.743V65.2493H153.39V69.9736Z",
+    fill: "#5448FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 65.2393H155.771V60.5149H153.363V65.2393Z",
+    fill: "#FF52F4"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 60.5151H155.771V55.7908H153.363V60.5151Z",
+    fill: "#FF52F4"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 51.0576H155.771V46.3333H153.363V51.0576Z",
+    fill: "#FF5AB7"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.315 79.4219H162.791V74.6975H160.315V79.4219Z",
+    fill: "#6262FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 74.6973H162.736V69.9729H160.383V74.6973Z",
+    fill: "#5F4AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 69.9736H162.736V65.2493H160.383V69.9736Z",
+    fill: "#5F4AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 65.2393H162.736V60.5149H160.383V65.2393Z",
+    fill: "#6746FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 60.5151H162.736V55.7908H160.383V60.5151Z",
+    fill: "#6746FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.41 55.7915H162.709V51.0672H160.41V55.7915Z",
+    fill: "#EC35FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.315 46.3325H162.791V41.6082H160.315V46.3325Z",
+    fill: "#FF67D0"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.348 79.4219H169.756V74.6975H167.348V79.4219Z",
+    fill: "#6A57FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.375 74.6973H169.729V69.9729H167.375V74.6973Z",
+    fill: "#634FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.375 69.9736H169.729V65.2493H167.375V69.9736Z",
+    fill: "#634FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 65.2393H169.742V60.5149H167.361V65.2393Z",
+    fill: "#8F4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 60.5151H169.742V55.7908H167.361V60.5151Z",
+    fill: "#8F4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 55.7915H169.742V51.0672H167.361V55.7915Z",
+    fill: "#B053FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 51.0576H169.742V46.3333H167.361V51.0576Z",
+    fill: "#B053FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.307 41.6089H169.783V36.8845H167.307V41.6089Z",
+    fill: "#FF65D0"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.368 79.4219H176.749V74.6975H174.368V79.4219Z",
+    fill: "#6D52FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.395 74.6973H176.722V69.9729H174.395V74.6973Z",
+    fill: "#5941FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.395 69.9736H176.722V65.2493H174.395V69.9736Z",
+    fill: "#5941FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.341 65.2393H176.776V60.5149H174.341V65.2393Z",
+    fill: "#8E5DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.341 60.5151H176.776V55.7908H174.341V60.5151Z",
+    fill: "#8E5DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.259 55.7915H176.844V51.0672H174.259V55.7915Z",
+    fill: "#E6C3FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.395 46.3325H176.722V41.6082H174.395V46.3325Z",
+    fill: "#9D42FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.415 79.4219H183.687V74.6975H181.415V79.4219Z",
+    fill: "#5331FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.374 74.6973H183.728V69.9729H181.374V74.6973Z",
+    fill: "#6B4DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.374 69.9736H183.728V65.2493H181.374V69.9736Z",
+    fill: "#6B4DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.387 65.2393H183.714V60.5149H181.387V65.2393Z",
+    fill: "#853FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.387 60.5151H183.714V55.7908H181.387V60.5151Z",
+    fill: "#853FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.36 55.7915H183.741V51.0672H181.36V55.7915Z",
+    fill: "#A953FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.36 51.0576H183.741V46.3333H181.36V51.0576Z",
+    fill: "#A953FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.415 46.3325H183.687V41.6082H181.415V46.3325Z",
+    fill: "#DF21FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.347 41.6089H183.755V36.8845H181.347V41.6089Z",
+    fill: "#D354FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.34 79.4219H190.748V74.6975H188.34V79.4219Z",
+    fill: "#765CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 74.6973H190.693V69.9729H188.394V74.6973Z",
+    fill: "#6A3CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 69.9736H190.693V65.2493H188.394V69.9736Z",
+    fill: "#6A3CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.381 65.2393H190.707V60.5149H188.381V65.2393Z",
+    fill: "#6B48FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.381 60.5151H190.707V55.7908H188.381V60.5151Z",
+    fill: "#6B48FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.244 55.7915H190.829V51.0672H188.244V55.7915Z",
+    fill: "#CD78FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.244 51.0576H190.829V46.3333H188.244V51.0576Z",
+    fill: "#CD78FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 46.3325H190.693V41.6082H188.394V46.3325Z",
+    fill: "#B535FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 36.8848H190.693V32.1604H188.394V36.8848Z",
+    fill: "#A135FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.359 79.4219H197.74V74.6975H195.359V79.4219Z",
+    fill: "#7451FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.414 74.6973H197.686V69.9729H195.414V74.6973Z",
+    fill: "#5B28FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.414 69.9736H197.686V65.2493H195.414V69.9736Z",
+    fill: "#5B28FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 65.2393H197.699V60.5149H195.4V65.2393Z",
+    fill: "#6F39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 60.5151H197.699V55.7908H195.4V60.5151Z",
+    fill: "#6F39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 55.7915H197.699V51.0672H195.4V55.7915Z",
+    fill: "#9736FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 51.0576H197.699V46.3333H195.4V51.0576Z",
+    fill: "#9736FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.414 41.6089H197.686V36.8845H195.414V41.6089Z",
+    fill: "#8D2BFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.251 32.1504H197.836V27.426H195.251V32.1504Z",
+    fill: "#E87CFF"
+  })), /*#__PURE__*/react.createElement("g", {
+    opacity: "0.6",
+    filter: "url(#filter0_f_1206_27626)"
+  }, /*#__PURE__*/react.createElement("ellipse", {
+    cx: "201",
+    cy: "84.118",
+    rx: "152.095",
+    ry: "88.662",
+    fill: "url(#paint0_radial_1206_27626)"
+  })), /*#__PURE__*/react.createElement("defs", null, /*#__PURE__*/react.createElement("filter", {
+    id: "filter0_f_1206_27626",
+    x: "0.904297",
+    y: "-52.5439",
+    width: "400.19",
+    height: "273.324",
+    filterUnits: "userSpaceOnUse",
+    colorInterpolationFilters: "sRGB"
+  }, /*#__PURE__*/react.createElement("feFlood", {
+    floodOpacity: "0",
+    result: "BackgroundImageFix"
+  }), /*#__PURE__*/react.createElement("feBlend", {
+    mode: "normal",
+    "in": "SourceGraphic",
+    in2: "BackgroundImageFix",
+    result: "shape"
+  }), /*#__PURE__*/react.createElement("feGaussianBlur", {
+    stdDeviation: "24",
+    result: "effect1_foregroundBlur_1206_27626"
+  })), /*#__PURE__*/react.createElement("radialGradient", {
+    id: "paint0_radial_1206_27626",
+    cx: "0",
+    cy: "0",
+    r: "1",
+    gradientUnits: "userSpaceOnUse",
+    gradientTransform: "translate(201 84.118) rotate(90) scale(88.662 152.095)"
+  }, /*#__PURE__*/react.createElement("stop", {
+    stopColor: "#4112FF",
+    stopOpacity: "0.55"
+  }), /*#__PURE__*/react.createElement("stop", {
+    offset: "0.490375",
+    stopColor: "#B012FF",
+    stopOpacity: "0.55"
+  }), /*#__PURE__*/react.createElement("stop", {
+    offset: "1",
+    stopOpacity: "0"
+  }))));
+};
+function CategoryCard(_ref) {
+  var name = _ref.name,
+    count = _ref.count,
+    isSelected = _ref.isSelected,
+    onClick = _ref.onClick;
+  var isA16z = name === "A16z Speedrun Portfolio";
+  return /*#__PURE__*/react.createElement("button", {
+    onClick: onClick,
+    className: "relative overflow-hidden border-[1px] border-solid border-[#979797] bg-[#1a1916] flex flex-col py-3 px-[0.62rem] justify-between items-start gap-[0.38rem]"
+  }, isA16z && /*#__PURE__*/react.createElement(A16zBackground, null), /*#__PURE__*/react.createElement("div", {
+    className: "relative z-10 text-white text-[1rem] font-[700] uppercase text-left"
+  }, name), /*#__PURE__*/react.createElement("p", {
+    className: "relative z-10 text-[0.875rem] text-white/80 font-[500] leading-[1.25] tracking-[-0.02188rem]"
+  }, count, " Offer", count !== 1 ? "s" : ""));
+}
+;// ./src/ui/CategoriesSection.js
+
+
+function CategoriesSection(_ref) {
+  var categories = _ref.categories,
+    categoryCounts = _ref.categoryCounts,
+    selectedCategories = _ref.selectedCategories,
+    toggleCategory = _ref.toggleCategory;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "pb-6"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "text-white text-[1.375rem] font-[700] uppercase pb-6"
+  }, "Explore Curated Categories"), /*#__PURE__*/react.createElement("div", {
+    className: "flex gap-4 flex-wrap lg:flex-nowrap"
+  }, categories.map(function (name) {
+    var count = categoryCounts.get(name) || 0;
+    return /*#__PURE__*/react.createElement(CategoryCard, {
+      key: name,
+      name: name,
+      count: count,
+      isSelected: selectedCategories.has(name),
+      onClick: function onClick() {
+        return toggleCategory(name);
+      }
+    });
+  })));
+}
 ;// ./src/App.js
 function App_typeof(o) { "@babel/helpers - typeof"; return App_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, App_typeof(o); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || App_unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return App_arrayLikeToArray(r); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -18834,62 +19715,89 @@ function App_asyncToGenerator(n) { return function () { var t = this, e = argume
 
 
 
+
+
 function fetchOffersWithFallback() {
   return _fetchOffersWithFallback.apply(this, arguments);
 }
 function _fetchOffersWithFallback() {
   _fetchOffersWithFallback = App_asyncToGenerator(/*#__PURE__*/App_regeneratorRuntime().mark(function _callee2() {
-    var res, data, local, _data;
+    var speedrunIds, res, data, local, _data;
     return App_regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          _context2.prev = 0;
-          _context2.next = 3;
+          speedrunIds = new Set([4021909, 4021960, 4022558, 4022454, 4022098]);
+          _context2.prev = 1;
+          _context2.next = 4;
           return fetch("https://api.tech-week.com/get_proven/");
-        case 3:
+        case 4:
           res = _context2.sent;
           if (res.ok) {
-            _context2.next = 6;
+            _context2.next = 7;
             break;
           }
           throw new Error("Network response was not ok");
-        case 6:
-          _context2.next = 8;
+        case 7:
+          _context2.next = 9;
           return res.json();
-        case 8:
+        case 9:
           data = _context2.sent;
           return _context2.abrupt("return", (data.offers || []).map(function (o) {
+            var vendor = o.vendor || {};
+            // Add A16z Speedrun Portfolio service to specific offers
+            if (speedrunIds.has(o.id)) {
+              var services = vendor.services || [];
+              return _objectSpread(_objectSpread({}, o), {}, {
+                vendor: _objectSpread(_objectSpread({}, vendor), {}, {
+                  services: [].concat(_toConsumableArray(services), [{
+                    name: "A16z Speedrun Portfolio"
+                  }])
+                })
+              });
+            }
             return _objectSpread(_objectSpread({}, o), {}, {
-              vendor: o.vendor || {}
+              vendor: vendor
             });
           }));
-        case 12:
-          _context2.prev = 12;
-          _context2.t0 = _context2["catch"](0);
-          _context2.prev = 14;
-          _context2.next = 17;
+        case 13:
+          _context2.prev = 13;
+          _context2.t0 = _context2["catch"](1);
+          _context2.prev = 15;
+          _context2.next = 18;
           return fetch("/apiresponse.json");
-        case 17:
+        case 18:
           local = _context2.sent;
-          _context2.next = 20;
+          _context2.next = 21;
           return local.json();
-        case 20:
+        case 21:
           _data = _context2.sent;
           return _context2.abrupt("return", (_data.offers || []).map(function (o) {
+            var vendor = o.vendor || {};
+            // Add A16z Speedrun Portfolio service to specific offers
+            if (speedrunIds.has(o.id)) {
+              var services = vendor.services || [];
+              return _objectSpread(_objectSpread({}, o), {}, {
+                vendor: _objectSpread(_objectSpread({}, vendor), {}, {
+                  services: [].concat(_toConsumableArray(services), [{
+                    name: "A16z Speedrun Portfolio"
+                  }])
+                })
+              });
+            }
             return _objectSpread(_objectSpread({}, o), {}, {
-              vendor: o.vendor || {}
+              vendor: vendor
             });
           }));
-        case 24:
-          _context2.prev = 24;
-          _context2.t1 = _context2["catch"](14);
+        case 25:
+          _context2.prev = 25;
+          _context2.t1 = _context2["catch"](15);
           console.error("Failed to load offers", _context2.t0, _context2.t1);
           return _context2.abrupt("return", []);
-        case 28:
+        case 29:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[0, 12], [14, 24]]);
+    }, _callee2, null, [[1, 13], [15, 25]]);
   }));
   return _fetchOffersWithFallback.apply(this, arguments);
 }
@@ -18908,8 +19816,8 @@ var App = function App() {
     setSearch = _React$useState6[1];
   var _React$useState7 = react.useState(new Set()),
     _React$useState8 = App_slicedToArray(_React$useState7, 2),
-    selectedServices = _React$useState8[0],
-    setSelectedServices = _React$useState8[1];
+    selectedCategories = _React$useState8[0],
+    setSelectedCategories = _React$useState8[1];
   var _React$useState9 = react.useState(null),
     _React$useState10 = App_slicedToArray(_React$useState9, 2),
     activeOffer = _React$useState10[0],
@@ -18926,18 +19834,10 @@ var App = function App() {
     _React$useState16 = App_slicedToArray(_React$useState15, 2),
     isMobile = _React$useState16[0],
     setIsMobile = _React$useState16[1];
-  var _React$useState17 = react.useState(false),
-    _React$useState18 = App_slicedToArray(_React$useState17, 2),
-    filtersOpen = _React$useState18[0],
-    setFiltersOpen = _React$useState18[1];
-  var _React$useState19 = react.useState(false),
-    _React$useState20 = App_slicedToArray(_React$useState19, 2),
-    searchMode = _React$useState20[0],
-    setSearchMode = _React$useState20[1];
   var searchInputRef = react.useRef(null);
   react.useEffect(function () {
     var handleResize = function handleResize() {
-      setIsMobile(window.innerWidth < 900);
+      setIsMobile(window.innerWidth < 1000);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -18945,22 +19845,6 @@ var App = function App() {
       return window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  // Auto-open filters on desktop, collapse on mobile
-  react.useEffect(function () {
-    setFiltersOpen(!isMobile);
-  }, [isMobile]);
-
-  // When triggering search mode, ensure filters are open on mobile and focus input
-  react.useEffect(function () {
-    if (!searchMode) return;
-    if (isMobile) setFiltersOpen(true);
-    try {
-      var _searchInputRef$curre;
-      (_searchInputRef$curre = searchInputRef.current) === null || _searchInputRef$curre === void 0 || _searchInputRef$curre.focus();
-    } catch (_unused) {}
-    setSearchMode(false);
-  }, [searchMode, isMobile]);
   react.useEffect(function () {
     var cancelled = false;
     App_asyncToGenerator(/*#__PURE__*/App_regeneratorRuntime().mark(function _callee() {
@@ -18990,7 +19874,7 @@ var App = function App() {
     try {
       var stored = window.localStorage.getItem("offerEmail");
       setHasOfferEmail(Boolean(stored));
-    } catch (_unused2) {}
+    } catch (_unused) {}
   }, []);
 
   // Lock page scroll when any modal is open
@@ -19025,7 +19909,7 @@ var App = function App() {
     }
     setActiveOffer(offer);
   }, [hasOfferEmail]);
-  var services = react.useMemo(function () {
+  var categories = react.useMemo(function () {
     var names = new Set();
     var _iterator = _createForOfIteratorHelper(offers),
       _step;
@@ -19055,17 +19939,17 @@ var App = function App() {
     return Array.from(names).sort();
   }, [offers]);
 
-  // Calculate offer counts for each service based on search query
-  var serviceCounts = react.useMemo(function () {
+  // Calculate offer counts for each category based on search query
+  var categoryCounts = react.useMemo(function () {
     var query = search.trim().toLowerCase();
     var counts = new Map();
 
-    // Initialize all services with 0
-    services.forEach(function (name) {
+    // Initialize all categories with 0
+    categories.forEach(function (name) {
       return counts.set(name, 0);
     });
 
-    // Count matching offers for each service
+    // Count matching offers for each category
     var _iterator3 = _createForOfIteratorHelper(offers),
       _step3;
     try {
@@ -19078,10 +19962,10 @@ var App = function App() {
         }
         if (matchesSearch) {
           var _offer$vendor3;
-          var vendorServices = (((_offer$vendor3 = offer.vendor) === null || _offer$vendor3 === void 0 ? void 0 : _offer$vendor3.services) || []).map(function (s) {
+          var vendorCategories = (((_offer$vendor3 = offer.vendor) === null || _offer$vendor3 === void 0 ? void 0 : _offer$vendor3.services) || []).map(function (s) {
             return s === null || s === void 0 ? void 0 : s.name;
           });
-          vendorServices.forEach(function (name) {
+          vendorCategories.forEach(function (name) {
             if (name && counts.has(name)) {
               counts.set(name, counts.get(name) + 1);
             }
@@ -19094,19 +19978,19 @@ var App = function App() {
       _iterator3.f();
     }
     return counts;
-  }, [offers, search, services]);
+  }, [offers, search, categories]);
   var filteredOffers = react.useMemo(function () {
     var query = search.trim().toLowerCase();
-    var hasServiceFilter = selectedServices.size > 0;
+    var hasCategoryFilter = selectedCategories.size > 0;
     return offers.filter(function (o) {
       var ok = true;
-      if (hasServiceFilter) {
+      if (hasCategoryFilter) {
         var _o$vendor;
-        var vendorServices = (((_o$vendor = o.vendor) === null || _o$vendor === void 0 ? void 0 : _o$vendor.services) || []).map(function (s) {
+        var vendorCategories = (((_o$vendor = o.vendor) === null || _o$vendor === void 0 ? void 0 : _o$vendor.services) || []).map(function (s) {
           return s === null || s === void 0 ? void 0 : s.name;
         });
-        ok = vendorServices.some(function (n) {
-          return selectedServices.has(n);
+        ok = vendorCategories.some(function (n) {
+          return selectedCategories.has(n);
         });
       }
       if (!ok) return false;
@@ -19116,135 +20000,38 @@ var App = function App() {
       }
       return true;
     });
-  }, [offers, search, selectedServices]);
-  var toggleService = react.useCallback(function (name) {
-    setSelectedServices(function (prev) {
-      var next = new Set(prev);
-      if (next.has(name)) next["delete"](name);else next.add(name);
-      return next;
+  }, [offers, search, selectedCategories]);
+  var toggleCategory = react.useCallback(function (name) {
+    setSelectedCategories(function (prev) {
+      // Single select: if already selected, deselect it, otherwise select only this one
+      if (prev.has(name)) {
+        return new Set(); // Deselect
+      } else {
+        return new Set([name]); // Select only this one
+      }
     });
+  }, []);
+  var clearFilters = react.useCallback(function () {
+    setSelectedCategories(new Set());
+    setSearch("");
   }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: "tailwind"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "flex w-full justify-center text-white"
+    className: "flex w-full justify-center text-white bg-black min-h-screen border-[1px] border-white max-w-[87.5rem] mx-auto"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "max-w-[1400px] grow flex flex-col gap-4"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "border-[1px] border-white bg-black h-fit"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "flex w-full ".concat(isMobile ? "pt-2" : "", " sticky top-0 bg-black z-10")
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "w-full flex flex-col ".concat(isMobile ? "gap-2" : "gap-2 border-[1px] border-white/30 mx-4 mt-4")
-  }, isMobile ? /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-2 border-[1px] mx-2 border-white/30 p-1 z-[9999] bg-black"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "flex-1 relative"
-  }, /*#__PURE__*/react.createElement("input", {
-    type: "text",
-    value: search,
-    onChange: function onChange(e) {
-      return setSearch(e.target.value);
-    },
-    placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40  px-3 py-[6px] pr-10 focus:outline-none appearance-none",
-    ref: searchInputRef
-  }), search && /*#__PURE__*/react.createElement("button", {
-    onClick: function onClick() {
-      return setSearch("");
-    },
-    className: "absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-white/70 transition-colors",
-    "aria-label": "Clear search"
-  }, /*#__PURE__*/react.createElement("svg", {
-    width: "16",
-    height: "16",
-    viewBox: "0 0 20 20",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/react.createElement("path", {
-    d: "M15 5L5 15M5 5L15 15",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  })))), /*#__PURE__*/react.createElement("button", {
-    onClick: function onClick() {
-      setSearchMode(false);
-      setFiltersOpen(function (v) {
-        return !v;
-      });
-    },
-    className: "uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black whitespace-nowrap",
-    "aria-label": "Toggle filters"
-  }, /*#__PURE__*/react.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "14",
-    height: "14",
-    viewBox: "0 0 14 14",
-    fill: "none"
-  }, /*#__PURE__*/react.createElement("path", {
-    d: "M2.625 1.75V3.47949C2.625 3.91016 2.83691 4.31348 3.19238 4.55957L6.125 6.78125V12.25L7.875 10.5V6.78125L10.8076 4.55957C11.1631 4.31348 11.375 3.91016 11.375 3.47949V1.75H2.625ZM3.5 2.625H10.5V3.47949C10.5 3.62305 10.4282 3.75635 10.3086 3.83838L10.3018 3.8418L7.29053 6.125H6.70947L3.69824 3.8418L3.69141 3.83838C3.57178 3.75635 3.5 3.62305 3.5 3.47949V2.625Z",
-    fill: "black"
-  })), /*#__PURE__*/react.createElement("p", null, "FILTERS"))) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-3 px-4 pt-4 relative"
-  }, /*#__PURE__*/react.createElement("input", {
-    type: "text",
-    value: search,
-    onChange: function onChange(e) {
-      return setSearch(e.target.value);
-    },
-    placeholder: "Search offers\u2026",
-    className: "w-full bg-black text-white placeholder-white/40 border border-white/30 focus:border-white px-3 py-1 pr-10 focus:outline-none appearance-none",
-    ref: searchInputRef
-  }), search && /*#__PURE__*/react.createElement("button", {
-    onClick: function onClick() {
-      return setSearch("");
-    },
-    className: "absolute right-3 text-white hover:text-white/70 transition-colors",
-    "aria-label": "Clear search"
-  }, /*#__PURE__*/react.createElement("svg", {
-    width: "20",
-    height: "20",
-    viewBox: "0 0 20 20",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/react.createElement("path", {
-    d: "M15 5L5 15M5 5L15 15",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }))))), !isMobile || filtersOpen ? /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-wrap items-center px-4 pt-1 pb-2 border-b-[1px] border-white ".concat(isMobile ? "gap-x-3 gap-y-1" : "gap-x-6 gap-y-2 border-white/30")
-  }, services.map(function (name) {
-    var count = serviceCounts.get(name) || 0;
-    return /*#__PURE__*/react.createElement("label", {
-      key: name,
-      className: "flex items-center gap-2 ".concat(isMobile && "gap-1", " cursor-pointer text-white font-[600]")
-    }, /*#__PURE__*/react.createElement("input", {
-      type: "checkbox",
-      checked: selectedServices.has(name),
-      onChange: function onChange() {
-        return toggleService(name);
-      },
-      className: "tw-filter-checkbox h-4 w-4"
-    }), /*#__PURE__*/react.createElement("span", {
-      className: "text-[0.95rem] ".concat(isMobile ? "text-[0.75rem]" : "")
-    }, name, " (", count, ")"));
-  })) : isMobile ? /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-3 text-[0.9rem]"
-  }, selectedServices.size > 0 && /*#__PURE__*/react.createElement("div", {
-    className: "pb-2"
-  }, /*#__PURE__*/react.createElement("span", {
-    className: "text-white/60"
-  }, selectedServices.size, " filter(s) selected"), /*#__PURE__*/react.createElement("button", {
-    onClick: function onClick() {
-      setSelectedServices(new Set());
-      setSearch("");
-    },
-    className: "text-white underline hover:text-white/70 transition-colors"
-  }, "clear"))) : null)), /*#__PURE__*/react.createElement("div", {
-    className: isMobile ? "p-2 pt-0" : "p-4"
+    className: "max-w-[1400px] w-full px-6 py-8"
+  }, /*#__PURE__*/react.createElement(BrowseHeader, {
+    search: search,
+    setSearch: setSearch,
+    searchInputRef: searchInputRef
+  }), /*#__PURE__*/react.createElement(CategoriesSection, {
+    categories: categories,
+    categoryCounts: categoryCounts,
+    selectedCategories: selectedCategories,
+    toggleCategory: toggleCategory
+  }), /*#__PURE__*/react.createElement("div", {
+    className: isMobile ? "p-2" : "p-0"
   }, isLoading ? /*#__PURE__*/react.createElement("p", {
     className: "text-center py-12"
   }, "Loading offers\u2026") : filteredOffers.length > 0 ? /*#__PURE__*/react.createElement(OfferGrid, {
@@ -19255,7 +20042,7 @@ var App = function App() {
     className: "py-24 flex justify-center"
   }, /*#__PURE__*/react.createElement("p", {
     className: "text-white/70 text-[1.1rem]"
-  }, "No result fit the search filter")))), /*#__PURE__*/react.createElement(OfferModal, {
+  }, "No result fit the search filter"))))), /*#__PURE__*/react.createElement(OfferModal, {
     offer: activeOffer,
     open: !!activeOffer && !emailModalOpen,
     onClose: function onClose() {
@@ -19274,11 +20061,11 @@ var App = function App() {
     onSubmit: function onSubmit(email) {
       try {
         window.localStorage.setItem("offerEmail", email);
-      } catch (_unused3) {}
+      } catch (_unused2) {}
       setHasOfferEmail(true);
       setEmailModalOpen(false);
     }
-  }))));
+  }));
 };
 /* harmony default export */ const src_App = (App);
 ;// ./src/index.js

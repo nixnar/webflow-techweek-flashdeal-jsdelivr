@@ -18,7 +18,6 @@
 #reacttest .tw-discount,
 #reacttest .tw-discount * {
   font-family: "Space Grotesk", sans-serif !important;
-  font-weight: 700 !important;
 }
 
 /* Hide scrollbars across browsers */
@@ -79,8 +78,10 @@ h1 {
 }
 
 p {
-  line-height: 130%;
+  line-height: 125%;
   font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.02188rem;
 }
 
 li {

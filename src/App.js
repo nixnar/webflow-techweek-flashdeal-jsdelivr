@@ -3,19 +3,51 @@ import "./style.css";
 import OfferGrid from "./ui/OfferGrid";
 import OfferModal from "./ui/OfferModal";
 import EmailModal from "./ui/EmailModal";
+import BrowseHeader from "./ui/BrowseHeader";
+import CategoriesSection from "./ui/CategoriesSection";
 
 async function fetchOffersWithFallback() {
+  const speedrunIds = new Set([4021909, 4021960, 4022558, 4022454, 4022098]);
+
   try {
     const res = await fetch("https://api.tech-week.com/get_proven/");
     if (!res.ok) throw new Error("Network response was not ok");
     const data = await res.json();
     // API shape already matches example. Normalize just in case
-    return (data.offers || []).map((o) => ({ ...o, vendor: o.vendor || {} }));
+    return (data.offers || []).map((o) => {
+      const vendor = o.vendor || {};
+      // Add A16z Speedrun Portfolio service to specific offers
+      if (speedrunIds.has(o.id)) {
+        const services = vendor.services || [];
+        return {
+          ...o,
+          vendor: {
+            ...vendor,
+            services: [...services, { name: "A16z Speedrun Portfolio" }],
+          },
+        };
+      }
+      return { ...o, vendor };
+    });
   } catch (err) {
     try {
       const local = await fetch("/apiresponse.json");
       const data = await local.json();
-      return (data.offers || []).map((o) => ({ ...o, vendor: o.vendor || {} }));
+      return (data.offers || []).map((o) => {
+        const vendor = o.vendor || {};
+        // Add A16z Speedrun Portfolio service to specific offers
+        if (speedrunIds.has(o.id)) {
+          const services = vendor.services || [];
+          return {
+            ...o,
+            vendor: {
+              ...vendor,
+              services: [...services, { name: "A16z Speedrun Portfolio" }],
+            },
+          };
+        }
+        return { ...o, vendor };
+      });
     } catch (e) {
       console.error("Failed to load offers", err, e);
       return [];
@@ -27,38 +59,21 @@ const App = () => {
   const [offers, setOffers] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [search, setSearch] = React.useState("");
-  const [selectedServices, setSelectedServices] = React.useState(new Set());
+  const [selectedCategories, setSelectedCategories] = React.useState(new Set());
   const [activeOffer, setActiveOffer] = React.useState(null);
   const [hasOfferEmail, setHasOfferEmail] = React.useState(false);
   const [emailModalOpen, setEmailModalOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
-  const [filtersOpen, setFiltersOpen] = React.useState(false);
-  const [searchMode, setSearchMode] = React.useState(false);
   const searchInputRef = React.useRef(null);
 
   React.useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 900);
+      setIsMobile(window.innerWidth < 1000);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // Auto-open filters on desktop, collapse on mobile
-  React.useEffect(() => {
-    setFiltersOpen(!isMobile);
-  }, [isMobile]);
-
-  // When triggering search mode, ensure filters are open on mobile and focus input
-  React.useEffect(() => {
-    if (!searchMode) return;
-    if (isMobile) setFiltersOpen(true);
-    try {
-      searchInputRef.current?.focus();
-    } catch {}
-    setSearchMode(false);
-  }, [searchMode, isMobile]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -119,7 +134,7 @@ const App = () => {
     [hasOfferEmail]
   );
 
-  const services = React.useMemo(() => {
+  const categories = React.useMemo(() => {
     const names = new Set();
     for (const offer of offers) {
       const arr = offer.vendor?.services || [];
@@ -130,15 +145,15 @@ const App = () => {
     return Array.from(names).sort();
   }, [offers]);
 
-  // Calculate offer counts for each service based on search query
-  const serviceCounts = React.useMemo(() => {
+  // Calculate offer counts for each category based on search query
+  const categoryCounts = React.useMemo(() => {
     const query = search.trim().toLowerCase();
     const counts = new Map();
 
-    // Initialize all services with 0
-    services.forEach((name) => counts.set(name, 0));
+    // Initialize all categories with 0
+    categories.forEach((name) => counts.set(name, 0));
 
-    // Count matching offers for each service
+    // Count matching offers for each category
     for (const offer of offers) {
       let matchesSearch = true;
       if (query) {
@@ -150,10 +165,10 @@ const App = () => {
       }
 
       if (matchesSearch) {
-        const vendorServices = (offer.vendor?.services || []).map(
+        const vendorCategories = (offer.vendor?.services || []).map(
           (s) => s?.name
         );
-        vendorServices.forEach((name) => {
+        vendorCategories.forEach((name) => {
           if (name && counts.has(name)) {
             counts.set(name, counts.get(name) + 1);
           }
@@ -162,16 +177,16 @@ const App = () => {
     }
 
     return counts;
-  }, [offers, search, services]);
+  }, [offers, search, categories]);
 
   const filteredOffers = React.useMemo(() => {
     const query = search.trim().toLowerCase();
-    const hasServiceFilter = selectedServices.size > 0;
+    const hasCategoryFilter = selectedCategories.size > 0;
     return offers.filter((o) => {
       let ok = true;
-      if (hasServiceFilter) {
-        const vendorServices = (o.vendor?.services || []).map((s) => s?.name);
-        ok = vendorServices.some((n) => selectedServices.has(n));
+      if (hasCategoryFilter) {
+        const vendorCategories = (o.vendor?.services || []).map((s) => s?.name);
+        ok = vendorCategories.some((n) => selectedCategories.has(n));
       }
       if (!ok) return false;
       if (query) {
@@ -183,229 +198,82 @@ const App = () => {
       }
       return true;
     });
-  }, [offers, search, selectedServices]);
+  }, [offers, search, selectedCategories]);
 
-  const toggleService = React.useCallback((name) => {
-    setSelectedServices((prev) => {
-      const next = new Set(prev);
-      if (next.has(name)) next.delete(name);
-      else next.add(name);
-      return next;
+  const toggleCategory = React.useCallback((name) => {
+    setSelectedCategories((prev) => {
+      // Single select: if already selected, deselect it, otherwise select only this one
+      if (prev.has(name)) {
+        return new Set(); // Deselect
+      } else {
+        return new Set([name]); // Select only this one
+      }
     });
+  }, []);
+
+  const clearFilters = React.useCallback(() => {
+    setSelectedCategories(new Set());
+    setSearch("");
   }, []);
 
   return (
     <div className="tailwind">
-      <div className="flex w-full justify-center text-white">
-        <div className="max-w-[1400px] grow flex flex-col gap-4">
-          <div className="border-[1px] border-white bg-black h-fit">
-            <div
-              className={`flex w-full ${
-                isMobile ? "pt-2" : ""
-              } sticky top-0 bg-black z-10`}
-            >
-              <div
-                className={`w-full flex flex-col ${
-                  isMobile
-                    ? "gap-2"
-                    : "gap-2 border-[1px] border-white/30 mx-4 mt-4"
-                }`}
-              >
-                {isMobile ? (
-                  <div className="flex items-center gap-2 border-[1px] mx-2 border-white/30 p-1 z-[9999] bg-black">
-                    <div className="flex-1 relative">
-                      <input
-                        type="text"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        placeholder="Search offers…"
-                        className="w-full bg-black text-white placeholder-white/40  px-3 py-[6px] pr-10 focus:outline-none appearance-none"
-                        ref={searchInputRef}
-                      />
-                      {search && (
-                        <button
-                          onClick={() => setSearch("")}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-white/70 transition-colors"
-                          aria-label="Clear search"
-                        >
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M15 5L5 15M5 5L15 15"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      )}
-                    </div>
-                    <button
-                      onClick={() => {
-                        setSearchMode(false);
-                        setFiltersOpen((v) => !v);
-                      }}
-                      className="uppercase font-medium text-[0.875rem] flex items-center gap-[0.375rem] py-[0.375rem] px-[0.5rem] bg-white text-black whitespace-nowrap"
-                      aria-label="Toggle filters"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                      >
-                        <path
-                          d="M2.625 1.75V3.47949C2.625 3.91016 2.83691 4.31348 3.19238 4.55957L6.125 6.78125V12.25L7.875 10.5V6.78125L10.8076 4.55957C11.1631 4.31348 11.375 3.91016 11.375 3.47949V1.75H2.625ZM3.5 2.625H10.5V3.47949C10.5 3.62305 10.4282 3.75635 10.3086 3.83838L10.3018 3.8418L7.29053 6.125H6.70947L3.69824 3.8418L3.69141 3.83838C3.57178 3.75635 3.5 3.62305 3.5 3.47949V2.625Z"
-                          fill="black"
-                        />
-                      </svg>
-                      <p>FILTERS</p>
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <div
-                      className={`flex items-center gap-3 px-4 pt-4 relative`}
-                    >
-                      <input
-                        type="text"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        placeholder="Search offers…"
-                        className="w-full bg-black text-white placeholder-white/40 border border-white/30 focus:border-white px-3 py-1 pr-10 focus:outline-none appearance-none"
-                        ref={searchInputRef}
-                      />
-                      {search && (
-                        <button
-                          onClick={() => setSearch("")}
-                          className="absolute right-3 text-white hover:text-white/70 transition-colors"
-                          aria-label="Clear search"
-                        >
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M15 5L5 15M5 5L15 15"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      )}
-                    </div>
-                  </>
-                )}
+      <div className="flex w-full justify-center text-white bg-black min-h-screen border-[1px] border-white max-w-[87.5rem] mx-auto">
+        <div className="max-w-[1400px] w-full px-6 py-8">
+          <BrowseHeader
+            search={search}
+            setSearch={setSearch}
+            searchInputRef={searchInputRef}
+          />
 
-                {!isMobile || filtersOpen ? (
-                  <div
-                    className={`flex flex-wrap items-center px-4 pt-1 pb-2 border-b-[1px] border-white ${
-                      isMobile
-                        ? "gap-x-3 gap-y-1"
-                        : "gap-x-6 gap-y-2 border-white/30"
-                    }`}
-                  >
-                    {services.map((name) => {
-                      const count = serviceCounts.get(name) || 0;
-                      return (
-                        <label
-                          key={name}
-                          className={`flex items-center gap-2 ${
-                            isMobile && "gap-1"
-                          } cursor-pointer text-white font-[600]`}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={selectedServices.has(name)}
-                            onChange={() => toggleService(name)}
-                            className="tw-filter-checkbox h-4 w-4"
-                          />
-                          <span
-                            className={`text-[0.95rem] ${
-                              isMobile ? "text-[0.75rem]" : ""
-                            }`}
-                          >
-                            {name} ({count})
-                          </span>
-                        </label>
-                      );
-                    })}
-                  </div>
-                ) : isMobile ? (
-                  <div className="flex items-center gap-3 text-[0.9rem]">
-                    {selectedServices.size > 0 && (
-                      <div className="pb-2">
-                        <span className="text-white/60">
-                          {selectedServices.size} filter(s) selected
-                        </span>
-                        <button
-                          onClick={() => {
-                            setSelectedServices(new Set());
-                            setSearch("");
-                          }}
-                          className="text-white underline hover:text-white/70 transition-colors"
-                        >
-                          clear
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                ) : null}
+          <CategoriesSection
+            categories={categories}
+            categoryCounts={categoryCounts}
+            selectedCategories={selectedCategories}
+            toggleCategory={toggleCategory}
+          />
+
+          <div className={isMobile ? "p-2" : "p-0"}>
+            {isLoading ? (
+              <p className="text-center py-12">Loading offers…</p>
+            ) : filteredOffers.length > 0 ? (
+              <OfferGrid
+                offers={filteredOffers}
+                onRedeem={handleRedeem}
+                isMobile={isMobile}
+              />
+            ) : (
+              <div className="py-24 flex justify-center">
+                <p className="text-white/70 text-[1.1rem]">
+                  No result fit the search filter
+                </p>
               </div>
-            </div>
-            <div className={isMobile ? "p-2 pt-0" : "p-4"}>
-              {isLoading ? (
-                <p className="text-center py-12">Loading offers…</p>
-              ) : filteredOffers.length > 0 ? (
-                <OfferGrid
-                  offers={filteredOffers}
-                  onRedeem={handleRedeem}
-                  isMobile={isMobile}
-                />
-              ) : (
-                <div className="py-24 flex justify-center">
-                  <p className="text-white/70 text-[1.1rem]">
-                    No result fit the search filter
-                  </p>
-                </div>
-              )}
-            </div>
+            )}
           </div>
-          <OfferModal
-            offer={activeOffer}
-            open={!!activeOffer && !emailModalOpen}
-            onClose={() => setActiveOffer(null)}
-            onRequireEmail={() => setEmailModalOpen(true)}
-            isMobile={isMobile}
-          />
-          <EmailModal
-            open={emailModalOpen}
-            onClose={() => {
-              setEmailModalOpen(false);
-              setActiveOffer(null);
-            }}
-            onSubmit={(email) => {
-              try {
-                window.localStorage.setItem("offerEmail", email);
-              } catch {}
-              setHasOfferEmail(true);
-              setEmailModalOpen(false);
-            }}
-          />
         </div>
       </div>
+
+      <OfferModal
+        offer={activeOffer}
+        open={!!activeOffer && !emailModalOpen}
+        onClose={() => setActiveOffer(null)}
+        onRequireEmail={() => setEmailModalOpen(true)}
+        isMobile={isMobile}
+      />
+      <EmailModal
+        open={emailModalOpen}
+        onClose={() => {
+          setEmailModalOpen(false);
+          setActiveOffer(null);
+        }}
+        onSubmit={(email) => {
+          try {
+            window.localStorage.setItem("offerEmail", email);
+          } catch {}
+          setHasOfferEmail(true);
+          setEmailModalOpen(false);
+        }}
+      />
     </div>
   );
 };
