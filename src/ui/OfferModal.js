@@ -85,6 +85,25 @@ export default function OfferModal({
         throw new Error(message || "Failed to redeem offer");
       }
 
+      // Track successful redeem in GA4
+      if (typeof window !== "undefined" && window.gtag) {
+        const eventData = {
+          event_category: "conversion",
+          event_label: `${vendor.name || "Unknown"} - ${offer.name}`,
+          offer_id: offer.id,
+          vendor_name: vendor.name || "Unknown",
+          offer_name: offer.name,
+          value: 1,
+        };
+        window.gtag("event", "redeem_success_secondary_click", eventData);
+        // console.log(
+        //   "✅ GA4 Event Tracked: redeem_success_secondary_click",
+        //   eventData
+        // );
+      } // else {
+      // console.log("⚠️ GA4 not available (gtag not found)");
+      // }
+
       setShowSteps(true);
     } catch (err) {
       setSubmitError("Unable to redeem right now. Please try again.");

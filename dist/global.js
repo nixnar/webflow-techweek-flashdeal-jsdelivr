@@ -18527,7 +18527,22 @@ function OfferCard(_ref2) {
   })), /*#__PURE__*/react.createElement("button", {
     className: "flex-shrink-0 w-[4.5rem] p-2 h-full flex items-center justify-center bg-white border-[1px] border-white text-[0.875rem] font-[700] uppercase tracking-[0.0175rem] leading-[1.35] text-black",
     onClick: function onClick() {
-      return onRedeem === null || onRedeem === void 0 ? void 0 : onRedeem(offer);
+      // Track redeem button click in GA4
+      if (typeof window !== "undefined" && window.gtag) {
+        var _offer$vendor, _offer$vendor2;
+        var eventData = {
+          event_category: "engagement",
+          event_label: "".concat(((_offer$vendor = offer.vendor) === null || _offer$vendor === void 0 ? void 0 : _offer$vendor.name) || "Unknown", " - ").concat(offer.name),
+          offer_id: offer.id,
+          vendor_name: ((_offer$vendor2 = offer.vendor) === null || _offer$vendor2 === void 0 ? void 0 : _offer$vendor2.name) || "Unknown",
+          offer_name: offer.name
+        };
+        window.gtag("event", "redeem_click", eventData);
+        // console.log("✅ GA4 Event Tracked: redeem_click", eventData);
+      } // else {
+      // console.log("⚠️ GA4 not available (gtag not found)");
+      // }
+      onRedeem === null || onRedeem === void 0 || onRedeem(offer);
     }
   }, "Redeem"))));
 }
@@ -18939,7 +18954,7 @@ function OfferModal(_ref) {
   }
   function _handleRedeemClick() {
     _handleRedeemClick = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var email, payload, res, message;
+      var email, payload, res, message, eventData;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -19004,25 +19019,44 @@ function OfferModal(_ref) {
           case 25:
             throw new Error(message || "Failed to redeem offer");
           case 26:
+            // Track successful redeem in GA4
+            if (typeof window !== "undefined" && window.gtag) {
+              eventData = {
+                event_category: "conversion",
+                event_label: "".concat(vendor.name || "Unknown", " - ").concat(offer.name),
+                offer_id: offer.id,
+                vendor_name: vendor.name || "Unknown",
+                offer_name: offer.name,
+                value: 1
+              };
+              window.gtag("event", "redeem_success_secondary_click", eventData);
+              // console.log(
+              //   "✅ GA4 Event Tracked: redeem_success_secondary_click",
+              //   eventData
+              // );
+            } // else {
+            // console.log("⚠️ GA4 not available (gtag not found)");
+            // }
+
             setShowSteps(true);
-            _context.next = 33;
+            _context.next = 34;
             break;
-          case 29:
-            _context.prev = 29;
+          case 30:
+            _context.prev = 30;
             _context.t1 = _context["catch"](5);
             setSubmitError("Unable to redeem right now. Please try again.");
             // Optional: console for diagnostics
             // eslint-disable-next-line no-console
             console.error("redeem_offer failed", _context.t1);
-          case 33:
-            _context.prev = 33;
+          case 34:
+            _context.prev = 34;
             setIsSubmitting(false);
-            return _context.finish(33);
-          case 36:
+            return _context.finish(34);
+          case 37:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[5, 29, 33, 36], [17, 23]]);
+      }, _callee, null, [[5, 30, 34, 37], [17, 23]]);
     }));
     return _handleRedeemClick.apply(this, arguments);
   }

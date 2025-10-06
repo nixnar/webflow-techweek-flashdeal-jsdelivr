@@ -96,7 +96,25 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
 
           <button
             className="flex-shrink-0 w-[4.5rem] p-2 h-full flex items-center justify-center bg-white border-[1px] border-white text-[0.875rem] font-[700] uppercase tracking-[0.0175rem] leading-[1.35] text-black"
-            onClick={() => onRedeem?.(offer)}
+            onClick={() => {
+              // Track redeem button click in GA4
+              if (typeof window !== "undefined" && window.gtag) {
+                const eventData = {
+                  event_category: "engagement",
+                  event_label: `${offer.vendor?.name || "Unknown"} - ${
+                    offer.name
+                  }`,
+                  offer_id: offer.id,
+                  vendor_name: offer.vendor?.name || "Unknown",
+                  offer_name: offer.name,
+                };
+                window.gtag("event", "redeem_click", eventData);
+                // console.log("✅ GA4 Event Tracked: redeem_click", eventData);
+              } // else {
+              // console.log("⚠️ GA4 not available (gtag not found)");
+              // }
+              onRedeem?.(offer);
+            }}
           >
             Redeem
           </button>
