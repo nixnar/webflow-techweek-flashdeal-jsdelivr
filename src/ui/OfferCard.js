@@ -78,7 +78,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
       </div>
       <div className="flex flex-col gap-3 px-3 pb-3">
         <div
-          className="text-white opacity-80 max-h-[4.5rem] overflow-hidden"
+          className="text-white opacity-80 max-h-[4.5rem] min-h-[4.5rem] overflow-hidden"
           dangerouslySetInnerHTML={{
             __html: sanitizeHtml(descriptionHtml),
           }}
@@ -121,7 +121,7 @@ function PriceBlock({ offer, badge, value, isMobile, isSpeedrun }) {
       <div className="leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] py-[0.53rem] text-white">
         <span
           className={`whitespace-nowrap ${
-            isSpeedrun ? "text-[#EB55E5]" : "text-white"
+            isSpeedrun ? "text-white" : "text-white"
           }`}
         >
           {offer.discount ?? 0}% OFF
@@ -148,7 +148,7 @@ function PriceBlock({ offer, badge, value, isMobile, isSpeedrun }) {
     <div className="leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] text-white">
       <span
         className={`whitespace-nowrap ${
-          isSpeedrun ? "text-[#EB55E5]" : "text-white"
+          isSpeedrun ? "text-white" : "text-white"
         }`}
       >
         {badge.primary}

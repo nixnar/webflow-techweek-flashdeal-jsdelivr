@@ -8,7 +8,9 @@ import CategoriesSection from "./ui/CategoriesSection";
 import SpeedrunSection from "./ui/SpeedrunSection";
 
 async function fetchOffersWithFallback() {
-  const speedrunIds = new Set([4021909, 4021960, 4022558, 4022454, 4022098]);
+  const speedrunIds = new Set([
+    50021443, 50021447, 50021428, 50021437, 50021438, 50021435, 50021429,
+  ]);
 
   try {
     const res = await fetch("https://api.tech-week.com/get_proven/");
@@ -18,7 +20,7 @@ async function fetchOffersWithFallback() {
     return (data.offers || []).map((o) => {
       const vendor = o.vendor || {};
       // Add A16z Speedrun Portfolio service to specific offers
-      if (speedrunIds.has(o.id)) {
+      if (speedrunIds.has(o.vendor_id)) {
         const services = vendor.services || [];
         return {
           ...o,

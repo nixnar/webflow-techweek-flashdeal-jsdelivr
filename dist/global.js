@@ -606,6 +606,12 @@ video {
 .top-1\\/2{
   top: 50% !important;
 }
+.left-0{
+  left: 0px !important;
+}
+.top-full{
+  top: 100% !important;
+}
 .z-10{
   z-index: 10 !important;
 }
@@ -717,11 +723,23 @@ video {
 .max-h-full{
   max-height: 100% !important;
 }
+.max-h-\\[70vh\\]{
+  max-height: 70vh !important;
+}
+.max-h-\\[100vh\\]{
+  max-height: 100vh !important;
+}
+.max-h-\\[60vh\\]{
+  max-height: 60vh !important;
+}
 .min-h-0{
   min-height: 0px !important;
 }
 .min-h-screen{
   min-height: 100vh !important;
+}
+.min-h-\\[4\\.5rem\\]{
+  min-height: 4.5rem !important;
 }
 .w-10{
   width: 2.5rem !important;
@@ -1156,6 +1174,18 @@ video {
 .pr-\\[0\\.56rem\\]{
   padding-right: 0.56rem !important;
 }
+.pb-48{
+  padding-bottom: 12rem !important;
+}
+.pb-96{
+  padding-bottom: 24rem !important;
+}
+.pb-\\[10rem\\]{
+  padding-bottom: 10rem !important;
+}
+.pb-\\[40rem\\]{
+  padding-bottom: 40rem !important;
+}
 .text-left{
   text-align: left !important;
 }
@@ -1326,6 +1356,11 @@ video {
 .opacity-70{
   opacity: 0.7 !important;
 }
+.blur{
+  --tw-blur: blur(8px) !important;
+  filter: blur(8px) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
@@ -1489,6 +1524,10 @@ li {
   --tw-border-opacity: 1 !important;
   border-color: rgba(255, 255, 255, 1) !important;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
+}
+
+.hover\\:border-white\\/80:hover{
+  border-color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .hover\\:bg-\\[\\#00e1ff\\]:hover{
@@ -18567,7 +18606,7 @@ function OfferCard(_ref2) {
   }, "Speedrun"))), /*#__PURE__*/react.createElement("div", {
     className: "flex flex-col gap-3 px-3 pb-3"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "text-white opacity-80 max-h-[4.5rem] overflow-hidden",
+    className: "text-white opacity-80 max-h-[4.5rem] min-h-[4.5rem] overflow-hidden",
     dangerouslySetInnerHTML: {
       __html: sanitizeHtml(descriptionHtml)
     }
@@ -18601,7 +18640,7 @@ function PriceBlock(_ref3) {
     return /*#__PURE__*/react.createElement("div", {
       className: "leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] py-[0.53rem] text-white"
     }, /*#__PURE__*/react.createElement("span", {
-      className: "whitespace-nowrap ".concat(isSpeedrun ? "text-[#EB55E5]" : "text-white")
+      className: "whitespace-nowrap ".concat(isSpeedrun ? "text-white" : "text-white")
     }, (_offer$discount = offer.discount) !== null && _offer$discount !== void 0 ? _offer$discount : 0, "% OFF"), showValue ? /*#__PURE__*/react.createElement("span", {
       className: "text-white/65 font-[500] leading-[1.25]"
     }, " ", value.label, " ", value.value) : null);
@@ -18614,7 +18653,7 @@ function PriceBlock(_ref3) {
   return /*#__PURE__*/react.createElement("div", {
     className: "leading-[1.35] text-[0.875rem] font-[700] tracking-[-0.02188rem] px-[0.62rem] text-white"
   }, /*#__PURE__*/react.createElement("span", {
-    className: "whitespace-nowrap ".concat(isSpeedrun ? "text-[#EB55E5]" : "text-white")
+    className: "whitespace-nowrap ".concat(isSpeedrun ? "text-white" : "text-white")
   }, badge.primary, badge.secondary ? " ".concat(badge.secondary) : ""), showValue ? /*#__PURE__*/react.createElement("span", {
     className: "text-white/65 font-[500] leading-[1.25]"
   }, " ", value.label, " ", value.value) : null);
@@ -19966,7 +20005,7 @@ function _fetchOffersWithFallback() {
     return App_regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          speedrunIds = new Set([4021909, 4021960, 4022558, 4022454, 4022098]);
+          speedrunIds = new Set([50021443, 50021447, 50021428, 50021437, 50021438, 50021435, 50021429]);
           _context2.prev = 1;
           _context2.next = 4;
           return fetch("https://api.tech-week.com/get_proven/");
@@ -19985,7 +20024,7 @@ function _fetchOffersWithFallback() {
           return _context2.abrupt("return", (data.offers || []).map(function (o) {
             var vendor = o.vendor || {};
             // Add A16z Speedrun Portfolio service to specific offers
-            if (speedrunIds.has(o.id)) {
+            if (speedrunIds.has(o.vendor_id)) {
               var services = vendor.services || [];
               return _objectSpread(_objectSpread({}, o), {}, {
                 vendor: _objectSpread(_objectSpread({}, vendor), {}, {
