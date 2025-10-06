@@ -379,7 +379,9 @@ export default function CategoryCard({ name, count, isSelected, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="relative overflow-hidden border-[1px] border-solid border-[#979797] bg-[#1a1916] flex flex-col py-3 px-[0.62rem] justify-between items-start gap-[0.38rem]"
+      className={`relative overflow-hidden border-[1px] border-solid ${
+        isSelected ? "border-white bg-black" : "border-[#979797]"
+      } bg-[#1a1916] flex flex-col py-3 px-[0.62rem] justify-between items-start gap-[0.38rem]`}
     >
       {isA16z && <A16zBackground />}
       <div className="relative z-10 text-white text-[1rem] font-[700] uppercase text-left">

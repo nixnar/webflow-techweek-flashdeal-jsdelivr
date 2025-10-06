@@ -49,7 +49,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
         >
           {isSpeedrun && <SpeedrunBackground />}
           <div
-            className={`flex flex-col text-white flex-1 px-[0.62rem] items-start justify-center h-full relative z-10 w-full`}
+            className={`flex flex-col text-white flex-1 px-[0.62rem] items-start justify-center h-full relative w-full`}
           >
             <div
               className={`text-[1rem] font-[700] leading-[1.1] uppercase tracking-[0.02rem]`}
@@ -64,7 +64,7 @@ export default function OfferCard({ offer, onRedeem, isMobile }) {
           </div>
           {isSpeedrun && (
             <div
-              className="text-white border-r-[1px] border-[#989898] text-[0.75rem] font-[700] tracking-[0.015em] uppercase whitespace-nowrap px-[0.19rem] py-[0.44rem] flex items-center justify-center relative z-10"
+              className="text-white border-r-[1px] border-[#989898] text-[0.75rem] font-[700] tracking-[0.015em] uppercase whitespace-nowrap px-[0.19rem] py-[0.44rem] flex items-center justify-center relativeuo"
               style={{
                 writingMode: "vertical-lr",
                 textOrientation: "mixed",

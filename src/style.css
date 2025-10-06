@@ -31,6 +31,16 @@
   scrollbar-width: none;
 }
 
+/* Utility class for hiding scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-size: 3.25rem;
   font-weight: 600;

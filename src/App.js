@@ -5,6 +5,7 @@ import OfferModal from "./ui/OfferModal";
 import EmailModal from "./ui/EmailModal";
 import BrowseHeader from "./ui/BrowseHeader";
 import CategoriesSection from "./ui/CategoriesSection";
+import SpeedrunSection from "./ui/SpeedrunSection";
 
 async function fetchOffersWithFallback() {
   const speedrunIds = new Set([4021909, 4021960, 4022558, 4022454, 4022098]);
@@ -65,6 +66,8 @@ const App = () => {
   const [emailModalOpen, setEmailModalOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
   const searchInputRef = React.useRef(null);
+  const resultsRef = React.useRef(null);
+  const hasUserInteracted = React.useRef(false);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -74,6 +77,28 @@ const App = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Function to scroll to results
+  const scrollToResults = React.useCallback(() => {
+    if (resultsRef.current && !isLoading) {
+      const element = resultsRef.current;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 84; // Account for sticky header + some padding
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  }, [isLoading]);
+
+  // Scroll to results whenever search or filters change (only after user interaction)
+  React.useEffect(() => {
+    if (hasUserInteracted.current) {
+      scrollToResults();
+    }
+  }, [search, selectedCategories, scrollToResults]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -201,6 +226,7 @@ const App = () => {
   }, [offers, search, selectedCategories]);
 
   const toggleCategory = React.useCallback((name) => {
+    hasUserInteracted.current = true;
     setSelectedCategories((prev) => {
       // Single select: if already selected, deselect it, otherwise select only this one
       if (prev.has(name)) {
@@ -211,6 +237,19 @@ const App = () => {
     });
   }, []);
 
+  const handleSearchChange = React.useCallback((value) => {
+    hasUserInteracted.current = true;
+    setSearch(value);
+  }, []);
+
+  const handleFilterToggle = React.useCallback(() => {
+    hasUserInteracted.current = true;
+    // Small delay to allow the filter drawer to render before scrolling
+    setTimeout(() => {
+      scrollToResults();
+    }, 100);
+  }, [scrollToResults]);
+
   const clearFilters = React.useCallback(() => {
     setSelectedCategories(new Set());
     setSearch("");
@@ -219,21 +258,38 @@ const App = () => {
   return (
     <div className="tailwind">
       <div className="flex w-full justify-center text-white bg-black min-h-screen border-[1px] border-white max-w-[87.5rem] mx-auto">
-        <div className="max-w-[1400px] w-full px-6 py-8">
+        <div
+          className={`max-w-[1400px] w-full ${
+            isMobile ? "px-3 py-4 pt-0" : "px-6 pb-8"
+          }`}
+        >
           <BrowseHeader
             search={search}
-            setSearch={setSearch}
+            setSearch={handleSearchChange}
             searchInputRef={searchInputRef}
-          />
-
-          <CategoriesSection
+            isMobile={isMobile}
             categories={categories}
             categoryCounts={categoryCounts}
             selectedCategories={selectedCategories}
             toggleCategory={toggleCategory}
+            onFilterToggle={handleFilterToggle}
           />
+          <div className="">
+            <SpeedrunSection
+              offers={offers}
+              onRedeem={handleRedeem}
+              isMobile={isMobile}
+            />
+            <div ref={resultsRef}>
+              <CategoriesSection
+                categories={categories}
+                categoryCounts={categoryCounts}
+                selectedCategories={selectedCategories}
+                toggleCategory={toggleCategory}
+                isMobile={isMobile}
+              />
+            </div>
 
-          <div className={isMobile ? "p-2" : "p-0"}>
             {isLoading ? (
               <p className="text-center py-12">Loading offers…</p>
             ) : filteredOffers.length > 0 ? (
