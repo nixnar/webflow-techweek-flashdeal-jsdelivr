@@ -606,17 +606,14 @@ video {
 .top-1\\/2{
   top: 50% !important;
 }
-.left-0{
-  left: 0px !important;
-}
-.top-full{
-  top: 100% !important;
-}
 .z-10{
   z-index: 10 !important;
 }
 .z-20{
   z-index: 20 !important;
+}
+.z-30{
+  z-index: 30 !important;
 }
 .z-50{
   z-index: 50 !important;
@@ -626,9 +623,6 @@ video {
 }
 .z-\\[9999\\]{
   z-index: 9999 !important;
-}
-.z-30{
-  z-index: 30 !important;
 }
 .mx-2{
   margin-left: 0.5rem !important;
@@ -648,14 +642,8 @@ video {
 .mb-4{
   margin-bottom: 1rem !important;
 }
-.mb-8{
-  margin-bottom: 2rem !important;
-}
 .ml-2{
   margin-left: 0.5rem !important;
-}
-.ml-3{
-  margin-left: 0.75rem !important;
 }
 .mt-2{
   margin-top: 0.5rem !important;
@@ -663,23 +651,14 @@ video {
 .mt-4{
   margin-top: 1rem !important;
 }
-.mt-6{
-  margin-top: 1.5rem !important;
-}
 .mt-\\[0\\.75rem\\]{
   margin-top: 0.75rem !important;
-}
-.mt-1{
-  margin-top: 0.25rem !important;
 }
 .line-clamp-2{
   overflow: hidden !important;
   display: -webkit-box !important;
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 2 !important;
-}
-.block{
-  display: block !important;
 }
 .flex{
   display: flex !important;
@@ -723,23 +702,14 @@ video {
 .max-h-full{
   max-height: 100% !important;
 }
-.max-h-\\[70vh\\]{
-  max-height: 70vh !important;
-}
-.max-h-\\[100vh\\]{
-  max-height: 100vh !important;
-}
-.max-h-\\[60vh\\]{
-  max-height: 60vh !important;
-}
 .min-h-0{
   min-height: 0px !important;
 }
-.min-h-screen{
-  min-height: 100vh !important;
-}
 .min-h-\\[4\\.5rem\\]{
   min-height: 4.5rem !important;
+}
+.min-h-screen{
+  min-height: 100vh !important;
 }
 .w-10{
   width: 2.5rem !important;
@@ -839,9 +809,6 @@ video {
      -moz-appearance: none !important;
           appearance: none !important;
 }
-.grid-cols-1{
-  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-}
 .flex-col{
   flex-direction: column !important;
 }
@@ -871,9 +838,6 @@ video {
 }
 .gap-4{
   gap: 1rem !important;
-}
-.gap-6{
-  gap: 1.5rem !important;
 }
 .gap-8{
   gap: 2rem !important;
@@ -925,9 +889,6 @@ video {
 .border-\\[1px\\]{
   border-width: 1px !important;
 }
-.border-\\[2px\\]{
-  border-width: 2px !important;
-}
 .border-b-2{
   border-bottom-width: 2px !important;
 }
@@ -937,8 +898,16 @@ video {
 .border-r-\\[1px\\]{
   border-right-width: 1px !important;
 }
+.border-l-\\[1px\\]{
+  border-left-width: 1px !important;
+}
 .border-solid{
   border-style: solid !important;
+}
+.border-\\[\\#606060\\]{
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(96, 96, 96, 1) !important;
+  border-color: rgba(96, 96, 96, var(--tw-border-opacity, 1)) !important;
 }
 .border-\\[\\#979797\\]{
   --tw-border-opacity: 1 !important;
@@ -964,10 +933,11 @@ video {
 .border-white\\/65{
   border-color: rgba(255, 255, 255, 0.65) !important;
 }
-.border-\\[\\#606060\\]{
-  --tw-border-opacity: 1 !important;
-  border-color: rgba(96, 96, 96, 1) !important;
-  border-color: rgba(96, 96, 96, var(--tw-border-opacity, 1)) !important;
+.border-white\\/80{
+  border-color: rgba(255, 255, 255, 0.8) !important;
+}
+.border-\\[\\#979797\\]\\/40{
+  border-color: rgba(151, 151, 151, 0.4) !important;
 }
 .bg-\\[\\#1D1B17\\]\\/80{
   background-color: rgba(29, 27, 23, 0.8) !important;
@@ -993,6 +963,14 @@ video {
 .bg-black\\/70{
   background-color: rgba(0, 0, 0, 0.7) !important;
 }
+.bg-black\\/80{
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+.bg-gray-700{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(55, 65, 81, 1) !important;
+  background-color: rgba(55, 65, 81, var(--tw-bg-opacity, 1)) !important;
+}
 .bg-white{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(255, 255, 255, 1) !important;
@@ -1001,21 +979,15 @@ video {
 .bg-white\\/5{
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
-.bg-transparent{
-  background-color: transparent !important;
+.bg-black\\/50{
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
-.bg-white\\/10{
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-.bg-black\\/80{
-  background-color: rgba(0, 0, 0, 0.8) !important;
+.bg-\\[\\#1a1916\\]\\/50{
+  background-color: rgba(26, 25, 22, 0.5) !important;
 }
 .object-contain{
   -o-object-fit: contain !important;
      object-fit: contain !important;
-}
-.p-0{
-  padding: 0px !important;
 }
 .p-1{
   padding: 0.25rem !important;
@@ -1067,6 +1039,10 @@ video {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
+.py-2{
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
 .py-24{
   padding-top: 6rem !important;
   padding-bottom: 6rem !important;
@@ -1075,9 +1051,13 @@ video {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
-.py-8{
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
+.py-4{
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.py-\\[0\\.31rem\\]{
+  padding-top: 0.31rem !important;
+  padding-bottom: 0.31rem !important;
 }
 .py-\\[0\\.375rem\\]{
   padding-top: 0.375rem !important;
@@ -1099,29 +1079,12 @@ video {
   padding-top: 6px !important;
   padding-bottom: 6px !important;
 }
-.py-4{
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
+.py-\\[0\\.58rem\\]{
+  padding-top: 0.58rem !important;
+  padding-bottom: 0.58rem !important;
 }
-.py-2{
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-}
-.py-6{
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
-}
-.px-2{
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
-}
-.py-\\[0\\.31rem\\]{
-  padding-top: 0.31rem !important;
-  padding-bottom: 0.31rem !important;
-}
-.py-\\[0\\.11rem\\]{
-  padding-top: 0.11rem !important;
-  padding-bottom: 0.11rem !important;
+.pb-0{
+  padding-bottom: 0px !important;
 }
 .pb-2{
   padding-bottom: 0.5rem !important;
@@ -1135,14 +1098,23 @@ video {
 .pb-6{
   padding-bottom: 1.5rem !important;
 }
+.pb-8{
+  padding-bottom: 2rem !important;
+}
+.pl-2{
+  padding-left: 0.5rem !important;
+}
 .pr-10{
   padding-right: 2.5rem !important;
 }
-.pr-12{
-  padding-right: 3rem !important;
-}
 .pr-2{
   padding-right: 0.5rem !important;
+}
+.pr-\\[0\\.56rem\\]{
+  padding-right: 0.56rem !important;
+}
+.pt-0{
+  padding-top: 0px !important;
 }
 .pt-1{
   padding-top: 0.25rem !important;
@@ -1153,38 +1125,14 @@ video {
 .pt-4{
   padding-top: 1rem !important;
 }
-.pt-8{
-  padding-top: 2rem !important;
-}
 .pt-6{
   padding-top: 1.5rem !important;
 }
-.pb-0{
-  padding-bottom: 0px !important;
+.pl-3{
+  padding-left: 0.75rem !important;
 }
-.pt-0{
-  padding-top: 0px !important;
-}
-.pb-8{
-  padding-bottom: 2rem !important;
-}
-.pl-2{
-  padding-left: 0.5rem !important;
-}
-.pr-\\[0\\.56rem\\]{
-  padding-right: 0.56rem !important;
-}
-.pb-48{
-  padding-bottom: 12rem !important;
-}
-.pb-96{
-  padding-bottom: 24rem !important;
-}
-.pb-\\[10rem\\]{
-  padding-bottom: 10rem !important;
-}
-.pb-\\[40rem\\]{
-  padding-bottom: 40rem !important;
+.pr-8{
+  padding-right: 2rem !important;
 }
 .text-left{
   text-align: left !important;
@@ -1208,6 +1156,9 @@ video {
 .text-\\[0\\.9rem\\]{
   font-size: 0.9rem !important;
 }
+.text-\\[1\\.125rem\\]{
+  font-size: 1.125rem !important;
+}
 .text-\\[1\\.1rem\\]{
   font-size: 1.1rem !important;
 }
@@ -1228,12 +1179,6 @@ video {
 }
 .text-\\[2rem\\]{
   font-size: 2rem !important;
-}
-.text-\\[1\\.125rem\\]{
-  font-size: 1.125rem !important;
-}
-.font-\\[400\\]{
-  font-weight: 400 !important;
 }
 .font-\\[500\\]{
   font-weight: 500 !important;
@@ -1262,11 +1207,11 @@ video {
 .leading-\\[1\\.35\\]{
   line-height: 1.35 !important;
 }
-.leading-tight{
-  line-height: 1.25 !important;
-}
 .leading-\\[1\\]{
   line-height: 1 !important;
+}
+.leading-tight{
+  line-height: 1.25 !important;
 }
 .tracking-\\[-0\\.02188rem\\]{
   letter-spacing: -0.02188rem !important;
@@ -1286,16 +1231,13 @@ video {
 .tracking-\\[0\\.05rem\\]{
   letter-spacing: 0.05rem !important;
 }
-.tracking-tight{
-  letter-spacing: -0.025em !important;
-}
 .tracking-wide{
   letter-spacing: 0.025em !important;
 }
-.text-\\[\\#EB55E5\\]{
+.text-\\[\\#ffebff\\]{
   --tw-text-opacity: 1 !important;
-  color: rgba(235, 85, 229, 1) !important;
-  color: rgba(235, 85, 229, var(--tw-text-opacity, 1)) !important;
+  color: rgba(255, 235, 255, 1) !important;
+  color: rgba(255, 235, 255, var(--tw-text-opacity, 1)) !important;
 }
 .text-black{
   --tw-text-opacity: 1 !important;
@@ -1324,13 +1266,11 @@ video {
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
 }
-.text-\\[\\#ffebff\\]{
-  --tw-text-opacity: 1 !important;
-  color: rgba(255, 235, 255, 1) !important;
-  color: rgba(255, 235, 255, var(--tw-text-opacity, 1)) !important;
+.text-white\\/40{
+  color: rgba(255, 255, 255, 0.4) !important;
 }
-.text-\\[1\\.\\.75rem\\]{
-  color: 1..75rem !important;
+.text-white\\/30{
+  color: rgba(255, 255, 255, 0.3) !important;
 }
 .underline{
   text-decoration-line: underline !important;
@@ -1350,16 +1290,14 @@ video {
 .opacity-30{
   opacity: 0.3 !important;
 }
-.opacity-80{
-  opacity: 0.8 !important;
-}
 .opacity-70{
   opacity: 0.7 !important;
 }
-.blur{
-  --tw-blur: blur(8px) !important;
-  filter: blur(8px) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+.opacity-80{
+  opacity: 0.8 !important;
+}
+.opacity-50{
+  opacity: 0.5 !important;
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -1526,20 +1464,10 @@ li {
   border-color: rgba(255, 255, 255, var(--tw-border-opacity, 1)) !important;
 }
 
-.hover\\:border-white\\/80:hover{
-  border-color: rgba(255, 255, 255, 0.8) !important;
-}
-
 .hover\\:bg-\\[\\#00e1ff\\]:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgba(0, 225, 255, 1) !important;
   background-color: rgba(0, 225, 255, var(--tw-bg-opacity, 1)) !important;
-}
-
-.hover\\:bg-white:hover{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(255, 255, 255, 1) !important;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1)) !important;
 }
 
 .hover\\:text-white:hover{
@@ -1550,12 +1478,6 @@ li {
 
 .hover\\:text-white\\/70:hover{
   color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.hover\\:text-black:hover{
-  --tw-text-opacity: 1 !important;
-  color: rgba(0, 0, 0, 1) !important;
-  color: rgba(0, 0, 0, var(--tw-text-opacity, 1)) !important;
 }
 
 .focus\\:border-white:focus{
@@ -1569,25 +1491,7 @@ li {
   outline-offset: 2px !important;
 }
 
-@media (min-width: 640px){
-
-  .sm\\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-
-@media (min-width: 768px){
-
-  .md\\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-}
-
 @media (min-width: 1024px){
-
-  .lg\\:grid-cols-4{
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  }
 
   .lg\\:flex-nowrap{
     flex-wrap: nowrap !important;
@@ -19628,13 +19532,15 @@ function CategoryCard(_ref) {
     isSelected = _ref.isSelected,
     onClick = _ref.onClick;
   var isA16z = name === "A16z Speedrun Portfolio";
+  var isDisabled = count === 0;
   return /*#__PURE__*/react.createElement("button", {
     onClick: onClick,
-    className: "relative overflow-hidden border-[1px] border-solid ".concat(isSelected ? "border-white bg-black" : "border-[#979797]", " bg-[#1a1916] flex flex-col py-3 px-[0.62rem] justify-between items-start gap-[0.38rem]")
-  }, isA16z && /*#__PURE__*/react.createElement(A16zBackground, null), /*#__PURE__*/react.createElement("div", {
-    className: "relative z-10 text-white text-[1rem] font-[700] uppercase text-left"
+    disabled: isDisabled,
+    className: "relative overflow-hidden border-[1px] border-solid ".concat(isDisabled ? "border-[#979797]/40 bg-[#1a1916]/50 cursor-not-allowed opacity-50" : isSelected ? "border-white bg-black" : "border-[#979797]", " bg-[#1a1916] flex flex-col py-3 px-[0.62rem] justify-between items-start gap-[0.38rem]")
+  }, isA16z && !isDisabled && /*#__PURE__*/react.createElement(A16zBackground, null), /*#__PURE__*/react.createElement("div", {
+    className: "relative z-10 text-[1rem] font-[700] uppercase text-left ".concat(isDisabled ? "text-white/40" : "text-white")
   }, name), /*#__PURE__*/react.createElement("p", {
-    className: "relative z-10 text-[0.875rem] text-white/80 font-[500] leading-[1.25] tracking-[-0.02188rem]"
+    className: "relative z-10 text-[0.875rem] font-[500] leading-[1.25] tracking-[-0.02188rem] ".concat(isDisabled ? "text-white/30" : "text-white/80")
   }, count, " Offer", count !== 1 ? "s" : ""));
 }
 ;// ./src/ui/BrowseHeader.js
@@ -19646,6 +19552,271 @@ function BrowseHeader_iterableToArrayLimit(r, l) { var t = null == r ? null : "u
 function BrowseHeader_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
+var A16zBackground2 = function A16zBackground2() {
+  return /*#__PURE__*/react.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "211",
+    height: "35",
+    viewBox: "0 0 211 35",
+    fill: "none",
+    preserveAspectRatio: "xMaxYMax slice",
+    className: "absolute right-0 bottom-0"
+  }, /*#__PURE__*/react.createElement("g", {
+    opacity: "0.9"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M111.421 35.9736H113.747V31.2493H111.421V35.9736Z",
+    fill: "#4343FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M118.386 31.2393H120.767V26.5149H118.386V31.2393Z",
+    fill: "#5A4CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M125.337 35.9736H127.813V31.2493H125.337V35.9736Z",
+    fill: "#7064FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M125.393 31.2393H127.773V26.5149H125.393V31.2393Z",
+    fill: "#7E4BFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M132.412 35.9736H134.738V31.2493H132.412V35.9736Z",
+    fill: "#4040FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M132.439 26.5151H134.711V21.7908H132.439V26.5151Z",
+    fill: "#4C23FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.35 35.9736H141.785V31.2493H139.35V35.9736Z",
+    fill: "#675CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.378 31.2393H141.759V26.5149H139.378V31.2393Z",
+    fill: "#AB4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M139.378 26.5151H141.759V21.7908H139.378V26.5151Z",
+    fill: "#AB4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.411 35.9736H148.737V31.2493H146.411V35.9736Z",
+    fill: "#FF39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.384 31.2393H148.765V26.5149H146.384V31.2393Z",
+    fill: "#FF52CC"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.384 26.5151H148.765V21.7908H146.384V26.5151Z",
+    fill: "#FF52CC"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M146.261 17.0576H148.873V12.3333H146.261V17.0576Z",
+    fill: "#FF84DA"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.39 35.9736H155.743V31.2493H153.39V35.9736Z",
+    fill: "#5448FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 31.2393H155.771V26.5149H153.363V31.2393Z",
+    fill: "#FF52F4"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 26.5151H155.771V21.7908H153.363V26.5151Z",
+    fill: "#FF52F4"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M153.363 17.0576H155.771V12.3333H153.363V17.0576Z",
+    fill: "#FF5AB7"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 35.9736H162.736V31.2493H160.383V35.9736Z",
+    fill: "#5F4AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 31.2393H162.736V26.5149H160.383V31.2393Z",
+    fill: "#6746FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.383 26.5151H162.736V21.7908H160.383V26.5151Z",
+    fill: "#6746FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.41 21.7915H162.709V17.0672H160.41V21.7915Z",
+    fill: "#EC35FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M160.315 12.3325H162.791V7.60817H160.315V12.3325Z",
+    fill: "#FF67D0"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.375 35.9736H169.729V31.2493H167.375V35.9736Z",
+    fill: "#634FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 31.2393H169.742V26.5149H167.361V31.2393Z",
+    fill: "#8F4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 26.5151H169.742V21.7908H167.361V26.5151Z",
+    fill: "#8F4EFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 21.7915H169.742V17.0672H167.361V21.7915Z",
+    fill: "#B053FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.361 17.0576H169.742V12.3333H167.361V17.0576Z",
+    fill: "#B053FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M167.307 7.60889H169.783V2.88454H167.307V7.60889Z",
+    fill: "#FF65D0"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.395 35.9736H176.722V31.2493H174.395V35.9736Z",
+    fill: "#5941FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.341 31.2393H176.776V26.5149H174.341V31.2393Z",
+    fill: "#8E5DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.341 26.5151H176.776V21.7908H174.341V26.5151Z",
+    fill: "#8E5DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.259 21.7915H176.844V17.0672H174.259V21.7915Z",
+    fill: "#E6C3FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M174.395 12.3325H176.722V7.60817H174.395V12.3325Z",
+    fill: "#9D42FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.374 35.9736H183.728V31.2493H181.374V35.9736Z",
+    fill: "#6B4DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.387 31.2393H183.714V26.5149H181.387V31.2393Z",
+    fill: "#853FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.387 26.5151H183.714V21.7908H181.387V26.5151Z",
+    fill: "#853FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.36 21.7915H183.741V17.0672H181.36V21.7915Z",
+    fill: "#A953FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.36 17.0576H183.741V12.3333H181.36V17.0576Z",
+    fill: "#A953FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.415 12.3325H183.687V7.60817H181.415V12.3325Z",
+    fill: "#DF21FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M181.347 7.60889H183.755V2.88454H181.347V7.60889Z",
+    fill: "#D354FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 35.9736H190.693V31.2493H188.394V35.9736Z",
+    fill: "#6A3CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.381 31.2393H190.707V26.5149H188.381V31.2393Z",
+    fill: "#6B48FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.381 26.5151H190.707V21.7908H188.381V26.5151Z",
+    fill: "#6B48FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.244 21.7915H190.829V17.0672H188.244V21.7915Z",
+    fill: "#CD78FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.244 17.0576H190.829V12.3333H188.244V17.0576Z",
+    fill: "#CD78FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 12.3325H190.693V7.60817H188.394V12.3325Z",
+    fill: "#B535FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M188.394 2.88477H190.693V-1.83958H188.394V2.88477Z",
+    fill: "#A135FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.414 35.9736H197.686V31.2493H195.414V35.9736Z",
+    fill: "#5B28FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 31.2393H197.699V26.5149H195.4V31.2393Z",
+    fill: "#6F39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 26.5151H197.699V21.7908H195.4V26.5151Z",
+    fill: "#6F39FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 21.7915H197.699V17.0672H195.4V21.7915Z",
+    fill: "#9736FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.4 17.0576H197.699V12.3333H195.4V17.0576Z",
+    fill: "#9736FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M195.414 7.60889H197.686V2.88454H195.414V7.60889Z",
+    fill: "#8D2BFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.38 35.9736H204.706V31.2493H202.38V35.9736Z",
+    fill: "#6F42FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.366 31.2393H204.72V26.5149H202.366V31.2393Z",
+    fill: "#814DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.366 26.5151H204.72V21.7908H202.366V26.5151Z",
+    fill: "#814DFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.366 21.7915H204.72V17.0672H202.366V21.7915Z",
+    fill: "#A748FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.366 17.0576H204.72V12.3333H202.366V17.0576Z",
+    fill: "#A748FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.407 12.3325H204.679V7.60817H202.407V12.3325Z",
+    fill: "#A522FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.38 7.60889H204.706V2.88454H202.38V7.60889Z",
+    fill: "#BB41FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M202.38 2.88477H204.706V-1.83958H202.38V2.88477Z",
+    fill: "#BB41FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.358 35.9736H211.712V31.2493H209.358V35.9736Z",
+    fill: "#794AFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.372 31.2393H211.698V26.5149H209.372V31.2393Z",
+    fill: "#7F3FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.372 26.5151H211.698V21.7908H209.372V26.5151Z",
+    fill: "#7F3FFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.4 21.7915H211.672V17.0672H209.4V21.7915Z",
+    fill: "#781CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.4 17.0576H211.672V12.3333H209.4V17.0576Z",
+    fill: "#781CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.372 12.3325H211.698V7.60817H209.372V12.3325Z",
+    fill: "#9D42FF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.4 7.60889H211.672V2.88454H209.4V7.60889Z",
+    fill: "#991CFF"
+  }), /*#__PURE__*/react.createElement("path", {
+    d: "M209.4 2.88477H211.672V-1.83958H209.4V2.88477Z",
+    fill: "#991CFF"
+  })), /*#__PURE__*/react.createElement("g", {
+    opacity: "0.6",
+    filter: "url(#filter0_f_1206_34095)"
+  }, /*#__PURE__*/react.createElement("ellipse", {
+    cx: "201",
+    cy: "50.118",
+    rx: "152.095",
+    ry: "88.662",
+    fill: "url(#paint0_radial_1206_34095)"
+  })), /*#__PURE__*/react.createElement("defs", null, /*#__PURE__*/react.createElement("filter", {
+    id: "filter0_f_1206_34095",
+    x: "0.904297",
+    y: "-86.5439",
+    width: "400.19",
+    height: "273.324",
+    filterUnits: "userSpaceOnUse",
+    "color-interpolation-filters": "sRGB"
+  }, /*#__PURE__*/react.createElement("feFlood", {
+    "flood-opacity": "0",
+    result: "BackgroundImageFix"
+  }), /*#__PURE__*/react.createElement("feBlend", {
+    mode: "normal",
+    "in": "SourceGraphic",
+    in2: "BackgroundImageFix",
+    result: "shape"
+  }), /*#__PURE__*/react.createElement("feGaussianBlur", {
+    stdDeviation: "24",
+    result: "effect1_foregroundBlur_1206_34095"
+  })), /*#__PURE__*/react.createElement("radialGradient", {
+    id: "paint0_radial_1206_34095",
+    cx: "0",
+    cy: "0",
+    r: "1",
+    gradientUnits: "userSpaceOnUse",
+    gradientTransform: "translate(201 50.118) rotate(90) scale(88.662 152.095)"
+  }, /*#__PURE__*/react.createElement("stop", {
+    "stop-color": "#4112FF",
+    "stop-opacity": "0.55"
+  }), /*#__PURE__*/react.createElement("stop", {
+    offset: "0.490375",
+    "stop-color": "#B012FF",
+    "stop-opacity": "0.55"
+  }), /*#__PURE__*/react.createElement("stop", {
+    offset: "1",
+    "stop-opacity": "0"
+  }))));
+};
 function BrowseHeader(_ref) {
   var search = _ref.search,
     setSearch = _ref.setSearch,
@@ -19697,13 +19868,15 @@ function BrowseHeader(_ref) {
     }
   }), /*#__PURE__*/react.createElement("div", {
     ref: headerRef,
-    className: "sticky top-0 z-20 bg-black ".concat(isMobile ? "pb-4" : "pb-6")
+    className: "sticky top-0 z-20 bg-black ".concat(isMobile ? filtersOpen ? "pb-0" : "pb-4" : "pb-6")
   }, /*#__PURE__*/react.createElement("div", {
     className: "".concat(isMobile ? "pt-4" : "pt-6", " flex items-center ").concat(isMobile ? "justify-between" : "justify-between", " gap-3")
   }, !isMobile && /*#__PURE__*/react.createElement("div", {
     className: "text-white text-[1.75rem] font-[700] uppercase"
   }, "Browse Offers"), /*#__PURE__*/react.createElement("div", {
     className: "flex items-center ".concat(isMobile ? "w-full" : "flex-1 max-w-[26rem]")
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "relative flex-1"
   }, /*#__PURE__*/react.createElement("input", {
     type: "text",
     value: search,
@@ -19711,9 +19884,27 @@ function BrowseHeader(_ref) {
       return setSearch(e.target.value);
     },
     placeholder: "Search Offers...",
-    className: "flex-1 appearance-none text-[0.875rem] font-500 leading-[1.25] tracking-[-0.02188rem] text-white placeholder-white/60 border-[1px] border-[#979797] bg-[#2d2d2d] px-4 py-2 focus:outline-none focus:border-white transition-colors",
+    className: "w-full appearance-none text-[0.875rem] font-500 leading-[1.25] tracking-[-0.02188rem] text-white placeholder-white/60 border-[1px] border-[#979797] bg-[#2d2d2d] ".concat(isMobile ? "px-3 pr-8" : "px-4 pr-10", " py-2 focus:outline-none focus:border-white transition-colors"),
     ref: searchInputRef
-  }), isMobile && /*#__PURE__*/react.createElement("button", {
+  }), search && /*#__PURE__*/react.createElement("button", {
+    onClick: function onClick() {
+      return setSearch("");
+    },
+    className: "absolute right-2 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors",
+    "aria-label": "Clear search"
+  }, /*#__PURE__*/react.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M15 5L5 15M5 5L15 15",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })))), isMobile && /*#__PURE__*/react.createElement("button", {
     onClick: handleFilterToggle,
     className: "flex appearance-none items-center justify-center gap-2 px-3 py-2 bg-white text-black text-[0.75rem] font-[700] uppercase tracking-wide whitespace-nowrap flex-shrink-0 border-solid border-[1px] border-white"
   }, /*#__PURE__*/react.createElement("svg", {
@@ -19744,23 +19935,20 @@ function BrowseHeader(_ref) {
     preserveAspectRatio: "none",
     xlinkHref: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADMklEQVR4nO2cQYjMURzHP3ZQaJISNcqJA3HYPUi2Ngcue1hu7k6U7G6UcHk3q5zMiVxcnKRk5SBXDoTDJEVRxEVtUqvZMHr1V5us3n935v1/7/2/n3q37f//vf+nmfnM7PwHhBBCCCGEEEIIIYTIn7XAEeCcFovXBLAmtoydwGugp8W/1itgR8xHhmQQJCXKI+Wogc32Eln+6WvgXDCw0V4i63wMIc7ARnuJLH+tJAQ7S0KwtUwImQee1WTNpyCkQ33oSIgtkhDyGWiSP81ir+aF+PUAWE2+NIC7Vl7UTwYWxnXypR14DU7EGGYv8CtwoEnyYzJw7z+BPbGGuhE41I9Yn+dEYqLYU8je/TWKxjrgSeBgvtX3kT7DwLfAPfv3KBtiD7gZeBs44CdgO+nSAj4E7vUdsLWqQXcBc4GD+mbfSJp5+zJwj1+L19hKOQh0AwdOLYcbgXnr1wJwGCMcDxw6tRxul9iXfztgisslhk8hh6dK7GcGg6wCbpVodP+vYKuMl8jb28AQRvE5/DjxHB4ukbdPq8jbOuVwK5W8rUMON1PL25xzuJFq3uaaw+2U83aQOTxVwXzTqedtTjk8nkve5pDDIyXzdj2Z4XP4jZEcbuWatynmcDP3vE0phxt1ydtUcrhd4rxRvqBgiZnIOTxd4nyXqCExc3i8rnlrMYdH6p63lnK4pbxdHrtL5PDzwJsp/d+8CDzmXDGDWMShIjVDLuCpgOOdDjzWQnFusYIcvh9wLP8eRnkbKYc7fbh3I5tPbwfNEDAbQchsnfO2iru0Ohbu3cgFJyG2cBJiCychtnASYgsnIbZwEmILJyG2cBJiCychtnASYgsnIbZwEmILJyG2cBJiCychtnASYgsnIbZwEmILJyFpCflYfCvxf0hI5B/a7ALXgG1LHENCKvo58+4SYiSkj5wpIeTP+g5cXfRUJiF9ZGwZQv4W815C+svDFUgJWRJSkk3AHQmxxyhwT0LyF+Oq3lAujPZJjIQYE+Oq3kDOifxoGUIuVj147oyVFHOs6oHrwliAGH97de3vR7ci5gtwoOrh6sx+4ApwEzgLbKl6ICGEEEIIIYTAEL8BOfiXXcVozjAAAAAASUVORK5CYII="
   }))), "FILTERS"))), isMobile && filtersOpen && /*#__PURE__*/react.createElement("div", {
-    className: "pt-4 pb-2 relative z-30"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "text-white text-[1rem] font-[700] uppercase pb-3"
-  }, "Filter by Category"), /*#__PURE__*/react.createElement("div", {
-    className: "flex flex-col gap-3"
+    className: "flex flex-col"
   }, categories.map(function (name) {
     var count = categoryCounts.get(name) || 0;
-    return /*#__PURE__*/react.createElement(CategoryCard, {
+    var isDisabled = count === 0;
+    return /*#__PURE__*/react.createElement("div", {
       key: name,
-      name: name,
-      count: count,
-      isSelected: selectedCategories.has(name),
+      className: "border-l-[1px] border-r-[1px] border-b-[1px] border-white/80 py-[0.58rem] pl-3 relative overflow-hidden ".concat(isDisabled ? "bg-black/50 text-white/40 cursor-not-allowed" : selectedCategories.has(name) ? "bg-white text-black cursor-pointer" : "bg-black text-white cursor-pointer", " text-[1rem] font-[700] Capitalized leading-1"),
       onClick: function onClick() {
-        return handleCategoryClick(name);
+        return !isDisabled && handleCategoryClick(name);
       }
-    });
-  })))));
+    }, name === "A16z Speedrun Portfolio" && !isDisabled && /*#__PURE__*/react.createElement(A16zBackground2, null), /*#__PURE__*/react.createElement("span", null, name), " ", /*#__PURE__*/react.createElement("span", {
+      className: "text-[0.875rem] font-[500]"
+    }, "(", count, ")"));
+  }))));
 }
 ;// ./src/ui/CategoriesSection.js
 
@@ -19836,7 +20024,7 @@ function SpeedrunSection(_ref) {
   }, [offers]);
 
   // Card width + gap (22.5rem = 360px, gap = 16px = 1rem)
-  var scrollDistance = isMobile ? 331 : 376; // 280px + 16px : 360px + 16px
+  var scrollDistance = isMobile ? 331 : 375; // 280px + 16px : 360px + 16px
 
   // Check scroll position and update arrow states
   var updateScrollButtons = react.useCallback(function () {
@@ -19867,7 +20055,7 @@ function SpeedrunSection(_ref) {
     if (!isDragging) return;
     e.preventDefault();
     var x = e.pageX - scrollContainerRef.current.offsetLeft;
-    var walk = (x - startX) * 2; // Scroll speed multiplier
+    var walk = x - startX; // Scroll speed multiplier
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
   };
   var handleMouseUp = function handleMouseUp() {
@@ -20132,7 +20320,7 @@ var App = function App() {
     if (resultsRef.current && !isLoading) {
       var element = resultsRef.current;
       var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      var offsetPosition = elementPosition - 84; // Account for sticky header + some padding
+      var offsetPosition = elementPosition - (isMobile ? 84 : 50); // Account for sticky header + some padding
 
       window.scrollTo({
         top: offsetPosition,

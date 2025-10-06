@@ -375,19 +375,33 @@ const A16zBackground = () => (
 
 export default function CategoryCard({ name, count, isSelected, onClick }) {
   const isA16z = name === "A16z Speedrun Portfolio";
+  const isDisabled = count === 0;
 
   return (
     <button
       onClick={onClick}
+      disabled={isDisabled}
       className={`relative overflow-hidden border-[1px] border-solid ${
-        isSelected ? "border-white bg-black" : "border-[#979797]"
+        isDisabled
+          ? "border-[#979797]/40 bg-[#1a1916]/50 cursor-not-allowed opacity-50"
+          : isSelected
+          ? "border-white bg-black"
+          : "border-[#979797]"
       } bg-[#1a1916] flex flex-col py-3 px-[0.62rem] justify-between items-start gap-[0.38rem]`}
     >
-      {isA16z && <A16zBackground />}
-      <div className="relative z-10 text-white text-[1rem] font-[700] uppercase text-left">
+      {isA16z && !isDisabled && <A16zBackground />}
+      <div
+        className={`relative z-10 text-[1rem] font-[700] uppercase text-left ${
+          isDisabled ? "text-white/40" : "text-white"
+        }`}
+      >
         {name}
       </div>
-      <p className="relative z-10 text-[0.875rem] text-white/80 font-[500] leading-[1.25] tracking-[-0.02188rem]">
+      <p
+        className={`relative z-10 text-[0.875rem] font-[500] leading-[1.25] tracking-[-0.02188rem] ${
+          isDisabled ? "text-white/30" : "text-white/80"
+        }`}
+      >
         {count} Offer{count !== 1 ? "s" : ""}
       </p>
     </button>

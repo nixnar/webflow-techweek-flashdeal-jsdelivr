@@ -19,7 +19,7 @@ export default function SpeedrunSection({ offers, onRedeem, isMobile }) {
   }, [offers]);
 
   // Card width + gap (22.5rem = 360px, gap = 16px = 1rem)
-  const scrollDistance = isMobile ? 331 : 376; // 280px + 16px : 360px + 16px
+  const scrollDistance = isMobile ? 331 : 375; // 280px + 16px : 360px + 16px
 
   // Check scroll position and update arrow states
   const updateScrollButtons = React.useCallback(() => {
@@ -48,7 +48,7 @@ export default function SpeedrunSection({ offers, onRedeem, isMobile }) {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
+    const walk = x - startX; // Scroll speed multiplier
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 

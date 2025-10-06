@@ -86,7 +86,7 @@ const App = () => {
       const element = resultsRef.current;
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - 84; // Account for sticky header + some padding
+      const offsetPosition = elementPosition - (isMobile ? 84 : 50); // Account for sticky header + some padding
 
       window.scrollTo({
         top: offsetPosition,
