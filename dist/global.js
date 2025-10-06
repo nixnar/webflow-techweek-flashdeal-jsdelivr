@@ -1470,6 +1470,10 @@ li {
   background-color: rgba(0, 225, 255, var(--tw-bg-opacity, 1)) !important;
 }
 
+.hover\\:bg-white\\/10:hover{
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 .hover\\:text-white:hover{
   --tw-text-opacity: 1 !important;
   color: rgba(255, 255, 255, 1) !important;
@@ -18515,17 +18519,7 @@ function OfferCard(_ref2) {
       __html: sanitizeHtml(descriptionHtml)
     }
   }), /*#__PURE__*/react.createElement("div", {
-    className: "flex items-center gap-2 border-[1px] border-white/65 bg-white/5"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "flex-1 min-w-0"
-  }, /*#__PURE__*/react.createElement(PriceBlock, {
-    offer: offer,
-    badge: badge,
-    value: value,
-    isMobile: isMobile,
-    isSpeedrun: isSpeedrun
-  })), /*#__PURE__*/react.createElement("button", {
-    className: "flex-shrink-0 w-[4.5rem] p-2 h-full flex items-center justify-center bg-white border-[1px] border-white text-[0.875rem] font-[700] uppercase tracking-[0.0175rem] leading-[1.35] text-black",
+    className: "flex items-center gap-2 border-[1px] border-white/65 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors",
     onClick: function onClick() {
       // Track redeem button click in GA4
       if (typeof window !== "undefined" && window.gtag) {
@@ -18544,6 +18538,16 @@ function OfferCard(_ref2) {
       // }
       onRedeem === null || onRedeem === void 0 || onRedeem(offer);
     }
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex-1 min-w-0"
+  }, /*#__PURE__*/react.createElement(PriceBlock, {
+    offer: offer,
+    badge: badge,
+    value: value,
+    isMobile: isMobile,
+    isSpeedrun: isSpeedrun
+  })), /*#__PURE__*/react.createElement("div", {
+    className: "flex-shrink-0 w-[4.5rem] p-2 h-full flex items-center justify-center bg-white border-[1px] border-white text-[0.875rem] font-[700] uppercase tracking-[0.0175rem] leading-[1.35] text-black"
   }, "Redeem"))));
 }
 function PriceBlock(_ref3) {
