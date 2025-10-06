@@ -612,9 +612,6 @@ video {
 .z-20{
   z-index: 20 !important;
 }
-.z-30{
-  z-index: 30 !important;
-}
 .z-50{
   z-index: 50 !important;
 }
@@ -653,6 +650,9 @@ video {
 }
 .mt-\\[0\\.75rem\\]{
   margin-top: 0.75rem !important;
+}
+.mt-1{
+  margin-top: 0.25rem !important;
 }
 .line-clamp-2{
   overflow: hidden !important;
@@ -895,11 +895,14 @@ video {
 .border-b-\\[1px\\]{
   border-bottom-width: 1px !important;
 }
+.border-l-\\[1px\\]{
+  border-left-width: 1px !important;
+}
 .border-r-\\[1px\\]{
   border-right-width: 1px !important;
 }
-.border-l-\\[1px\\]{
-  border-left-width: 1px !important;
+.border-b{
+  border-bottom-width: 1px !important;
 }
 .border-solid{
   border-style: solid !important;
@@ -913,6 +916,9 @@ video {
   --tw-border-opacity: 1 !important;
   border-color: rgba(151, 151, 151, 1) !important;
   border-color: rgba(151, 151, 151, var(--tw-border-opacity, 1)) !important;
+}
+.border-\\[\\#979797\\]\\/40{
+  border-color: rgba(151, 151, 151, 0.4) !important;
 }
 .border-\\[\\#989898\\]{
   --tw-border-opacity: 1 !important;
@@ -936,9 +942,6 @@ video {
 .border-white\\/80{
   border-color: rgba(255, 255, 255, 0.8) !important;
 }
-.border-\\[\\#979797\\]\\/40{
-  border-color: rgba(151, 151, 151, 0.4) !important;
-}
 .bg-\\[\\#1D1B17\\]\\/80{
   background-color: rgba(29, 27, 23, 0.8) !important;
 }
@@ -946,6 +949,9 @@ video {
   --tw-bg-opacity: 1 !important;
   background-color: rgba(26, 25, 22, 1) !important;
   background-color: rgba(26, 25, 22, var(--tw-bg-opacity, 1)) !important;
+}
+.bg-\\[\\#1a1916\\]\\/50{
+  background-color: rgba(26, 25, 22, 0.5) !important;
 }
 .bg-\\[\\#2d2d2d\\]{
   --tw-bg-opacity: 1 !important;
@@ -960,16 +966,14 @@ video {
 .bg-black\\/10{
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
+.bg-black\\/50{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
 .bg-black\\/70{
   background-color: rgba(0, 0, 0, 0.7) !important;
 }
 .bg-black\\/80{
   background-color: rgba(0, 0, 0, 0.8) !important;
-}
-.bg-gray-700{
-  --tw-bg-opacity: 1 !important;
-  background-color: rgba(55, 65, 81, 1) !important;
-  background-color: rgba(55, 65, 81, var(--tw-bg-opacity, 1)) !important;
 }
 .bg-white{
   --tw-bg-opacity: 1 !important;
@@ -978,12 +982,6 @@ video {
 }
 .bg-white\\/5{
   background-color: rgba(255, 255, 255, 0.05) !important;
-}
-.bg-black\\/50{
-  background-color: rgba(0, 0, 0, 0.5) !important;
-}
-.bg-\\[\\#1a1916\\]\\/50{
-  background-color: rgba(26, 25, 22, 0.5) !important;
 }
 .object-contain{
   -o-object-fit: contain !important;
@@ -1071,6 +1069,10 @@ video {
   padding-top: 0.53rem !important;
   padding-bottom: 0.53rem !important;
 }
+.py-\\[0\\.58rem\\]{
+  padding-top: 0.58rem !important;
+  padding-bottom: 0.58rem !important;
+}
 .py-\\[10px\\]{
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -1078,10 +1080,6 @@ video {
 .py-\\[6px\\]{
   padding-top: 6px !important;
   padding-bottom: 6px !important;
-}
-.py-\\[0\\.58rem\\]{
-  padding-top: 0.58rem !important;
-  padding-bottom: 0.58rem !important;
 }
 .pb-0{
   padding-bottom: 0px !important;
@@ -1104,11 +1102,17 @@ video {
 .pl-2{
   padding-left: 0.5rem !important;
 }
+.pl-3{
+  padding-left: 0.75rem !important;
+}
 .pr-10{
   padding-right: 2.5rem !important;
 }
 .pr-2{
   padding-right: 0.5rem !important;
+}
+.pr-8{
+  padding-right: 2rem !important;
 }
 .pr-\\[0\\.56rem\\]{
   padding-right: 0.56rem !important;
@@ -1127,12 +1131,6 @@ video {
 }
 .pt-6{
   padding-top: 1.5rem !important;
-}
-.pl-3{
-  padding-left: 0.75rem !important;
-}
-.pr-8{
-  padding-right: 2rem !important;
 }
 .text-left{
   text-align: left !important;
@@ -1254,6 +1252,12 @@ video {
   color: rgba(255, 255, 255, 1) !important;
   color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
 }
+.text-white\\/30{
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+.text-white\\/40{
+  color: rgba(255, 255, 255, 0.4) !important;
+}
 .text-white\\/60{
   color: rgba(255, 255, 255, 0.6) !important;
 }
@@ -1265,12 +1269,6 @@ video {
 }
 .text-white\\/80{
   color: rgba(255, 255, 255, 0.8) !important;
-}
-.text-white\\/40{
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-.text-white\\/30{
-  color: rgba(255, 255, 255, 0.3) !important;
 }
 .underline{
   text-decoration-line: underline !important;
@@ -1290,14 +1288,14 @@ video {
 .opacity-30{
   opacity: 0.3 !important;
 }
+.opacity-50{
+  opacity: 0.5 !important;
+}
 .opacity-70{
   opacity: 0.7 !important;
 }
 .opacity-80{
   opacity: 0.8 !important;
-}
-.opacity-50{
-  opacity: 0.5 !important;
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -20231,7 +20229,16 @@ function _fetchOffersWithFallback() {
     return App_regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          speedrunIds = new Set([50021443, 50021447, 50021428, 50021437, 50021438, 50021435, 50021429]);
+          speedrunIds = new Set([50021443, 50021447, 50021428, 50021437, 50021438,
+          //Limy
+          50021435,
+          //Rehersals
+          50020089,
+          //Runware
+          50021429,
+          //Shortcut
+          50021477 //rork
+          ]);
           _context2.prev = 1;
           _context2.next = 4;
           return fetch("https://api.tech-week.com/get_proven/");

@@ -9,7 +9,15 @@ import SpeedrunSection from "./ui/SpeedrunSection";
 
 async function fetchOffersWithFallback() {
   const speedrunIds = new Set([
-    50021443, 50021447, 50021428, 50021437, 50021438, 50021435, 50021429,
+    50021443,
+    50021447,
+    50021428,
+    50021437,
+    50021438, //Limy
+    50021435, //Rehersals
+    50020089, //Runware
+    50021429, //Shortcut
+    50021477, //rork
   ]);
 
   try {
