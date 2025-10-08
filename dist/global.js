@@ -651,9 +651,6 @@ video {
 .mt-\\[0\\.75rem\\]{
   margin-top: 0.75rem !important;
 }
-.mt-1{
-  margin-top: 0.25rem !important;
-}
 .line-clamp-2{
   overflow: hidden !important;
   display: -webkit-box !important;
@@ -900,9 +897,6 @@ video {
 }
 .border-r-\\[1px\\]{
   border-right-width: 1px !important;
-}
-.border-b{
-  border-bottom-width: 1px !important;
 }
 .border-solid{
   border-style: solid !important;
@@ -20237,7 +20231,9 @@ function _fetchOffersWithFallback() {
           //Runware
           50021429,
           //Shortcut
-          50021477 //rork
+          50021477,
+          //rork
+          50021483 //Nativ
           ]);
           _context2.prev = 1;
           _context2.next = 4;

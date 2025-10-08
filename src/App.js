@@ -18,6 +18,7 @@ async function fetchOffersWithFallback() {
     50020089, //Runware
     50021429, //Shortcut
     50021477, //rork
+    50021483, //Nativ
   ]);
 
   try {
